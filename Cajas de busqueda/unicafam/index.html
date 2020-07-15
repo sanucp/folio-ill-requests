@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+<script src="http://support.ebscohost.com/eit/scripts/ebscohostsearch.js" type="text/javascript"></script>
+<script>
+$(function() {
+			$( "#tabs" ).tabs();
+		});
+function ebscoHostSearchEbooks(form) {
+			 var ebscohostsearchtext = chkObject(form.ebscohostsearchtext,'');
+			 var ebscohostkeywords = chkObject(form.ebscohostkeywords,'');
+			 var ebscohostsearchsrc = chkObject(form.ebscohostsearchsrc,'');
+			 var ebscohostsearchmode = chkObject(form.ebscohostsearchmode,'\+AND\+');
+			 var ebscohostwindow = parseInt(chkObject(form.ebscohostwindow,0));
+			 var ebscohosturl = chkObject(form.ebscohosturl,'http://search.ebscohost.com/login.aspx?');
+			
+			 var strAlert="";
+			
+			 ebscohostsearchtext = encodeURI(ebscohostsearchtext);
+			
+			 if (ebscohostsearchtext=="") 
+					strAlert+="Please enter search term(s).\n"; 
+			 
+			 if (strAlert !== "") {
+				alert(strAlert);
+				return false;
+			 }	 
+
+			var searchFieldSelector =form["searchFieldSelector"].value;
+			ebscohosturl+='&bquery='+searchFieldSelector+'+('+ebscohostkeywords+ebscoHostSearchParse(ebscohostsearchtext,ebscohostsearchmode)+') AND PT ebook'; 
+			if (ebscohostwindow)
+				window.open(ebscohosturl, 'EBSCOhost');
+			else
+				window.location = ebscohosturl;
+				
+			return false;
+}
+</script>
+<style>
+body{
+width:auto;
+}
+#contenedor{
+	width:1120px;
+	height:550px;
+	margin-left:auto;
+	margin-right:auto;
+	border:1px solid black;
+	background-image:url('http://www.unicafam.edu.co/pags/biblioteca/png_jpg/bienvenida_fondo.jpg')
+}
+#tabs{
+width:800px;
+margin-left:auto;
+margin-right:auto;
+margin-top:80px;
+opacity:.6;
+filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+#tabs:hover{
+opacity:1;
+filter: alpha(opacity=100); /* For IE8 and earlier */
+}
+.ui-widget-header {
+            background:#0265ab;
+			border: 1px solid #b9cd6d;
+            color: #FFFFFF;
+            font-weight: bold;
+         }
+#ebscohostsearchtext { width:70%;height:30px;font-size:20px; }
+#catalogsearch{width:70%;height:30px;font-size:20px;}
+.ebscohost-search-button {
+	background-color:#f29200;
+	color:white;
+	border:none;
+	font-weight:bold;
+	height:30px;
+	border-radius:10px;
+}
+#guidedFieldSelectors{
+	margin:10px;
+}
+#limiterblock{
+	margin:10px;
+}
+/*AUTOCOMPLETE STYLES*/
+#auto-results {
+    border: 1px black solid;
+    font-family: mir-cond,Helvetica,Arial,sans-serif;
+    background-color:white;
+    position:absolute;
+    padding:10px;
+    z-index:1000;
+    width: 430px;
+}
+#auto-results li:hover {
+    background-color: #3875D7;
+    color: white;
+    font-weight:bold;
+    cursor: pointer;
+}
+#auto-results li {
+    border: medium none;
+    list-style: outside none none;
+    padding-left: 5px;
+}
+/*END AUTOCOMPLETE STYLES*/
+</style>
+</head>
+<body>
+<div id="contenedor">
+<div id="tabs">
+	<ul>
+		<li><a href="#tabs-1">Búsqueda unificada</a></li>
+		<li><a href="#tabs-2">Catálogo</a></li>
+		<li><a href="#tabs-3">Ebooks</a></li>
+		<li><a href="#tabs-4">Google Academico</a></li>
+	</ul>
+<!--EDS-->
+	<div id = "tabs-1">
+		<form id="sbEDS" action="" onsubmit="return ebscoHostSearchGo(this);" method="post" >
+		<input id="ebscohostwindow" name="ebscohostwindow" type="hidden" value="1" />
+		<input id="ebscohosturl" name="ebscohosturl" type="hidden" value="http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&type=0&custid=ns145085&groupid=main&profid=eds&mode=bool&lang=es&authtype=ip,guest" />
+		<input id="ebscohostsearchsrc" name="ebscohostsearchsrc" type="hidden" value="db" />
+		<input id="ebscohostsearchmode" name="ebscohostsearchmode" type="hidden" value="+" />
+		<input id="ebscohostkeywords" name="ebscohostkeywords" type="hidden" value="" />
+		
+		<div>
+			<div>
+			<div>
+			<input id="ebscohostsearchtext" class="" name="ebscohostsearchtext" type="text" size="50" autocomplete="off" onkeyup="autocomp()" />
+			<span id="edsSearchWrapper"></span>
+			<input type="submit" value="Buscar" class="ebscohost-search-button" />
+			<div id="guidedFieldSelectors">
+				<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_0" value="" checked="checked" />
+				<label class="label" for="guidedField_0"> Palabras Clave</label>
+				<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_1" value="TI" />
+				<label class="label" for="guidedField_1"> Título</label>
+				<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_2" value="AU" />
+				<label class="label" for="guidedField_2"> Autor</label>
+			</div>
+			</div>
+			</div>
+		</div>
+
+		<div id="limiterblock" >
+			<div id="limitertitle" >Limita los Resultados</div>
+			
+			<div class="limiter" >
+				<input type="checkbox" id="chkFullText" name="chkFullText" checked="checked" />
+				<label for="chkFullText">Texto Completo</label>
+			</div>
+
+			<div class="limiter" >
+				<input type="checkbox" id="chkPeerReviewed" name="chkPeerReviewed"  />
+				<label for="chkPeerReviewed">Revisado por Pares Academicos</label>
+			</div>
+		</div>
+	</form>
+    </div>
+<!--catalogo de Libros-->
+    <div id = "tabs-2">
+    <form id="sbCatalog">
+	<input id="catalogsearch" type="text" size="50"  />
+	<button onclick="searchCatalog() " class="ebscohost-search-button">Buscar</button><br/>
+				
+	<div id="guidedFieldSelectors">
+		<input type="radio" name="searchFieldSelectorCat" value="1" checked="checked" />
+		<label> Palabra clave</label>
+		<input type="radio" name="searchFieldSelectorCat" value="2" />
+		<label> Título</label>
+		<input type="radio" name="searchFieldSelectorCat" value="3" />
+		<label>Autor</label>
+	</div>
+	</form>
+    </div>
+	<script>
+		function searchCatalog() {
+		var text1 = document.getElementById("catalogsearch").value;
+		if (text1 != ''){
+		var rev1 = document.getElementsByName("searchFieldSelectorCat");
+		var url = '';
+		if (rev1[0].checked == true) { url = "http://koha.unicafam.edu.co/cgi-bin/koha/opac-search.pl?" + "q=" + text1 ; }
+		if (rev1[1].checked == true) { url = "http://koha.unicafam.edu.co/cgi-bin/koha/opac-search.pl?idx=ti&" + "q=" + text1 ; }
+		if (rev1[2].checked == true) { url = "http://koha.unicafam.edu.co/cgi-bin/koha/opac-search.pl?idx=au&" + "q=" + text1; }
+		window.open (url);}
+		}
+	</script>
+<!--libros electronicos-->
+    <div id = "tabs-3">
+	<form id="sbPeriodici" action="" onsubmit="return ebscoHostSearchEbooks(this);" method="post">
+		<input id="ebscohostwindow" name="ebscohostwindow" type="hidden" value="1" />
+		<input id="ebscohosturl" name="ebscohosturl" type="hidden" value="http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&type=0&custid=ns145085&groupid=main&profid=eds&mode=bool&lang=es&authtype=ip,guest" />
+		<input id="ebscohostsearchsrc" name="ebscohostsearchsrc" type="hidden" value="db" />
+		<input id="ebscohostsearchmode" name="ebscohostsearchmode" type="hidden" value="+" />
+		<input id="ebscohostkeywords" name="ebscohostkeywords" type="hidden" value="" />
+		<input id="ebscohostsearchtext" name="ebscohostsearchtext" type="text" size="50"/>
+		<input type="submit" value="Buscar" class="ebscohost-search-button"/>
+				
+	<div id="guidedFieldSelectors">
+		<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_0" value="" checked="checked" />
+		<label class="label" for="guidedField_0"> Palabra clave</label>
+		<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_1" value="TI" />
+		<label class="label" for="guidedField_1"> Título</label>
+		<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_2" value="AU" />
+		<label class="label" for="guidedField_2"> Autor</label>
+	</div>
+	</form>
+    </div>
+<!--Google Academico-->
+	<div id="tabs-4">
+		<form id="sbPeriodici" action="https://scholar.google.com/scholar" target="_blank" method="get">
+			<input id="hl" name="hl" type="hidden" value="es" />
+			<input id="ebscohostsearchtext" name="q" type="text" placeholder="Busquedas en Google Scholar..." />
+			<input type="submit" value="Buscar" class="ebscohost-search-button" />
+		</form>
+	</div>	
+</div>
+</div>
+
+<script type="text/javascript">
+  //##### Required Variables #####
+  //ID of form for submission of terms to search
+  var searchformid = 'sbEDS';
+  //ID of search box input field
+  var searchboxid = 'ebscohostsearchtext';
+  //ID of div or span that the autocomplete results will appear below
+  var appenddiv = 'edsSearchWrapper';
+  //determines if search happens when autocomplete term is clicked
+  var searchOnClick = true;
+  //##### End Variables #####
+</script>
+<script src="http://widgets.ebscohost.com/prod/simplekey/autocomplete/autocomp.js"></script>
+</body>
+</html>

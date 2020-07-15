@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form id="sbCatalog" style="overflow:auto;">
+        
+        <input id="catalogsearch" name="ebscohostsearchtext" type="text" size="50" placeholder="Busca en el catalogo..." />
+        <button onclick="searchCatalog()">Buscar</button>
+        <div id="guidedFieldSelectors">
+            <input type="radio" name="searchFieldSelector" value="1" checked="checked" />
+            <label>Palabras Clave</label>
+            <input type="radio" name="searchFieldSelector" value="2" />
+            <label>Título</label>
+            <input type="radio" name="searchFieldSelector" value="3" />
+            <label>Autor</label>
+        </div>
+
+        <script>
+            function searchCatalog() {
+                var text1 = document.getElementById("catalogsearch").value;
+                var res = escape(text1);
+                if (res != '') {
+                    var rev1 = document.getElementsByName("searchFieldSelector");
+                    var url = '';
+                    if (rev1[0].checked == true) {
+                        url = "https://biblos.javeriana.edu.co/uhtbin/cgisirsi/x/0/0/5?" + "searchdata1=" + res;
+                    }
+                    if (rev1[1].checked == true) {
+                        url = "https://biblos.javeriana.edu.co/uhtbin/cgisirsi/x/0/0/5?" + "searchdata1=" + res + "&srchfield1=TI^TITLE^^Title Processing^title";
+                    }
+                    if (rev1[2].checked == true) {
+                        url = "https://biblos.javeriana.edu.co/uhtbin/cgisirsi/x/0/0/5?" + "searchdata1=" + res + "&srchfield1=AU^AUTHOR^^Author Processing^author";
+                    }
+                    if (rev1[3].checked == true) {
+                        url = "https://biblos.javeriana.edu.co/uhtbin/cgisirsi/x/0/0/5?" + "searchdata1=" + res + "&srchfield1=SU^SUBJECT^SUBJECTS^^tema Processing^subjects"
+                    }
+                    window.open(url);
+                }
+            }
+
+        </script>
+</body>
+</html>

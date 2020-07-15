@@ -1,0 +1,106 @@
+{
+  "user" : {
+    "username" : "kaley",
+    "id" : "6e74dfe1-2eca-48bd-89ce-9fe1633920a3",
+    "barcode" : "70567676297152",
+    "active" : true,
+    "type" : "patron",
+    "patronGroup" : "3684a786-6671-4268-8ed0-9db82ebca60b",
+    "proxyFor" : [ ],
+    "personal" : {
+      "lastName" : "Murphy",
+      "firstName" : "Bettye",
+      "email" : "baby@abernathy-and-sons.cm",
+      "phone" : "783.614.3439",
+      "mobilePhone" : "591.690.6025 x9830",
+      "dateOfBirth" : "1968-01-08T00:00:00.000+0000",
+      "addresses" : [ {
+        "countryId" : "US",
+        "addressLine1" : "85846 Block Corner",
+        "city" : "Bell",
+        "region" : "DC",
+        "postalCode" : "14504-7792",
+        "addressTypeId" : "93d3d88d-499b-45d0-9bc7-ac73c3a19880",
+        "primaryAddress" : true
+      } ],
+      "preferredContactTypeId" : "002"
+    },
+    "enrollmentDate" : "2017-04-14T00:00:00.000+0000",
+    "expirationDate" : "2020-05-10T00:00:00.000+0000",
+    "createdDate" : "2020-01-07T23:03:43.027+0000",
+    "updatedDate" : "2020-01-07T23:03:43.027+0000",
+    "metadata" : {
+      "createdDate" : "2020-01-07T23:03:42.941+0000",
+      "updatedDate" : "2020-01-07T23:03:42.941+0000"
+    }
+  },
+  "patronGroup" : {
+    "group" : "staff",
+    "desc" : "Staff Member",
+    "id" : "3684a786-6671-4268-8ed0-9db82ebca60b",
+    "metadata" : {
+      "createdDate" : "2020-01-07T23:03:27.062+0000",
+      "updatedDate" : "2020-01-07T23:03:27.062+0000"
+    }
+  },
+  "permissions" : {
+    "permissions" : [ ]
+  },
+  "proxiesFor" : [ ],
+  "servicePointsUser" : {
+    "id" : "604d4abd-351a-4f28-ac8f-c63e7d248844",
+    "userId" : "6e74dfe1-2eca-48bd-89ce-9fe1633920a3",
+    "servicePointsIds" : [ "7c5abc9f-f3d7-4856-b8d7-6712462ca007", "3a40852d-49fd-4df2-a1f9-6e2641a6e91f", "c4c90014-c8c9-4ade-8f24-b5e313319f4b" ],
+    "servicePoints" : [ {
+      "id" : "7c5abc9f-f3d7-4856-b8d7-6712462ca007",
+      "name" : "Online",
+      "code" : "Online",
+      "discoveryDisplayName" : "Online",
+      "shelvingLagTime" : 0,
+      "pickupLocation" : false,
+      "staffSlips" : [ ],
+      "locationIds" : [ ],
+      "metadata" : {
+        "createdDate" : "2020-01-07T23:02:45.915+0000",
+        "updatedDate" : "2020-01-07T23:02:45.915+0000"
+      }
+    }, {
+      "id" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+      "name" : "Circ Desk 1",
+      "code" : "cd1",
+      "discoveryDisplayName" : "Circulation Desk -- Hallway",
+      "pickupLocation" : true,
+      "staffSlips" : [ ],
+      "locationIds" : [ ],
+      "metadata" : {
+        "createdDate" : "2020-01-07T23:02:45.965+0000",
+        "updatedDate" : "2020-01-07T23:02:45.965+0000"
+      },
+      "holdShelfExpiryPeriod" : {
+        "duration" : 3,
+        "intervalId" : "Weeks"
+      }
+    }, {
+      "id" : "c4c90014-c8c9-4ade-8f24-b5e313319f4b",
+      "name" : "Circ Desk 2",
+      "code" : "cd2",
+      "discoveryDisplayName" : "Circulation Desk -- Back Entrance",
+      "pickupLocation" : true,
+      "staffSlips" : [ ],
+      "locationIds" : [ ],
+      "metadata" : {
+        "createdDate" : "2020-01-07T23:02:45.986+0000",
+        "updatedDate" : "2020-01-07T23:02:45.986+0000"
+      },
+      "holdShelfExpiryPeriod" : {
+        "duration" : 5,
+        "intervalId" : "Days"
+      }
+    } ],
+    "defaultServicePointId" : "7c5abc9f-f3d7-4856-b8d7-6712462ca007",
+    "metadata" : {
+      "createdDate" : "2020-01-07T23:03:08.741+0000",
+      "updatedDate" : "2020-01-07T23:03:08.741+0000"
+    }
+  }
+}

@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Biblioteca SearchBox</title>
+    <meta name="description" content="The HTML5 Herald" />
+    <meta name="author" content="SitePoint" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://support.ebsco.com/eit/scripts/ebscohostsearch.js"
+      type="text/javascript"
+    ></script>
+    <style>
+      #pestanas {
+        margin-top: 30px;
+      }
+      a {
+        color: #ffffff !important;
+        text-decoration: none !important;
+        background-color: transparent !important;
+      }
+      .nav-tabs .nav-item.show .nav-link,
+      .nav-tabs .nav-link.active {
+        background-color: transparent !important;
+        /* border-color: #dee2e6 #dee2e6 #fff; */
+      }
+      .nav-tabs .nav-link {
+        border: 1px solid transparent !important;
+        /* border-top-left-radius: .25rem; */
+        /* border-top-right-radius: .25rem; */
+      }
+
+      .nav-tabs {
+        border-bottom: none !important;
+      }
+      .form-control-lg {
+        height: calc(1.5em + 1rem + 2px) !important;
+        padding: 0.5rem 1rem !important;
+        font-size: 1.25rem !important;
+        line-height: 1.5 !important;
+        border-radius: 26px !important;
+        font-family: "Futura-CondensedExtraBold, sans-serif" !important;
+      }
+      .card1 {
+        position: relative !important;
+        display: -ms-flexbox !important;
+        display: flex !important;
+        -ms-flex-direction: column !important;
+        flex-direction: column !important;
+        min-width: 0 !important;
+        word-wrap: break-word !important;
+        /* background-color: #fff; */
+        background-clip: border-box !important;
+        /* border: 1px solid rgba(0,0,0,.125); */
+        border-radius: 0.25rem !important;
+      }
+      .card2 {
+        position: relative !important;
+        display: -ms-flexbox !important;
+        display: flex !important;
+        -ms-flex-direction: column !important;
+        flex-direction: column !important;
+        min-width: 0 !important;
+        word-wrap: break-word !important;
+        /* background-color: #fff; */
+        background-clip: border-box !important;
+        /* border: 1px solid rgba(0,0,0,.125); */
+        border-radius: 0.25rem !important;
+      }
+      .card3 {
+        position: relative !important;
+        display: -ms-flexbox !important;
+        display: flex !important;
+        -ms-flex-direction: column !important;
+        flex-direction: column !important;
+        min-width: 0 !important;
+        word-wrap: break-word !important;
+        /* background-color: #fff; */
+        background-clip: border-box !important;
+        /* border: 1px solid rgba(0,0,0,.125); */
+        border-radius: 0.25rem !important;
+      }
+
+      .btn-success1 {
+        /* color: #fff; */
+        /* background-color: #28a745; */
+        /* border-color: #28a745; */
+        background-image: url(https://wwwp.ugc.edu.co/sede/bogota/images/biblioteca/new/home/buscar.png) !important;
+        background-repeat: no-repeat;
+        width: 37px !important;
+        height: 38px !important;
+      }
+      .navbar-light .navbar-toggler {
+        border-color: rgba(0, 0, 0, 0.1) !important;
+        background-color: #f7f7f7 !important;
+      }
+      #guidedFieldSelectors {
+        float: left;
+      }
+    </style>
+  </head>
+
+  <body style="background-color: #ccc;">
+    <div class="container">
+      <div class="row" id="pestanas">
+        <div class="col" align="center">
+          <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+            <a class="navbar-brand" href="#" style="display: none;">Menú</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav" id="myTab" role="tablist">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    id="home-tab"
+                    data-toggle="tab"
+                    href="#eds"
+                    role="tab"
+                    aria-controls="eds"
+                    aria-selected="true"
+                    >Todos los recursos</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    id="profile-tab"
+                    data-toggle="tab"
+                    href="#catalogo"
+                    role="tab"
+                    aria-controls="catalogo"
+                    aria-selected="false"
+                    >Catálogo</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    id="contact-tab"
+                    data-toggle="tab"
+                    href="#BD"
+                    role="tab"
+                    >Bases Datos</a
+                  >
+                </li>
+
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    id="contact-tab"
+                    data-toggle="tab"
+                    href="#repositorio"
+                    role="tab"
+                    aria-controls="repositorio"
+                    aria-selected="false"
+                    >Repositorio</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </nav>
+
+          <div class="tab-content" id="TabContent">
+            <div
+              class="tab-pane fade show active"
+              id="eds"
+              role="tabpanel"
+              aria-labelledby="home-tab"
+            >
+              <form
+                class="card1 card-sm"
+                onsubmit="return ebscoHostSearchGo(this);"
+                method="post"
+                target="_blank"
+              >
+                <div class="card-body row no-gutters align-items-center">
+                  <div class="col">
+                    <input
+                      class="form-control form-control-lg form-control-borderless"
+                      type="search"
+                      placeholder="Buscar"
+                      name="ebscohostsearchtext"
+                    />
+                    <input
+                      id="ebscohostwindow"
+                      name="ebscohostwindow"
+                      type="hidden"
+                      value="1"
+                    />
+                    <input
+                      id="ebscohosturl"
+                      name="ebscohosturl"
+                      type="hidden"
+                      value="http://ugc.elogim.com:2048/login?url=http://search.ebscohost.com/login.aspx?direct=true&scope=site&type=0&site=eds-live&lang=es&authtype=ip"
+                    />
+                    <input
+                      id="ebscohostsearchsrc"
+                      name="ebscohostsearchsrc"
+                      type="hidden"
+                      value="db"
+                    />
+                    <input
+                      id="ebscohostsearchmode"
+                      name="ebscohostsearchmode"
+                      type="hidden"
+                      value="+"
+                    />
+                    <input
+                      id="ebscohostkeywords"
+                      name="ebscohostkeywords"
+                      type="hidden"
+                      value=""
+                    />
+                  </div>
+                  <!--end of col-->
+                  <div class="col-auto">
+                    <button
+                      class="btn btn-lg btn-success1"
+                      type="submit"
+                    ></button>
+                  </div>
+                  <!--end of col-->
+                  <div id="guidedFieldSelectors">
+                    <input
+                      class="radio"
+                      type="radio"
+                      name="searchFieldSelector"
+                      id="guidedField_0"
+                      value=""
+                      checked="checked"
+                    />
+                    <label class="label" for="guidedField_0">
+                      Palabra Clave</label
+                    >
+                    <input
+                      class="radio"
+                      type="radio"
+                      name="searchFieldSelector"
+                      id="guidedField_1"
+                      value="TI"
+                    />
+                    <label class="label" for="guidedField_1"> Título</label>
+                    <input
+                      class="radio"
+                      type="radio"
+                      name="searchFieldSelector"
+                      id="guidedField_2"
+                      value="AU"
+                    />
+                    <label class="label" for="guidedField_2"> Autor</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="catalogo"
+              role="tabpanel"
+              aria-labelledby="profile-tab"
+            >
+              <form
+                class="card2 card-sm"
+                action="http://biblioteca.ugc.edu.co/cgi-bin/koha/opac-search.pl"
+                method="get"
+                target="_blank"
+              >
+                <div class="card-body row no-gutters align-items-center">
+                  <div class="col">
+                    <input
+                      class="form-control form-control-lg form-control-borderless"
+                      type="search"
+                      placeholder="Buscar"
+                      name="q"
+                    />
+                  </div>
+                  <!--end of col-->
+                  <div class="col-auto">
+                    <button
+                      class="btn btn-lg btn-success1"
+                      type="submit"
+                    ></button>
+                  </div>
+                  <!--end of col-->
+                </div>
+              </form>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="repositorio"
+              role="tabpanel"
+              aria-labelledby="contact-tab"
+            >
+              <form
+                class="card3 card-sm"
+                action="http://repository.ugc.edu.co/discover"
+                method="get"
+                target="_blank"
+              >
+                <div class="card-body row no-gutters align-items-center">
+                  <div class="col">
+                    <input
+                      class="form-control form-control-lg form-control-borderless"
+                      name="query"
+                      type="search"
+                      placeholder="Buscar"
+                    />
+                  </div>
+                  <!--end of col-->
+                  <div class="col-auto">
+                    <button
+                      class="btn btn-lg btn-success1"
+                      type="submit"
+                    ></button>
+                  </div>
+                  <!--end of col-->
+                </div>
+              </form>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="BD"
+              role="tabpanel"
+              aria-labelledby="contact-tab"
+            >
+              <div class="row">
+                <div class="col">
+                  <div id="accordion">
+                    <div class="card col-9">
+                      <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                          <button
+                            class="btn btn-link"
+                            data-toggle="collapse"
+                            data-target="#collapseOne"
+                            aria-expanded="true"
+                            aria-controls="collapseOne"
+                          >
+                            Ciencias jurídicas
+                          </button>
+                        </h5>
+                      </div>
+                      <div
+                        id="collapseOne"
+                        class="collapse"
+                        aria-labelledby="headingOne"
+                        data-parent="#accordion"
+                      >
+                        <div class="card-body">
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                              <a
+                                href="http://ugc.elogim.com:2048/login?url=https://www.multilegis.com/ugc/"
+                                target="_blank"
+                                >MULTILEGIS</a
+                              >
+                            </li>
+                            <li class="list-group-item">
+                              <a
+                                href="http://ugc.elogim.com:2048/login?url=http://latam.tirantonline.com/login.do?user=GRANCOLOMBIA&password=LATAM"
+                                target="_blank"
+                                >Tirant LATAM</a
+                              >
+                            </li>
+                            <li class="list-group-item">
+                              <a
+                                href="http://ugc.elogim.com:2048/login?url=https://vlex.com/account/login_ip"
+                                target="_blank"
+                                >V|LEX</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card col-9">
+                      <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                          <button
+                            class="btn btn-link collapsed"
+                            data-toggle="collapse"
+                            data-target="#collapseTwo"
+                            aria-expanded="false"
+                            aria-controls="collapseTwo"
+                          >
+                            Arquitectura e ingeniería civil
+                          </button>
+                        </h5>
+                      </div>
+                      <div
+                        id="collapseTwo"
+                        class="collapse"
+                        aria-labelledby="headingTwo"
+                        data-parent="#accordion"
+                      >
+                        <div class="card-body">
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                              <a
+                                href="http://ugc.elogim.com:2048/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&custid=s6279388&profile=ehost&defaultdb=vth&groupid=main"
+                                target="_blank"
+                                >ART & ARCHITECTURE COMPLETE</a
+                              >
+                            </li>
+                            <li class="list-group-item">
+                              <a
+                                href="http://ugc.elogim.com:2048/login?url=http://www.construdata.com"
+                                target="_blank"
+                                >CONSTRUDATA</a
+                              >
+                            </li>
+                            <li class="list-group-item">
+                              <a
+                                href="http://ugc.elogim.com:2048/login?url=http://www.architectureopenlibrary.com/"
+                                target="_blank"
+                                >Océano Arquitectura - Architectura Open
+                                Library</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card col-9">
+                      <div class="card-header" id="headingThree">
+                        <h5 class="mb-0">
+                          <button
+                            class="btn btn-link collapsed"
+                            data-toggle="collapse"
+                            data-target="#collapseThree"
+                            aria-expanded="false"
+                            aria-controls="collapseThree"
+                          >
+                            Ciencias económicas, administrativas y contables
+                          </button>
+                        </h5>
+                      </div>
+                      <div
+                        id="collapseThree"
+                        class="collapse"
+                        aria-labelledby="headingThree"
+                        data-parent="#accordion"
+                      >
+                        <div class="card-body">
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                              <a
+                                href="http://ugc.elogim.com:2048/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&custid=s6279388&profile=ehost&defaultdb=bsu&groupid=main"
+                                target="_blank"
+                                >BUSINESS SOURCE ULTIMATE</a
+                              >
+                            </li>
+                            <li class="list-group-item">
+                              <a
+                                href="http://ugc.elogim.com:2048/login?url=http://www.gestionhumana.com/gh4/homecol.asp"
+                                target="_blank"
+                                >GESTIÓN HUMANA</a
+                              >
+                            </li>
+                            <li class="list-group-item">
+                              <a
+                                href="http://ugc.elogim.com:2048/login?url=https://www.legiscomex.com/"
+                                target="_blank"
+                                >LEGISCOMEX</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card col-9">
+                      <div class="card-header" id="headingFour">
+                        <h5 class="mb-0">
+                          <button
+                            class="btn btn-link collapsed"
+                            data-toggle="collapse"
+                            data-target="#collapseFour"
+                            aria-expanded="true"
+                            aria-controls="collapseFour"
+                          >
+                            Multidisciplinarias
+                          </button>
+                        </h5>
+                      </div>
+                      <div
+                        id="collapseFour"
+                        class="collapse"
+                        aria-labelledby="headingOne"
+                        data-parent="#accordion"
+                      >
+                        <div class="card-body">
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                              <a
+                                href="http://ugc.elogim.com:2048/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&custid=s6279388&profile=ehost&defaultdb=afh&groupid=main"
+                                target="_blank"
+                                >ACADEMIC SEARCH ELITE</a
+                              >
+                            </li>
+                            <li class="list-group-item">
+                              <a
+                                href="http://ugc.elogim.com:2048/login?url=http://e-collection.icontec.org/colacc.aspx?Q=E39433350DBD555ABAA9751100A60A21"
+                                target="_blank"
+                                >e-Collection</a
+                              >
+                            </li>
+                            <li class="list-group-item">
+                              <a
+                                href="http://ugc.elogim.com:2048/login?url=https://myendnoteweb.com"
+                                target="_blank"
+                                >EndNote</a
+                              >
+                            </li>
+                            <li class="list-group-item">
+                              <a
+                                href="http://ugc.elogim.com:2048/login?url=http://infotrac.galegroup.com/itweb/ugc?db=GRNR"
+                                target="_blank"
+                                >GREENR</a
+                              >
+                            </li>
+                            <li class="list-group-item">
+                              <a
+                                href="http://ugc.elogim.com:2048/login?url=http://infotrac.galegroup.com/itweb/ugc?db=IFME"
+                                target="_blank"
+                                >INFORME ACADÉMICO</a
+                              >
+                            </li>
+                            <li class="list-group-item">
+                              <a
+                                href="http://ugc.elogim.com:2048/login?url=http://www.jstor.org"
+                                target="_blank"
+                                >JSTOR</a
+                              >
+                            </li>
+                            <li class="list-group-item">
+                              <a
+                                href="http://ugc.elogim.com:2048/login?url=https://www.nature.com/"
+                                target="_blank"
+                                >NATURE</a
+                              >
+                            </li>
+                            <li class="list-group-item">
+                              <a
+                                href="http://ugc.elogim.com:2048/login?url=https://academic.oup.com/"
+                                target="_blank"
+                                >Oxford University Press</a
+                              >
+                            </li>
+                            <li class="list-group-item">
+                              <a
+                                href="http://ugc.elogim.com:2048/login?url=https://journals.sagepub.com/"
+                                target="_blank"
+                                >Sage Journals</a
+                              >
+                            </li>
+                            <li class="list-group-item">
+                              <a
+                                href="http://ugc.elogim.com:2048/login?url=http://www.sciencedirect.com/"
+                                target="_blank"
+                                >SCIENCEDIRECT</a
+                              >
+                            </li>
+                            <li class="list-group-item">
+                              <a
+                                href="https://ugc.elogim.com:2443/login?url=https://www.scopus.com/"
+                                target="_blank"
+                                >SCOPUS</a
+                              >
+                            </li>
+                            <li class="list-group-item">
+                              <a
+                                href="https://ugc.elogim.com:2443/login?url=https://link.springer.com/"
+                                target="_blank"
+                                >SPRINGERLINK</a
+                              >
+                            </li>
+                            <li class="list-group-item">
+                              <a
+                                href="http://ugc.elogim.com:2048/login?url=https://www.tandfonline.com"
+                                target="_blank"
+                                >TAYLOR AND FRANCIS JOURNALS</a
+                              >
+                            </li>
+                            <li class="list-group-item">
+                              <a
+                                href="http://ugc.elogim.com:2048/login?url=https://www.webofknowledge.com"
+                                target="_blank"
+                                >Web of Science</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card col-9">
+                      <div class="card-header" id="headingFive">
+                        <h5 class="mb-0">
+                          <button
+                            class="btn btn-link collapsed"
+                            data-toggle="collapse"
+                            data-target="#collapseFive"
+                            aria-expanded="true"
+                            aria-controls="collapseFive"
+                          >
+                            Libros electrónicos
+                          </button>
+                        </h5>
+                      </div>
+                      <div
+                        id="collapseFive"
+                        class="collapse"
+                        aria-labelledby="headingOne"
+                        data-parent="#accordion"
+                      >
+                        <div class="card-body">
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                              <a
+                                href="http://ugc.elogim.com:2048/login?url=https://www.ebooks7-24.com/?ed=83"
+                                target="_blank"
+                                >Ecoe Ediciones</a
+                              >
+                            </li>
+                            <li class="list-group-item">
+                              <a
+                                href="http://ugc.elogim.com:2048/login?url=https://www.ebooks7-24.com/?ed=256"
+                                target="_blank"
+                                >McGraw-Hill</a
+                              >
+                            </li>
+                            <li class="list-group-item">
+                              <a
+                                href="http://ugc.elogim.com:2048/login?url=https://www.ebooks7-24.com/?ed=273"
+                                target="_blank"
+                                >Pearson</a
+                              >
+                            </li>
+                            <li class="list-group-item">
+                              <a
+                                href="http://ugc.elogim.com:2048/login?url=https://ebookcentral.proquest.com/lib/biblioulagrancolsp"
+                                target="_blank"
+                                >E-libro</a
+                              >
+                            </li>
+                            <li class="list-group-item">
+                              <a
+                                href="http://ugc.elogim.com:2048/login?url=https://sk.sagepub.com/books"
+                                target="_blank"
+                                >Sage Knowledge eBooks Media and
+                                Communication</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card col-9">
+                      <div class="card-header" id="headingSix">
+                        <h5 class="mb-0">
+                          <button
+                            class="btn btn-link collapsed"
+                            data-toggle="collapse"
+                            data-target="#collapseSix"
+                            aria-expanded="true"
+                            aria-controls="collapseSix"
+                          >
+                            Bases de datos en demostración
+                          </button>
+                        </h5>
+                      </div>
+                      <div
+                        id="collapseSix"
+                        class="collapse"
+                        aria-labelledby="headingOne"
+                        data-parent="#accordion"
+                      >
+                        <div class="card-body">
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                              <a
+                                href="http://ugc.elogim.com:2048/login?url=https://www.accessengineeringlibrary.com/"
+                                target="_blank"
+                                >AccessEngineering</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

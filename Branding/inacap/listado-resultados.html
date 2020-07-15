@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Biblioteca INACAP</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="myModal" class="alert">
+        <div class="modal">
+            
+            <h3 class="modal__title">
+                Bienvenido al Buscador Integrado de Bibliotecas INACAP
+                <span class="close">&times;</span>
+            </h3>
+            <p class="modal__text">
+                Para acceder al material seleccionado debes logearte con tus credenciales institucionales.
+            </p>
+            <a href="" class="modal__button">
+                Ingresar
+            </a>
+        </div>
+    </div>
+    <header class="menu">
+        <div class="menu__container">
+            <div class="menu__logo" id="menu__logo"> 
+                <div> 
+                    <div class="menu__logos-interior"> 
+                        <a href="http://www.inacap.cl" target="_top">
+                            <img src="http://portales.inacap.cl/Assets/portal/img/logo-negro.png" alt="INACAP" class="logo">
+                            <img src="http://portales.inacap.cl/Assets/portal/img/logo-negro-mobile.png" alt="INACAP" class="logo-mobile">
+                        </a> 
+                    </div>
+                </div>
+            </div>
+            <h1 class="menu-title">
+                Biblioteca en Red INACAP
+            </h1>
+        </div>
+    </header>
+    
+    <div class="wrapper">
+        <section class="section">
+            
+            <div class="tabs">
+                <button class="tabs__link active" onclick="openTab(event,'Buscador')">
+                    <span class="tabs__text">
+                        Nueva Búsqueda
+                    </span>
+                    <i class="material-icons tabs__icon">
+                        search
+                    </i>
+                </button>
+                <button class="tabs__link" onclick="openTab(event,'Publicaciones')">
+                    <span class="tabs__text">
+                        Publicaciones
+                    </span>
+                    <i class="material-icons tabs__icon">
+                        book
+                    </i>
+                    
+                </button>
+                <button id="mas-recursos" class="tabs__link">
+                    <span class="tabs__text">
+                        Más Recursos
+                    </span>
+                    
+                    <i class="material-icons tabs__icon">
+                        insert_drive_file
+                    </i>
+                    
+                </button>
+                <div class="border"></div>
+            </div>
+            
+            <div class="results">
+                <div id="Buscador" class="results__tab">
+                    <h3 class="results__title">Buscador</h3>
+                    <div class="search">
+                        <div class="search__select">
+                            <div class="search__selectContainer">
+                                <select id="select-sede" name="select-sede" class="select-sede">
+                                    <option value="0">Palabra Clave</option>
+                                    <option value="1">Autor</option>
+                                    <option value="2">T&iacute;tulo</option>
+                                </select>
+                                <div class="select__arrow"></div>
+                            </div>
+                        </div>
+                        <div class="search__input">
+                            <input type="text" placeholder="Escribe un título, tema, autor o número de ISSN/ISBN">
+                        </div>
+                        <button class="search__button">
+                            Buscar
+                        </button>
+                    </div>
+                    <a href="http://search.ebscohost.com/login.aspx?direct=true&amp;site=eds-live&amp;scope=site&amp;type=1&amp;custid=ns076602&amp;groupid=main&amp;profid=eds&amp;mode=all&amp;lang=es&amp;authtype=ip,guest" target="_blank" class="search__advanced">
+                        Búsqueda avanzada
+                    </a> 
+                </div>
+                <div id="Publicaciones" class="results__tab" style="display:none">
+                    <h3 class="results__title">Publicaciones</h3>
+                    <div class="search">
+                        <div class="search__input publications">
+                            <input type="text" placeholder="Escribe un título, tema, autor o número de ISSN/ISBN">
+                        </div>
+                        <button class="search__button">
+                            Buscar
+                        </button>
+                    </div>
+                    <a href="http://search.ebscohost.com/login.aspx?direct=true&amp;site=eds-live&amp;scope=site&amp;type=1&amp;custid=ns076602&amp;groupid=main&amp;profid=eds&amp;mode=all&amp;lang=es&amp;authtype=ip,guest" target="_blank" class="search__advanced">
+                        Búsqueda avanzada
+                    </a> 
+                </div>
+            </div>
+        </section>
+        
+        <div class="resources">
+            <aside class="filterResults">
+                <h3 class="filterResults__title">Depurar los resultados</h3>
+                <p class="filterResults__subtitle">Búsqueda Actual
+                    <i class="material-icons">
+                        chevron_right
+                    </i>
+                    
+                </p>
+                <hr>
+                <p class="filterResults__subtitle">Depurar resultados de búsqueda</p>
+                
+                <div class="filterResults__checkboxContainer">
+                    <input  type="checkbox" name="Texto Completo" value="BiTexto Completoke">&nbsp;&nbsp;Texto Completo
+                </div>
+                
+                <div class="filterResults__checkboxContainer">
+                    <input  type="checkbox" name="Texto Completo" value="BiTexto Completoke">&nbsp;&nbsp;Catálogos
+                </div>
+                
+                <div class="filterResults__checkboxContainer">
+                    <input  type="checkbox" name="Texto Completo" value="BiTexto Completoke">&nbsp;&nbsp;Publicaciones académicas
+                </div>
+                
+                <div class="date">
+                    <p>Fecha de Publicación</p>
+                    <div>
+                        <div class="date-container">
+                            <p>Entre:</p>
+                            <input type="text" placeholder="1990">
+                        </div>
+                        <div class="date-container">
+                            <p>Hasta:</p>
+                            <input type="text" placeholder="2008">
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                
+                <p class="filterResults__subtitle">
+                    Ubicación
+                    <i class="material-icons">
+                        chevron_right
+                    </i>
+                </p>
+                <hr>
+                <p class="filterResults__subtitle">
+                    
+                    Materia
+                    <i class="material-icons">
+                        chevron_right
+                    </i>
+                </p>
+                <hr>
+                
+                <p class="filterResults__subtitle">
+                    
+                    Editorial
+                    <i class="material-icons">
+                        chevron_right
+                    </i>
+                </p>
+                <hr>
+                
+                <p class="filterResults__subtitle">
+                    
+                    Publicación
+                    <i class="material-icons">
+                        chevron_right
+                    </i>
+                </p>
+                
+                
+            </aside>
+            <section class="searchResults">
+                <div class="searchResults__actions">
+                    <p>
+                        <span class="searchResults__actionsText">Resultados de la búsqueda:</span>
+                        <span>1 a 30 de 1.132.400</span>
+                    </p>
+                    <ul class="searchResults__actionsList">
+                        <li>Relevancia&nbsp;<i class="material-icons">
+                            arrow_drop_down
+                        </i></li>
+                        <li>Opciones de página&nbsp;<i class="material-icons">
+                            arrow_drop_down
+                        </i></li>
+                        <li>Compartir&nbsp;<i class="material-icons">
+                            arrow_drop_down
+                        </i></li>
+                    </ul>
+                </div>
+                <div class="searchResults__list">
+                    <article class="searchResults__item">
+                        <h2 class="searchResults__title">
+                            1. Salud: The Rise of Santa Barbara's Wine Industry
+                            <div class="searchResults__title-icons">
+                                <i class="material-icons">
+                                    search
+                                </i>
+                                <i class="material-icons">
+                                    create_new_folder
+                                </i>
+                            </div>
+                        </h2>
+                        <div class="searchResults__container">
+                            <figure class="searchResults__image">
+                                <img src="img/book.jpg" alt="">
+                                <figcaption>Libro electrónico</figcaption>
+                            </figure>
+                            <div class="searchResults__content">
+                                <ul class="searchResults__contentList">
+                                    <li><span>By:</span> Geraci, Victor W. Reno</li>
+                                    <li><span>Nev:</span> University of Nevada Press. 2003. eBook</li>
+                                    <li><span>Base de Datos:</span> eBook Collection(EBSCOhost)</li>
+                                </ul>
+                                <p class="searchResults__contentText">
+                                    <span><strong>Materias :</strong></span>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam alias nisi ad! Cum voluptatem dicta numquam mollitia voluptatum assumenda earum ipsum, sapiente eum saepe temporibus quia adipisci quos id cumque!
+                                </p>
+                                <ul class="searchResults__contentActions">
+                                    <li>
+                                        <i class="material-icons">
+                                            picture_as_pdf
+                                        </i>
+                                        Texto completo en PDF
+                                    </li>
+                                    
+                                    <li>
+                                        <i class="material-icons">
+                                            merge_type
+                                        </i>
+                                        PlumX Metrics
+                                    </li>
+                                    
+                                    <li>
+                                        <i class="material-icons">
+                                            archive
+                                        </i>
+                                        Descarga completa
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <ul class="searchResults__pagination">
+                            <li class="control">Anterior</li>
+                            <li>1</li>
+                            <li>2</li>
+                            <li class="active">3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li class="control">Siguiente</li>
+                        </ul>
+                    </article>
+                    
+                    
+                </div>
+            </section>
+            <aside class="otherResources">
+                <h3 class="filterResults__title">Otros Recursos</h3>
+                <ul class="otherResources__list">
+                    <li>
+                        <a href="">
+                            <img src="http://placehold.it/300x80" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="http://placehold.it/300x80" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="http://placehold.it/300x80" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="http://placehold.it/300x80" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </aside>   
+        </div>
+        
+    </div>
+    
+    <div class="footer"id="footer">
+        <div>
+            <div>
+                
+                <div class="redes-sociales"> 
+                    <ul> 
+                        <li><a class="facebook" href="https://www.facebook.com/UNIVERSIDAD.INACAP" target="_blank"></a></li> 
+                        <li><a class="youtube" href="https://www.youtube.com/user/CANALINACAP" target="_blank"></a></li> 
+                        <li><a class="twitter" href="https://twitter.com/INACAPINOS" target="_blank"></a></li> 
+                        <li><a class="linkedin" href="https://www.linkedin.com/school/inacap/" target="_blank"></a></li> 
+                        <li><a class="instagram" href="https://www.instagram.com/inacap_oficial/" target="_blank"></a></li> 
+                    </ul> 
+                </div>
+                
+            </div>
+            <div>
+                <div class="contenidoFooter"> 
+                    <div class="toggleFooter" onclick="toggleFooter(this)">
+                        M&aacute;s Informaci&oacute;n 
+                    </div> 
+                    <div class="menuFooter"> 
+                        <ul class="column"> 
+                            <li><a href="tel:800202520" class=""><i class="material-icons">phone</i> 800 20 25 20</a></li> 
+                            <li><a href="tel:+56925797204" class=""><i class="material-icons">smartphone</i> +569 2579 7204</a></li> 
+                            <li><a href="mailto:informaciones@inacap.cl" class=""><i class="material-icons">email</i> informaciones@inacap.cl</a></li> 
+                            <li><i class="material-icons">location_on</i> Casa Central | Nuestras Sedes en <a href="https://www.google.com/maps/d/u/0/viewer?hl=es&amp;oe=UTF8&amp;msa=0&amp;ie=UTF8&amp;mid=1-IoFg4uSS0Uiz9kVaJLFyxeu5BY" class="">Googlemaps</a> <br> Av. Vitacura 10.151, Vitacura, Santiago - Chile</li> 
+                        </ul> 
+                        <ul class="column"> 
+                            <li><a href="http://portales.inacap.cl/sobre-nosotros/universidad/index" class="">Universidad INACAP</a></li> 
+                            <li><a href="http://portales.inacap.cl/sobre-nosotros/ip/index" class="">Instituto Profesional INACAP</a></li> 
+                            <li><a href="http://portales.inacap.cl/sobre-nosotros/cft/index" class="">Centro de Formaci&oacute;n T&eacute;cnica INACAP</a></li> 
+                            <li><a href="http://portales.inacap.cl/transparencia" class=""><strong>TRANSPARENCIA</strong></a></li>
+                            <li><a href="http://portales.inacap.cl/sedes/index" class="">Contactos en Sedes</a></li> 
+                        </ul> 
+                        <ul class="column"> 
+                            
+                            <li><a href="http://www.inacap.cl/tportalvp/red-de-bibliotecas-inacap" class="">Biblioteca</a></li> 
+                            <li><a href="http://portales.inacap.cl/estudiantes/recursos/reglamentos-y-politicas/reglamentos/index" class="">Reglamento Acad&eacute;mico</a></li>
+                            <li><a href="http://www.inacap.cl/web/2019/documentos/PROTOCOLO_CONTRA_LA_VIOLENCIA.pdf" class="">Protocolo contra la Violencia de Género <br>y el Acoso Sexual</a></li>
+                            <li><a href="http://www.inacap.cl/web/2018/documentos/reglamentos/CODIGO-ETICA.pdf" class="">C&oacute;digo de &Eacute;tica INACAP</a></li> 
+                            <li><a href="https://www.inacap.cl/tportalvp/portal/acerca-de/contenido-acerca-de/politicas-de-privacidad" class="">Pol&iacute;ticas de Privacidad</a></li> 
+                        </ul> 
+                        <ul class="column"> 
+                            <li><a href="http://inacap.trabajando.cl/" class="">Trabaje con nosotros</a></li> 
+                            <li><a href="https://pagos.inacap.cl/inacap.portalpagos/home.aspx" class="">Portal de Pago</a></li> 
+                            <li>
+                                
+                                
+                                <a href="https://siga.inacap.cl/Inacap.VerificacionCertificados/Default.aspx">Verificaci&oacute;n de Documentos </a>
+                                <ul class="vertificacionDocumentos"> 
+                                    <li><a href="https://siga3.inacap.cl/efactura/boletaspublicas/viewdocument.aspx" class=""><span class="bullet">&#9632; </span> Boletas Electr&oacute;nicas</a></li> 
+                                </ul> </li> 
+                                <li><a href="https://adfs.inacap.cl/adfs/ls/?wa=wsignin1.0&wtrealm=urn:federation:MicrosoftOnline&&wctx=MEST%3D0%26wa%3Dwsignin1.0%26wreply%3Dhttps:%252F%252Fwww.outlook.com%252Fowa%252Finacapmail.cl%252F" class=""><i class="material-icons">email</i> INACAPMail</a></li> 
+                            </ul> 
+                        </div> 
+                    </div>
+                    
+                </div>
+                <div class="perc-widget">
+                    <div class="logos"> 
+                        <div class="logosAcreditacion"> 
+                            <a href="https://portales.inacap.cl/sobre-nosotros/certificados/index" class="">
+                                <div class="iso"></div></a> 
+                                <div class="vertebral"></div> 
+                                <div class="cnca"></div> 
+                                <div class="acreditacionCFT"></div> 
+                                <div class="acreditacionIP"></div> 
+                                <div class="acreditacionU"></div> 
+                            </div> 
+                            <div class="logoInacap"> 
+                                <p>Universidad Tecnol&oacute;gica de Chile</p> 
+                                <p>Instituto Profesional</p> 
+                                <p>Centro de Formaci&oacute;n T&eacute;cnica</p> 
+                            </div> 
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <script>
+                //Footer Toggle
+                function toggleFooter(toggleButton){
+                    var contenidoFooter = toggleButton.parentNode;
+                    
+                    if(hasClass(contenidoFooter, 'active')) {
+                        contenidoFooter.classList.remove('active')
+                    } else {
+                        contenidoFooter.classList.add('active')
+                    }
+                }
+                
+                function hasClass( target, className ) {
+                    return new RegExp('(\\s|^)' + className + '(\\s|$)').test(target.className);
+                }
+                
+            </script> 
+            <script>
+                
+                //Tabs
+                document.getElementById("mas-recursos").onclick = function () {
+                    location.href = "https://www.inacap.cl/tportalvp/red-de-bibliotecas-inacap/recursos-de-aprendizaje/recursos-de-aprendizaje/recurso-digital-suscrito";
+                };
+                
+                function openTab(evt, tabName) {
+                    var i, x, tabs__links;
+                    x = document.getElementsByClassName("results__tab");
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";
+                    }
+                    tabs__links = document.getElementsByClassName("tabs__link");
+                    for (i = 0; i < x.length; i++) {
+                        tabs__links[i].className = tabs__links[i].className.replace(" active", "");
+                    }
+                    document.getElementById(tabName).style.display = "block";
+                    evt.currentTarget.className += " active";
+                }
+            </script>
+            
+            <script>
+                var slider = document.getElementById("myRange");
+                var output = document.getElementById("demo");
+                output.innerHTML = slider.value;
+                
+                slider.oninput = function() {
+                    output.innerHTML = this.value;
+                }
+            </script>
+            
+            
+            
+            
+            
+            
+            <script>
+                
+                // Get the modal
+                var modal = document.getElementById("myModal");
+                
+                
+                // Get the <span> element that closes the modal
+                    var span = document.getElementsByClassName("close")[0];
+                    
+                    // When the user clicks on <span> (x), close the modal
+                        span.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        
+                        // When the user clicks anywhere outside of the modal, close it
+                        window.onclick = function(event) {
+                            if (event.target == modal) {
+                                modal.style.display = "none";
+                            }
+                        }
+                        
+                    </script>
+                    
+                </body>
+                </html>

@@ -1,0 +1,49 @@
+<div id="tabs-1" class="tabs-x">
+				<form id="sbEDS" action="" onsubmit="return ebscoHostSearchGo(this);" method="post">
+				<p><span style="padding:10px;font-weight:bold;font-size:17px;">Búsqueda General</span></p>
+					<input id="ebscohostwindow" name="ebscohostwindow" type="hidden" value="1" />
+					<input id="ebscohosturl" name="ebscohosturl" type="hidden" value="http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&type=0&custid=ns016481&groupid=main&profid=eds&mode=bool&lang=es&authtype=ip,url" />
+					<input id="ebscohostsearchsrc" name="ebscohostsearchsrc" type="hidden" value="db" />
+					<input id="ebscohostsearchmode" name="ebscohostsearchmode" type="hidden" value="+" />
+					<input id="ebscohostkeywords" name="ebscohostkeywords" type="hidden" value="" />
+					<div>
+						<div>
+							<div>
+								<input id="ebscohostsearchtext" class="" name="ebscohostsearchtext" type="text" size="50" autocomplete="off" onkeyup="autocomp()"  placeholder="Buscar..." />
+								<span id="edsSearchWrapper"></span>
+								<input type="submit" value="Buscar" class="ebscohost-search-button "/>
+								
+								<div id="guidedFieldSelectors" style="padding:10px;">
+									<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_0" value="" checked="checked" />
+									<label class="label" for="guidedField_0"> Palabras Clave</label>
+									<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_1" value="TI" />
+									<label class="label" for="guidedField_1"> Titulo</label>
+									<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_2" value="AU" />
+									<label class="label" for="guidedField_2"> Autor</label>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+
+					<div id="limiterblock" style="padding:10px;">
+						<div id="limitertitle">Limita los resultados</div>
+						
+						<div class="limiter" >
+							<input type="checkbox" id="chkFullText" name="chkFullText" checked="checked" />
+							<label for="chkFullText">Texto Completo</label>
+						</div>
+					</div>		
+				</form>
+				<form id="sbPeriodici" action="" onsubmit="return ebscoHostSearchOther(this);" method="post">
+					<p><span style="padding:10px;font-weight:bold;font-size:17px;">Búsqueda de Revistas Académicas</span></p>
+					<input id="ebscohostwindow" name="ebscohostwindow" type="hidden" value="1" />
+					<input id="ebscohosturl" name="ebscohosturl" type="hidden" value="http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&type=44&db=edspub&custid=ns016481&amp;groupid=main&amp;profid=eds&amp;mode=bool&amp;lang=es&amp;authtype=ip,url" />
+					<input id="ebscohostsearchsrc" name="ebscohostsearchsrc" type="hidden" value="db" />
+					<input id="ebscohostsearchmode" name="ebscohostsearchmode" type="hidden" value="+" />
+					<input id="ebscohostkeywords" name="ebscohostkeywords" type="hidden" value="" />
+					<input id="ebscohostsearchtext" name="ebscohostsearchtext" type="text" size="50" placeholder="Escribe un título, tema, o número de ISSN/ISBN"/>
+					<input type="submit" value="Buscar" />
+				</form>
+		</div>
+		</div>

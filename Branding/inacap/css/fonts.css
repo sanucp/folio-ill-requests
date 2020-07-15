@@ -1,0 +1,93 @@
+/*Roboto*/
+@font-face {
+	font-family: 'roboto_condensedregular';
+	src: url('../fonts/RobotoCondensed-Regular-webfont.eot');
+	src: url('../fonts/RobotoCondensed-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/RobotoCondensed-Regular-webfont.woff') format('woff'),
+		url('../fonts/RobotoCondensed-Regular-webfont.ttf') format('truetype'),
+		url('../fonts/RobotoCondensed-Regular-webfont.svg#roboto_condensedregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'roboto_condensedbold';
+	src: url('../fonts/RobotoCondensed-Bold-webfont.eot');
+	src: url('../fonts/RobotoCondensed-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/RobotoCondensed-Bold-webfont.woff') format('woff'),
+		url('../fonts/RobotoCondensed-Bold-webfont.ttf') format('truetype'),
+		url('../fonts/RobotoCondensed-Bold-webfont.svg#roboto_condensedbold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'roboto_condensedlight';
+	src: url('../fonts/RobotoCondensed-Light-webfont.eot');
+	src: url('../fonts/RobotoCondensed-Light-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/RobotoCondensed-Light-webfont.woff') format('woff'),
+		url('../fonts/RobotoCondensed-Light-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'roboto_condensed_light';
+	src: url('../fonts/robotocondensed2-light-webfont.woff2') format('woff2'),
+		url('../fonts/robotocondensed2-light-webfont.woff') format('woff'),
+		url('../fonts/RobotoCondensed-Light.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'roboto_condenseditalic';
+	src: url('../fonts/RobotoCondensed-Italic-webfont.eot');
+	src: url('../fonts/RobotoCondensed-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/RobotoCondensed-Italic-webfont.woff') format('woff'),
+		url('../fonts/RobotoCondensed-Italic-webfont.ttf') format('truetype'),
+		url('../fonts/RobotoCondensed-Italic-webfont.svg#roboto_condenseditalic') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*Fjallaone*/
+@font-face {
+	font-family: 'fjalla_oneregular';
+	src: url('../fonts/fjallaone-regular-webfont.eot');
+	src: url('../fonts/fjallaone-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/fjallaone-regular-webfont.woff2') format('woff2'),
+		url('../fonts/fjallaone-regular-webfont.woff') format('woff'),
+		url('../fonts/fjallaone-regular-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*Material-Icons*/
+@font-face {
+	font-family: 'Material Icons';
+	src: url("../fonts/MaterialIcons-Regular.eot");
+	src: url("../fonts/MaterialIcons-Regular.eot?#iefix") format("embedded-opentype"),
+		url("../fonts/MaterialIcons-Regular.woff2") format("woff2"),
+		url("../fonts/MaterialIcons-Regular.woff") format("woff"),
+		url("../fonts/MaterialIcons-Regular.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+}
+
+.material-icons {
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 1em; /* Preferred icon size */
+	display: inline-block;
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+	word-wrap: normal;
+	white-space: nowrap;
+	direction: ltr;
+	-webkit-font-smoothing: antialiased; /* Support for all WebKit browsers. */
+	text-rendering: optimizeLegibility; /* Support for Safari and Chrome. */
+	-moz-osx-font-smoothing: grayscale; /* Support for Firefox. */
+	font-feature-settings: 'liga'; /* Support for IE. */
+}

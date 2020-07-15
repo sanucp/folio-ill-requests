@@ -1,0 +1,58 @@
+<div id="originalSearchTerm" style="display: none;">ep.SearchTerm</div>  
+<div id="Results"></div>
+<script>
+	function cleanEDSTags (expression)
+	{
+		var res="";
+		try
+		{
+			res=expression;
+			var array = {"AU ":"", "TI ":"", "TX ":"", "SU ":"", "SO ":"", "AB ":"", "IS ":"", "IB ":"", "JN ":"", "DO ":"", "AN ":""};
+
+			for (var val in array)
+				res = res.replace(new RegExp(val, "g"), array[val]);
+			
+			return res;
+		}
+		catch(e)
+		{
+			return res;
+		}
+	}
+	
+var originalSearchTerm = document.getElementById('originalSearchTerm').innerHTML;
+var proxyprefix = "http://proxy.umb.edu.co:2048/login?url=";
+var result = "<center>";
+//Escapes the original search term for proper double quotes handling
+var WidgetqValue = cleanEDSTags(originalSearchTerm);
+//Enter PubMed info between quotes below
+var myncbishare = "";
+var pubmedholdings = "";
+//Enter STAT!Ref ID between quotes below
+var statref = "";
+
+
+result = result + '<a href="' + proxyprefix + 'http://www.psicodoc.org/" target="_blank"><img src="http://gss.ebscohost.com/jelizondo/umb/img/psicodoc.jpg" alt="Psicodoc"  width="165" height="50"/></a> <br /> <br />';
+
+result = result + '<a href="' + proxyprefix + 'http://www.gestionhumana.com/gh4/Homecol.asp" target="_blank"><img src="http://gss.ebscohost.com/jelizondo/umb/img/gestion_humana.png" alt="Gestion Humana"  width="165" height="50"/></a> <br /> <br />';
+
+result = result + '<a href="' + proxyprefix + 'http://umb.ambientalex.info/" target="_blank"><img src="http://gss.ebscohost.com/jelizondo/umb/img/ambientalex.jpg" alt="Ambientalex" width="165" height="50"/></a> <br /> <br />';
+
+result = result + '<a href="' + proxyprefix + 'http://www.enferteca.com" target="_blank"><img src="http://gss.ebscohost.com/jelizondo/umb/img/enferteca.png" alt="Enferteca" width="165" height="50"/></a> <br /> <br />';
+
+result = result + '<a href="' + proxyprefix + 'http://www.ebooks7-24.com/stage.aspx?il=&pg=" target="_blank"><img src="http://gss.ebscohost.com/jelizondo/umb/img/ebooks7-24.jpg" alt="ebooks 7-24" width="165" height="50"/></a> <br /> <br />';
+
+result = result + '<a href="' + proxyprefix + 'http://e-normas.icontec.org/icontec_enormas_mobile/?us_GUID=f653b01b-33aa-4eda-a983-4ed1b96bb781" target="_blank"><img src="http://gss.ebscohost.com/jelizondo/umb/img/icontec.jpg" alt="Normas Icontec"/></a> <br /> <br />';
+
+result = result + '<a href="' + proxyprefix + 'http://ebooks.alfaomegagrupoeditor.com/bookshelf" target="_blank"><img src="http://gss.ebscohost.com/jelizondo/umb/img/alfaomega.png" alt="Alfaomega Cloud"/></a> <br /> <br />';
+
+result = result + '<a href="' + proxyprefix + 'http://www.revistavirtualpro.com/" target="_blank"><img src="http://gss.ebscohost.com/anavarro/img/virtualpro.png" alt="Revista Virtual Pro" width="165" height="50"/></a> <br /> <br />';
+
+result = result + '<a href="' + proxyprefix + 'https://vlex.com.co/jurisdictions/CO" target="_blank"><img src="https://d30l60o09nopna.cloudfront.net/logo/web/vlex.png?1375782638" alt="Vlex" width="165" height="50"/></a> <br /> <br />';
+
+result = result + '<a href="' + proxyprefix + 'https://www.medicapanamericana.com/default.aspx" target="_blank"><img src="https://binpar.cachefly.net/img/svg/logos/logotipo.svg" alt="Eurecka Panamericana" width="165" height="50"/></a> <br /> <br />';
+
+result = result + '</center>';
+
+document.getElementById("Results").innerHTML = result;
+</script>

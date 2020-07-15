@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>carrusel</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+    <script>
+$(document).ready(
+
+function() {
+
+var numeroImagenes;
+
+var contenidoInicial=$('.bloque-imagenes').html();
+
+var margenTop;
+var ancho;
+var anchoOriginal=$('.bloque-imagenes').css('width');
+anchoOriginal=anchoOriginal.split('p');
+
+function carrusel(){
+
+margenTop=$('.bloque-imagenes').css('margin-left');
+
+margenTop=margenTop.split('p');
+margenTop[0]=margenTop[0] - 1;
+
+ancho=$('.bloque-imagenes').css('width');;
+ancho=ancho.split('p');
+
+
+
+if((($('.bloque-imagenes').children().size() - 4) * 73) < Math.abs(margenTop[0])){
+
+$('.bloque-imagenes').append(contenidoInicial);
+$('.bloque-imagenes').css('width',(parseInt(ancho[0]) + parseInt(anchoOriginal)) + 'px');
+
+};
+
+$('.bloque-imagenes').css('margin-left',margenTop[0] +'px');
+
+}
+
+
+var parar=setInterval(function mover() {carrusel();},70);
+
+
+$('.bloque-imagenes').mouseover(function(){
+	clearInterval(parar);
+
+});
+
+$('.bloque-imagenes').mouseout(function(){
+	parar=setInterval(function mover() {carrusel();},70);
+});
+
+});
+    </script>
+    <style>
+    .carrusel{
+		margin:auto;
+		height:150px;
+		overflow:hidden;
+		width:600px;
+	}
+
+	.bloque-imagenes{
+		padding:0;
+		width:700px;
+	}
+
+	.bloque-imagenes li{
+		list-style:none;
+		margin:5px;
+		padding:0;
+		display:inline;
+	}
+
+	.bloque-imagenes li img{
+		height:100px;
+		width:109px;
+		border:0;
+	}
+
+	.bloque-imagenes a:hover img{
+		border:1px #fff solid;
+	}
+    </style>
+</head>
+<body>
+        <div class="carrusel">
+                <ul class="bloque-imagenes">
+                    <li><a href="http://search.ebscohost.com/login.aspx?direct=true&db=mdc&jid=9104824&lang=es&site=ehost-live" target="_blank"><img src="journal2.jpg"/></a>
+                    </li>
+                    <li><a href="http://search.ebscohost.com/login.aspx?direct=true&db=mdc&jid=0370301&lang=es&site=ehost-live" target="_blank"><img src="journal3.jpg"/></a>
+                    </li>
+                    <li><a href="http://search.ebscohost.com/login.aspx?direct=true&db=mdc&jid=9433781&lang=es&site=ehost-live" target="_blank"><img src="journal4.gif"/></a>
+                    </li>
+                    <li><a href="http://search.ebscohost.com/login.aspx?direct=true&db=mdc&jid=9114917&lang=es&site=ehost-live" target="_blank"><img src="journal5.png"/></a>
+                    </li>
+                    <li><a href="http://search.ebscohost.com/login.aspx?direct=true&db=mdc&jid=9703158&lang=es&site=ehost-live" target="_blank"><img src="journal7.png"/></a>
+                    </li>
+                </ul>
+            </div> 
+</body>
+</html>

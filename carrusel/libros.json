@@ -1,0 +1,38 @@
+{
+  "libros": [
+    {
+      "database": "cat03315a",
+      "AN": "BCRP00080192c4",
+      "title": "Progress and confusion : the state of macroeconomic policy",
+      "ISBN": "9780262034623"
+    },
+
+    {
+      "database": "cat03315a",
+      "AN": "BCRP00081435c9",
+      "title": "Measuring happiness: the economics of well-being",
+      "ISBN": "9780262028448"
+    },
+
+    {
+      "database": "cat03315a",
+      "AN": "BCRP00082268c3",
+      "title": "The biological bases of economic behaviour : a concise introduction",
+      "ISBN": "9781137568069"
+    },
+
+    {
+      "database": "cat03315a",
+      "AN": "BCRP00081840c0",
+      "title": "The influence of uncertainty in a changing financial environment : an inquiry into the root causes of the great recession of 2007-2008",
+      "ISBN": "9783319487786"
+    },
+
+    {
+      "database": "cat03315a",
+      "AN": "BCRP00083695c7",
+      "title": "The new age of cryptocurrency",
+      "ISBN": "AN bcrp.BCRP00083695c7"
+    }
+  ]
+}

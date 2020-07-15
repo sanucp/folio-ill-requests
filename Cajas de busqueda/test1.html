@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+              cambio();   
+            });
+            function cambio(){
+                    var x = document.getElementById("citationFields");
+                    var y = x.getElementsByTagName("dt");
+                    var z = x.getElementsByTagName("dd");
+                    var h = y[2].innerHTML;
+                    alert(h);
+                    if (h=="tres"){
+                    $(y[0]).clone(true).appendTo("#citationFields");
+                    $(z[0]).clone(true).appendTo("#citationFields");
+                    $(y[0]).remove();
+                    $(z[0]).remove();
+                }
+                 };
+        </script>
+    </head>
+    <body>
+        <dl id="lista">
+            <dt>uno</dt>
+            <dd>1</dd>
+            <dt>dos</dt>
+            <dd>2</dd>
+            <dt>tres</dt>
+            <dd>3</dd>
+        </dl>
+        <p id=texto></p>
+
+        <link rel="stylesheet" type="text/css" href="//widgets.ebscohost.com/prod/openaccess/LatestBooksCSV/carousel1.css" />
+	<div id="carouselTitle">Ultimos libros en la biblioteca</div>
+	<div id="carouselContainer">
+		<div id="prev"class="prev"></div>
+		<div class="mainWindow">
+			<div id="slideHolder"class="slideHolder"></div> 
+		</div> 
+		<div id="next"class="next"></div> 
+	</div> 
+	
+	
+<script>
+	var carousel = {
+	"profile":"s4892549.main.eds",
+	"catalogurl":"http://search.ebscohost.com/login.aspx?direct=true&scope=site&type=0&site=eds-live&custid=s4509042&groupid=main&profid=eds&lang=es&authtype=cookie&bquery=IB+{ILSRecNo}",
+	"booksDisplayed": 4,
+	"shiftRate": 1,
+	"shiftSpeed": 500,
+	"autoShift": true,
+	"shiftTime": 5,
+	"newWindow": false
+	};
+	var bookList ;
+	var s1="";
+	
+	try
+	{
+		var carouselVar=setInterval("loadbranding()",500);
+		
+		function loadbranding(){
+			if (!window.jQuery) {
+				return;
+			}
+
+			clearInterval(carouselVar); //clean interval			
+			
+			jQuery(window.parent.document).ready(function() { 
+
+				// carousel de libros
+					jQuery.getJSON('//widgets.ebscohost.com/prod/openaccess/LatestBooksCSV/index.php?callback=?', {'nr':100,'preffix':'','database':'','url':'http://widgets.ebscohost.com/prod/customerspecific/s4509042/carousel.txt'}, 
+						function(data) {
+							bookList=data;
+							jQuery.getScript('//widgets.ebscohost.com/prod/openaccess/LatestBooksCSV/carousel1.js', function() {
+								
+							});				
+
+						})
+						.success(function() {  
+						})
+						.error(function(jqXHR, textStatus, errorThrown) {
+							console.log("error " + textStatus);
+							console.log("incoming Text " + jqXHR.responseText);
+						});				
+				
+				
+			});
+		}
+	}
+	catch(e) 
+	{}
+
+
+</script>
+    </body>
+</html>

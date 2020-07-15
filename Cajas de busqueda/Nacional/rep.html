@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" >
+		<title>Universidad Nacional de Colombia</title>
+		<script src="http://support.ebscohost.com/eit/scripts/ebscohostsearch.js" type="text/javascript"></script>
+		<script>
+			function ebscoHostSearchRepositoro(form, buff) {
+			 var ebscohostsearchtext = chkObject(form.ebscohostsearchtext,'');
+			 var ebscohostkeywords = chkObject(form.ebscohostkeywords,'');
+			 var ebscohostsearchsrc = chkObject(form.ebscohostsearchsrc,'');
+			 var ebscohostsearchmode = chkObject(form.ebscohostsearchmode,'\+AND\+');
+			 var ebscohostwindow = parseInt(chkObject(form.ebscohostwindow,0));
+			 var ebscohosturl = chkObject(form.ebscohosturl,'http://search.ebscohost.com/login.aspx?');
+			 var strAlert="";
+			 //var selectedIR = selectedRadio();
+			 var selectedIR = " AND LN ir00238a";
+			 ebscohostsearchtext = encodeURI(ebscohostsearchtext);
+			
+			 if (ebscohostsearchtext=="") 
+					strAlert+="Please enter search term(s).\n"; 
+			 
+			 if (strAlert !== "") {
+				alert(strAlert);
+				return false;
+			 }
+			
+			 
+			var searchFieldSelector =form["searchFieldSelector"].value;
+			ebscohosturl+='&bquery='+searchFieldSelector+'+('+ebscohostkeywords+ebscoHostSearchParse(ebscohostsearchtext,ebscohostsearchmode)+')'+selectedIR; 
+			
+			form.ebscohostsearchtext.value = buff;
+			if (ebscohostwindow)
+				window.open(ebscohosturl, 'EBSCOhost');
+			else
+				window.location = ebscohosturl;
+				
+			return false;			
+		}
+		</script>
+	</head>
+	<body>
+	<div id="rep">
+		<form id="sbPeriodici" action="" onsubmit="var buff=this.ebscohostsearchtext.value; return ebscoHostSearchRepositoro(this, buff);" method="post" >
+				<input id="ebscohostwindow" name="ebscohostwindow" type="hidden" value="1" />
+				<input id="ebscohosturl" name="ebscohosturl" type="hidden" value="http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&type=0&custid=s1229929&groupid=main&profid=eds&mode=bool&lang=es&authtype=guest,ip,cookie&cli0=PC1&clv0=Y" />
+				<input id="ebscohostsearchsrc" name="ebscohostsearchsrc" type="hidden" value="db" />
+				<input id="ebscohostsearchmode" name="ebscohostsearchmode" type="hidden" value="+" />
+				<input id="ebscohostkeywords" name="ebscohostkeywords" type="hidden" value="" />
+				<select name="searchFieldSelector" id="searchFieldSelector">
+				<option value="" >Palabras Clave</option>
+				<option value="AU" >Autor</option>
+				<option value="TI" >Titulo</option>
+				</select>
+				<input id="ebscohostsearchtext" name="ebscohostsearchtext" type="text" size="50"  />
+				<input type="submit" value="Buscar"  />
+		</form>
+		<a href="http://www.bdigital.unal.edu.co/cgi/search/advanced">Busqueda avanzada</a>
+	</div>
+	</body>
+</html>

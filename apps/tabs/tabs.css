@@ -1,0 +1,96 @@
+.find-field-controls {
+  margin: auto;
+
+  padding: 20px;
+}
+
+.find-field-controls .searching {
+  max-width: none;
+}
+
+.find-field-controls .find-field-inputs {
+  margin: auto;
+}
+
+#menuList {
+  padding-top: 10px;
+}
+
+.basic-search {
+  padding-bottom: 50px;
+}
+
+#searchBoxItems li {
+  margin-right: 0px;
+
+  padding: 7px;
+
+  list-style-type: none;
+
+  width: auto;
+
+  display: table-cell;
+
+  border-bottom: 1px solid #bfbfbf;
+
+  overflow: hidden;
+}
+
+#searchBoxItems li.middle {
+  border-left: 1px solid #bfbfbf;
+}
+
+#searchBoxWrap {
+  border-left: 1px solid #bfbfbf;
+  border-right: 1px solid #bfbfbf;
+  display: table;
+  font-size: 17px;
+  color: #203864;
+}
+
+#searchBoxItems li a {
+  color: #595959;
+}
+
+#searchBoxItems {
+  /*    display: block!important;*/
+
+  display: table-row !important;
+}
+
+#searchBoxWrapper {
+  text-align: center;
+}
+
+#searchBoxItems .activeSearch {
+  background: #203864;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#searchBoxItems a:hover {
+  text-decoration: none;
+}
+
+#searchBoxItems {
+  text-decoration: none;
+}
+
+#searchBoxItems li:hover {
+  background: #203864;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.logo {
+  margin: auto;
+
+  display: block !important;
+}
+
+.find-field-inner {
+  display: inline !important;
+}

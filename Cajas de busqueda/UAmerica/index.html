@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content="text/html" charset="utf-8" http-equiv="Content-Type">
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+		<script src="http://support.ebscohost.com/eit/scripts/ebscohostsearch.js" type="text/javascript"></script>
+		<script>
+		$(function() {
+			$( "#tabs" ).tabs();
+		});
+		  $( function() {
+			$( document ).tooltip();
+		});
+		function searchRepo() {
+		var text1 = document.getElementById("repoSearch").value;
+		if (text1 != ''){
+		var rev1 = document.getElementsByName("searchFieldSelectorRep");
+		var url = '';
+		if (rev1[0].checked == true) { url = "http://repository.uamerica.edu.co/simple-search?" + "query=" + text1 ; }
+		if (rev1[1].checked == true) { url = "http://repository.uamerica.edu.co/browse?type=title&sort_by=1&order=ASC&rpp=20&etal=-1&starts_with=" + text1 ; }
+		if (rev1[2].checked == true) { url = "http://repository.uamerica.edu.co/browse?type=author&order=ASC&rpp=20&starts_with=" + text1 ; }
+		window.open (url);}
+		}
+		function searchCatalog() {
+		var text1 = document.getElementById("catalogsearch").value;
+		if (text1 != ''){
+		var rev1 = document.getElementsByName("searchFieldSelectorCat");
+		var url = '';
+		if (rev1[0].checked == true) { url = "http://biblos.uamerica.edu.co/cgi-bin/koha/opac-search.pl?" + "q=" + text1 ; }
+		if (rev1[1].checked == true) { url = "http://biblos.uamerica.edu.co/cgi-bin/koha/opac-search.pl?idx=ti&" + "q=" + text1 ; }
+		if (rev1[2].checked == true) { url = "http://biblos.uamerica.edu.co/cgi-bin/koha/opac-search.pl?idx=au&" + "q=" + text1; }
+		window.open (url);}
+		}
+		function ebscoHostSearchOther(form, buff) {
+			 var ebscohostsearchtext = chkObject(form.ebscohostsearchtext,'');
+			 var ebscohostkeywords = chkObject(form.ebscohostkeywords,'');
+			 var ebscohostsearchsrc = chkObject(form.ebscohostsearchsrc,'');
+			 var ebscohostsearchmode = chkObject(form.ebscohostsearchmode,'\+AND\+');
+			 var ebscohostwindow = parseInt(chkObject(form.ebscohostwindow,0));
+			 var ebscohosturl = chkObject(form.ebscohosturl,'http://search.ebscohost.com/login.aspx?');
+			 var strAlert="";
+			
+			 ebscohostsearchtext = encodeURI(ebscohostsearchtext);
+			
+			 if (ebscohostsearchtext=="") 
+					strAlert+="Please enter search term(s).\n"; 
+			 
+			 if (strAlert !== "") {
+				alert(strAlert);
+				return false;
+			 }
+			 
+			//var searchFieldSelector =form["searchFieldSelector"].value;
+			var searchFieldSelector = '';
+			ebscohosturl+='&bquery='+searchFieldSelector+'+('+ebscohostkeywords+ebscoHostSearchParse(ebscohostsearchtext,ebscohostsearchmode)+')'; 
+
+			if (ebscohostwindow)
+				window.open(ebscohosturl, 'EBSCOhost');
+			else
+				window.location = ebscohosturl;
+				
+			return false;
+		}		
+						
+		function ebscoHostSearchRepositoro(form, buff) {
+			 var ebscohostsearchtext = chkObject(form.ebscohostsearchtext,'');
+			 var ebscohostkeywords = chkObject(form.ebscohostkeywords,'');
+			 var ebscohostsearchsrc = chkObject(form.ebscohostsearchsrc,'');
+			 var ebscohostsearchmode = chkObject(form.ebscohostsearchmode,'\+AND\+');
+			 var ebscohostwindow = parseInt(chkObject(form.ebscohostwindow,0));
+			 var ebscohosturl = chkObject(form.ebscohosturl,'http://search.ebscohost.com/login.aspx?');
+			 var strAlert="";
+			 //var selectedIR = selectedRadio();
+			 var selectedIR = " AND LN irXXXXX";
+			 ebscohostsearchtext = encodeURI(ebscohostsearchtext);
+			
+			 if (ebscohostsearchtext=="") 
+					strAlert+="Please enter search term(s).\n"; 
+			 
+			 if (strAlert !== "") {
+				alert(strAlert);
+				return false;
+			 }
+			 
+			var searchFieldSelector =form["searchFieldSelector"].value;
+			ebscohosturl+='&bquery='+searchFieldSelector+'+('+ebscohostkeywords+ebscoHostSearchParse(ebscohostsearchtext,ebscohostsearchmode)+')'+selectedIR; 
+			
+			form.ebscohostsearchtext.value = buff;
+			if (ebscohostwindow)
+				window.open(ebscohosturl, 'EBSCOhost');
+			else
+				window.location = ebscohosturl;
+				
+			return false;			
+		}
+		
+
+		function ebscoHostSearchArticles(form, buff) {
+			 var ebscohostsearchtext = chkObject(form.ebscohostsearchtext,'');
+			 var ebscohostkeywords = chkObject(form.ebscohostkeywords,'');
+			 var ebscohostsearchsrc = chkObject(form.ebscohostsearchsrc,'');
+			 var ebscohostsearchmode = chkObject(form.ebscohostsearchmode,'\+AND\+');
+			 var ebscohostwindow = parseInt(chkObject(form.ebscohostwindow,0));
+			 var ebscohosturl = chkObject(form.ebscohosturl,'http://search.ebscohost.com/login.aspx?');
+			 var strAlert="";
+			 //var selectedIR = selectedRadio();
+			 var selectedIR = " AND ZT article";
+			 ebscohostsearchtext = encodeURI(ebscohostsearchtext);
+			
+			 if (ebscohostsearchtext=="") 
+					strAlert+="Please enter search term(s).\n"; 
+			 
+			 if (strAlert !== "") {
+				alert(strAlert);
+				return false;
+			 }
+			 
+			var searchFieldSelector =form["searchFieldSelector"].value;
+			ebscohosturl+='&bquery='+searchFieldSelector+'+('+ebscohostkeywords+ebscoHostSearchParse(ebscohostsearchtext,ebscohostsearchmode)+')'+selectedIR; 
+			
+			form.ebscohostsearchtext.value = buff;
+			if (ebscohostwindow)
+				window.open(ebscohosturl, 'EBSCOhost');
+			else
+				window.location = ebscohosturl;
+				
+			return false;			
+		}				
+		
+		
+		function ebscoHostSearchEbooks(form) {
+			 var ebscohostsearchtext = chkObject(form.ebscohostsearchtext,'');
+			 var ebscohostkeywords = chkObject(form.ebscohostkeywords,'');
+			 var ebscohostsearchsrc = chkObject(form.ebscohostsearchsrc,'');
+			 var ebscohostsearchmode = chkObject(form.ebscohostsearchmode,'\+AND\+');
+			 var ebscohostwindow = parseInt(chkObject(form.ebscohostwindow,0));
+			 var ebscohosturl = chkObject(form.ebscohosturl,'http://search.ebscohost.com/login.aspx?');
+			
+			 var strAlert="";
+			
+			 ebscohostsearchtext = encodeURI(ebscohostsearchtext);
+			
+			 if (ebscohostsearchtext=="") 
+					strAlert+="Please enter search term(s).\n"; 
+			 
+			 if (strAlert !== "") {
+				alert(strAlert);
+				return false;
+			 }	 
+
+			var searchFieldSelector =form["searchFieldSelector"].value;
+			ebscohosturl+='&bquery='+searchFieldSelector+'+('+ebscohostkeywords+ebscoHostSearchParse(ebscohostsearchtext,ebscohostsearchmode)+') AND PT ebook'; 
+			if (ebscohostwindow)
+				window.open(ebscohosturl, 'EBSCOhost');
+			else
+				window.location = ebscohosturl;
+				
+			return false;
+		}		
+		function cambiarFondo(){
+			var i = Math.floor(Math.random() *5)+1 ; 
+			var img;
+			switch(i){
+			case 1:
+			img = "url('http://imageserver.ebscohost.com/branding/s7725738/foto_uno.jpg')";
+			break;
+			case 2:
+			img = "url('http://imageserver.ebscohost.com/branding/s7725738/foto_dos.jpg')";
+			break;
+			case 3:
+			img = "url('http://imageserver.ebscohost.com/branding/s7725738/foto_tres.png')";
+			break;
+			case 4:
+			img = "url('http://imageserver.ebscohost.com/branding/s7725738/foto_cuatro.jpg')";
+			break;
+			case 5:
+			img = "url('http://imageserver.ebscohost.com/branding/s7725738/foto_cinco.jpg')";
+			break;
+			}
+			document.getElementById("content").style.backgroundImage=img;
+		}
+		</script>
+		<style>
+			#content{
+				background-size:100% 100%;
+				background-repeat: no-repeat;
+				background-position:center center;
+				width:auto;
+				height:500px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			#tabs{
+				width:1000px;
+			}
+			.ui-widget-content{
+				background:rgba(17,136,153,0.7);
+				color:#fff;
+			}
+			.ui-tabs-nav{
+				background:none;
+				border:none;
+			}
+			.ui-tabs .ui-tabs-nav li{
+				font-size: 0.75em;
+				background:none;
+			}
+			.ui-tabs .ui-tabs-nav a{
+				color:#fff;
+				font-weight:bold;
+			}
+			.ui-tabs .ui-tabs-nav li.ui-tabs-active{
+				background:rgba(238,214,59,0.7);
+			}
+			#ebscohostsearchtext{
+				width:70%;
+				height:25px;
+				font-size:15px;
+				border-radius:10px 0 10px 0;
+			}
+			#catalogsearch{
+				width:70%;
+				height:25px;
+				font-size:15px;
+				border-radius:10px 0 10px 0;
+			}
+			#repoSearch{
+				width:70%;
+				height:25px;
+				font-size:15px;
+				border-radius:10px 0 10px 0;
+			}
+			input[type=submit]{
+				border:none;
+				background-color:#eed63b;
+				color:white; 
+				font-weight:bold; 
+				padding:10px; 
+				font-size:14px; 
+				border-radius:5px; 
+				margin-left:0px;
+			}
+			.ui-widget button{
+				border:none;
+				background-color:#eed63b;
+				color:white; 
+				font-weight:bold; 
+				padding:10px; 
+				font-size:14px; 
+				border-radius:5px; 
+				margin-left:0px;
+			}
+/*AUTOCOMPLETE STYLES*/
+#auto-results {
+    border: 1px black solid;
+    font-family: Helvetica,Arial,sans-serif;
+	width:63%;
+	color:black;
+    background-color:white;
+    position:absolute;
+    padding:10px;
+    z-index:1000;
+}
+#auto-results li:hover {
+    background-color: #3875D7;
+    color: white;
+    font-weight:bold;
+    cursor: pointer;
+}
+#auto-results li {
+    border: medium none;
+    list-style: outside none none;
+    padding-left: 5px;
+}
+/*END AUTOCOMPLETE STYLES*/
+		</style>
+	</head>
+	<body onload="cambiarFondo()">
+		<div id="content">
+			<div id="tabs">
+				<ul>
+					<li><a href="#tabs-1" title="Facilita el acceso a todos los contenidos científicos y académicos análogos y digitales con que cuenta el Sistema de Bibliotecas, a través de un único “cajón” de búsqueda.">EDS</a></li>
+					<li><a href="#tabs-2" title="Consulta de la producción académica y científica de la Universidad, bajo la premisa del acceso abierto">Lumieres</a></li>
+					<li><a href="#tabs-3" title="Permite la búsqueda de colecciones físicas (Libros, revistas, CD-ROM, entre otros). Así como la renovación de colecciones en préstamo y la reserva de material en préstamo.">Catálogo en línea</a></li>
+					<li><a href="#tabs-4">Revistas Digitales</a></li>
+					<li><a href="#tabs-5">Google Académico</a></li>
+					<li><a href="#tabs-6">Libros Digitales</a></li>
+					<li><a href="#tabs-7">Publicaciones A-Z</a></li>
+				</ul>
+				<div id="tabs-1">
+					<form id="sbEDS" action="" onsubmit="return ebscoHostSearchGo(this);" method="post" >
+						<input id="ebscohostwindow" name="ebscohostwindow" type="hidden" value="1" />
+						<input id="ebscohosturl" name="ebscohosturl" type="hidden" value="http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&type=0&custid=s7725738&groupid=main&profid=eds&mode=bool&lang=es&authtype=ip,guest,uid" />
+						<input id="ebscohostsearchsrc" name="ebscohostsearchsrc" type="hidden" value="db" />
+						<input id="ebscohostsearchmode" name="ebscohostsearchmode" type="hidden" value="+" />
+						<input id="ebscohostkeywords" name="ebscohostkeywords" type="hidden" value="" />
+						<input id="ebscohostsearchtext" name="ebscohostsearchtext" type="text" size="50" autocomplete="off" onkeyup="autocomp()" />
+						<span id="edsSearchWrapper"></span>
+						<input type="submit" value="Buscar"/>
+					<div id="guidedFieldSelectors">
+						<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_0" value="" checked="checked" />
+						<label class="label" for="guidedField_0"> Palabra clave</label>
+						<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_1" value="TI" />
+						<label class="label" for="guidedField_1"> Título</label>
+						<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_2" value="AU" />
+						<label class="label" for="guidedField_2"> Autor</label>
+					</div>
+							
+					<div id="limiterblock" >
+						<div id="limitertitle" style="font-weight:bold;padding-top:25px;padding-bottom:5px;">Filtros</div>
+						
+						<div class="limiter" >
+							<input type="checkbox" id="chkFullText" name="chkFullText"  />
+							<label for="chkFullText">Texto completo</label>
+						</div>
+						<div class="limiter" >
+							<input type="checkbox" id="chkCatalogOnly" name="chkCatalogOnly"  />
+							<label for="chkCatalogOnly">Catálogo en línea</label>
+						</div>
+
+						<div class="limiter" >
+							<input type="checkbox" id="chkPeerReviewed" name="chkPeerReviewed"  />
+							<label for="chkPeerReviewed">Revisión por pares</label>
+						</div>
+						
+						<div class="limiter" >
+						  <input type="checkbox" id="chkLibraryCollection" name="chkLibraryCollection"  />
+						  <label for="chkLibraryCollection">Disponible en las bibliotecas</label>
+						</div>			
+					</div>
+					</form>
+				</div>
+				<div id="tabs-2">
+					<form id="sbPeriodici" style="width:900px; overflow:auto;">
+					<input id="repoSearch" name="ebscohostsearchtext" type="text" size="50" />
+					<button onclick="searchRepo()">Buscar</button><br/>
+					<div id="guidedFieldSelectors">
+						<input type="radio" name="searchFieldSelectorRep" value="1" checked="checked" />
+						<label> Palabra clave</label>
+						<input type="radio" name="searchFieldSelectorRep" value="2" />
+						<label> Título</label>
+						<input type="radio" name="searchFieldSelectorRep" value="3" />
+						<label>Autor</label>
+					</div>
+					</form>
+				</div>
+				<div id="tabs-3">
+					<form id="sbCatalog" style="width:900px; overflow:auto;">
+						<input id="catalogsearch" name="ebscohostsearchtext" type="text" size="50"  />
+						<button onclick="searchCatalog()">Buscar</button><br/>
+						
+						<div id="guidedFieldSelectors">
+							<input type="radio" name="searchFieldSelectorCat" value="1" checked="checked" />
+							<label> Palabra clave</label>
+							<input type="radio" name="searchFieldSelectorCat" value="2" />
+							<label> Título</label>
+							<input type="radio" name="searchFieldSelectorCat" value="3" />
+							<label>Autor</label>
+						</div>
+					</form>
+
+				</div>
+				<div id="tabs-4">
+					<form id="sbPeriodici" action="" onsubmit="var buff=this.ebscohostsearchtext.value; return ebscoHostSearchArticles(this, buff);" method="post">
+					<input id="ebscohostwindow" name="ebscohostwindow" type="hidden" value="1" />
+					<input id="ebscohosturl" name="ebscohosturl" type="hidden" value="http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&type=0&custid=s7725738&groupid=main&profid=eds&mode=bool&lang=es&authtype=ip,guest,cookie&cli0=PC1&clv0=Y" />
+					<input id="ebscohostsearchsrc" name="ebscohostsearchsrc" type="hidden" value="db" />
+					<input id="ebscohostsearchmode" name="ebscohostsearchmode" type="hidden" value="+" />
+					<input id="ebscohostkeywords" name="ebscohostkeywords" type="hidden" value="" />
+					<input id="ebscohostsearchtext" name="ebscohostsearchtext" type="text" size="50" />
+					<input type="submit" value="Buscar" />
+					<div id="guidedFieldSelectors">
+						<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_0" value="" checked="checked" />
+						<label class="label" for="guidedField_0"> Palabra clave</label>
+						<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_1" value="TI" />
+						<label class="label" for="guidedField_1"> Título</label>
+						<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_2" value="AU" />
+						<label class="label" for="guidedField_2"> Autor</label>
+					</div>
+					</form>
+				</div>
+				<div id="tabs-5">
+					<form id="sbPeriodici" action="https://scholar.google.com/scholar" target="_blank" method="get" >
+						<input id="hl" name="hl" type="hidden" value="es" />
+						<input id="ebscohostsearchtext" name="q" type="text" placeholder="Busquedas en Google Scholar..." />
+						<input type="submit" value="Buscar" />
+					</form>
+				</div>
+				<div id="tabs-6">
+					<form id="sbPeriodici" action="" onsubmit="return ebscoHostSearchEbooks(this);" method="post">
+						<input id="ebscohostwindow" name="ebscohostwindow" type="hidden" value="1" />
+						<input id="ebscohosturl" name="ebscohosturl" type="hidden" value="http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&type=0&custid=s7725738&groupid=main&profid=eds&mode=bool&lang=es&authtype=ip,guest,uid" />
+						<input id="ebscohostsearchsrc" name="ebscohostsearchsrc" type="hidden" value="db" />
+						<input id="ebscohostsearchmode" name="ebscohostsearchmode" type="hidden" value="+" />
+						<input id="ebscohostkeywords" name="ebscohostkeywords" type="hidden" value="" />
+						<input id="ebscohostsearchtext" name="ebscohostsearchtext" type="text" size="50" />
+						<input type="submit" value="Buscar" />
+						
+						<div id="guidedFieldSelectors">
+							<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_0" value="" checked="checked" />
+							<label class="label" for="guidedField_0"> Palabra clave</label>
+							<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_1" value="TI" />
+							<label class="label" for="guidedField_1"> Título</label>
+							<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_2" value="AU" />
+							<label class="label" for="guidedField_2"> Autor</label>
+						</div>
+					</form>
+
+				</div>
+				<div id="tabs-7">
+					<form id="sbPeriodici" action="" onsubmit="return ebscoHostSearchOther(this);" method="post">
+						<input id="ebscohostwindow" name="ebscohostwindow" type="hidden" value="1" />
+						<input id="ebscohosturl" name="ebscohosturl" type="hidden" value="http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&type=44&db=edspub&custid=s7725738&amp;groupid=main&amp;profid=eds&amp;mode=bool&amp;lang=es&amp;authtype=ip,guest" />
+						<input id="ebscohostsearchsrc" name="ebscohostsearchsrc" type="hidden" value="db" />
+						<input id="ebscohostsearchmode" name="ebscohostsearchmode" type="hidden" value="+" />
+						<input id="ebscohostkeywords" name="ebscohostkeywords" type="hidden" value="" />
+						<input id="ebscohostsearchtext" name="ebscohostsearchtext" type="text" size="50" placeholder="Escribe un título, tema, o número de ISSN/ISBN"/>
+						<input type="submit" value="Buscar" />
+					</form>
+				</div>						
+			</div>
+		</div>
+<script type="text/javascript">
+  //##### Required Variables #####
+  //ID of form for submission of terms to search
+  var searchformid = 'sbEDS';
+  //ID of search box input field
+  var searchboxid = 'ebscohostsearchtext';
+  //ID of div or span that the autocomplete results will appear below
+  var appenddiv = 'edsSearchWrapper';
+  //determines if search happens when autocomplete term is clicked
+  var searchOnClick = true;
+  //##### End Variables #####
+</script>
+<script src="http://gss.ebscohost.com/anavarro/script/autocomp.js"></script>
+	</body>
+</html>

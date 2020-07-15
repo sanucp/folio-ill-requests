@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Clinica Foianini</title>
+    <script src="https://support.ebscohost.com/eit/scripts/ebscohostsearch.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+    <script type="text/javascript">
+      $(function () {
+      	$("#tabs").tabs();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="contenido">
+      <div id="tabs">
+        <ul>
+          <li><a href="#tabs-1">Dynamed</a></li>
+          <li><a href="#tabs-2">Medline</a></li>
+          <li><a href="#tabs-3">Enfermeria al día</a></li>
+        </ul>
+        <div id="tabs-1">
+          <form class="ebscohostCustomSearchBox" action="" onsubmit="return ebscoHostSearchGo(this);" method="post" style="overflow:hidden;">
+		          <input id="ebscohostwindow" name="ebscohostwindow" type="hidden" value="1" />
+		          <input id="ebscohosturl" name="ebscohosturl" type="hidden" value="http://www.dynamed.com/resultlist?direct=true&scope=site&type=1&site=dmp-live&db=dmp&custid=ns271514&groupid=main&profid=dmp&authtype=url" />
+          		<input id="ebscohostsearchsrc" name="ebscohostsearchsrc" type="hidden" value="url" />
+          		<input id="ebscohostsearchmode" name="ebscohostsearchmode" type="hidden" value="+" />
+		          <input id="ebscohostkeywords" name="ebscohostkeywords" type="hidden" value="" />
+          			<div >
+          				<span class="ebscohost-title " style="font-weight:bold;">Buscar en DynaMed Plus</span>
+          				<div>
+          					<input id="ebscohostsearchtext" class="" name="ebscohostsearchtext" type="text" size="50" />
+          					<input type="submit" value="Search" class="ebscohost-search-button " />
+          				</div>
+          			</div>
+	         </form>
+        </div>
+        <div id="tabs-2">
+            <form class="ebscohostCustomSearchBox" action="" onsubmit="return ebscoHostSearchGo(this);" method="post" style="overflow:hidden;">
+                <input id="ebscohostwindow" name="ebscohostwindow" type="hidden" value="1" />
+                <input id="ebscohosturl" name="ebscohosturl" type="hidden" value="http://search.ebscohost.com/login.aspx?direct=true&scope=site&type=1&site=ehost-live&db=mdc&custid=ns271514&groupid=main&profid=dmp&lang=es&authtype=url" />
+                <input id="ebscohostsearchsrc" name="ebscohostsearchsrc" type="hidden" value="url" />
+                <input id="ebscohostsearchmode" name="ebscohostsearchmode" type="hidden" value="+" />
+                <input id="ebscohostkeywords" name="ebscohostkeywords" type="hidden" value="" />
+                
+                 <div>
+                    <span class="ebscohost-title " style="font-weight:bold;">Buscar en Medline</span>
+            
+                    <div>
+                      <input id="ebscohostsearchtext" class="" name="ebscohostsearchtext" type="text" size="50" />
+                      <input type="submit" value="Search" class="ebscohost-search-button " />
+                      
+                    </div>
+                  </div>
+          
+                <div id="limiterblock" style="margin-left:-px; overflow: auto; ">
+                  <div id="limitertitle" style="font-weight:bold;padding-top:25px;padding-bottom:5px;">Limite sus resultados</div>
+                  
+                  <div class="limiter" >
+                    <input type="checkbox" id="chkFullText" name="chkFullText"  />
+                    <label for="chkFullText">Texto Completo</label>
+                  </div>
+                                  
+                  <div class="limiter" >
+                    <input type="checkbox" id="chkPeerReviewed" name="chkPeerReviewed"  />
+                    <label for="chkPeerReviewed">Revistas academicas</label>
+                  </div>
+                  
+                </div>
+              </form>
+        </div>
+        <div id="tabs-3">
+            <form class="ebscohostCustomSearchBox" action="" onsubmit="return ebscoHostSearchGo(this);" method="post" style="overflow:hidden;">
+                <input id="ebscohostwindow" name="ebscohostwindow" type="hidden" value="1" />
+                <input id="ebscohosturl" name="ebscohosturl" type="hidden" value="http://search.ebscohost.com/login.aspx?direct=true&scope=site&type=1&site=nrc-live&custid=ns271514&groupid=main&profid=nrc-spa&authtype=url" />
+                <input id="ebscohostsearchsrc" name="ebscohostsearchsrc" type="hidden" value="url" />
+                <input id="ebscohostsearchmode" name="ebscohostsearchmode" type="hidden" value="+" />
+                <input id="ebscohostkeywords" name="ebscohostkeywords" type="hidden" value="" />
+                
+                  <div>
+                    <span class="ebscohost-title " style="font-weight:bold;">Buscar en Enfermeria al día</span>
+            
+                    <div>
+                      <input id="ebscohostsearchtext" class="" name="ebscohostsearchtext" type="text" size="50" />
+                      <input type="submit" value="Search" class="ebscohost-search-button " />
+                      
+                    </div>
+                  </div>
+            
+                <div id="limiterblock" style="margin-left:-px; overflow: auto; ">
+                  <div id="limitertitle" style="font-weight:bold;padding-top:25px;padding-bottom:5px;">Limite sus resultados</div>
+                  
+                  <div class="limiter" >
+                    <input type="checkbox" id="chkFullText" name="chkFullText"  />
+                    <label for="chkFullText">Texto Completo</label>
+                  </div>
+                  
+                  <div class="limiter" >
+                    <input type="checkbox" id="chkPeerReviewed" name="chkPeerReviewed"  />
+                    <label for="chkPeerReviewed">Revistas academicas</label>
+                  </div>
+                  
+                </div>  
+              </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

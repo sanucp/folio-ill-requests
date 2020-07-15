@@ -1,0 +1,17 @@
+{
+  "lang.selct": "Select Language",
+  "lang.esp": "Spanish",
+  "lang.eng": "English",
+  "lang.por": "Portuguese",
+  "app.header": "User personal data",
+  "app.usr": "User Name",
+  "app.name": "Name",
+  "app.lastname": "Lastname",
+  "app.Email": "E-mail",
+  "app.button": "LogIn",
+  "bib.header": "Bibliographic data",
+  "bib.tittle": "Tittle",
+  "bib.aut": "Author",
+  "bib.pub": "Publication Type",
+  "bib.comments": "Comments"
+}

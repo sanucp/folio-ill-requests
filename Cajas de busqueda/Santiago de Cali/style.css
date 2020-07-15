@@ -1,0 +1,85 @@
+.contenido{
+  width: 80%;
+  margin: auto;
+  font-size: 0.70em;
+}
+.ui-tabs-nav{
+  background: none;
+  border: none;
+  height: 20px;
+}
+.ui-widget-content{
+  background-color: none;
+}
+.ui-tabs{
+  border:none;
+  background:#0b4f7e;
+}
+.ui-tabs .ui-tabs-nav li{
+  background:none;
+  border:none;
+}
+.ui-tabs .ui-tabs-nav a{
+  color:#fff;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active{
+  background:#009bdb;
+  color:#fff;
+  font-weight:bold;
+  font-size: 0.90em;
+}
+.busqueda{
+  position: relative;
+  top: 5px;
+  color:#fff;
+  position: relative;
+}
+#ebscohostsearchtext{
+  padding:10px;
+  width:60%;
+  border-radius:5px 0 5px 0;
+}
+#catalogsearch{
+  padding:10px;
+  width:60%;
+  border-radius:5px 0 5px 0;
+}
+#ojssearch{
+  padding:10px;
+  width:60%;
+  border-radius:5px 0 5px 0;
+}
+.ebscohost-search-button{
+  background:#009bdb;
+  color:#fff;
+  border:none;
+  font-weight:bold;
+  border-radius:5px 0 5px 0;
+  padding:10px;
+}
+#buscador{
+  position: relative;
+  top:10px;
+  left: 20px;
+  width: 300px;
+  height: 59px;
+}
+@media screen and (max-width:700px) {
+  .contenido{
+    width: 80%;
+    font-size: 0.50em;
+  }
+  .ui-tabs-nav{
+    width: 100%;
+  }
+  #ebscohostsearchtext{
+    width: 70%;
+  }
+  #catalogsearch{
+    width: 70%;
+  }
+  #ojssearch{
+    width: 70%;
+  }
+
+}

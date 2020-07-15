@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>UDCA</title>
+    <script
+      src="https://support.ebscohost.com/eit/scripts/ebscohostsearch.js"
+      type="text/javascript"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script>
+      function ebscoHostSearchOther(form, buff) {
+        var ebscohostsearchtext = chkObject(form.ebscohostsearchtext, "");
+        var ebscohostkeywords = chkObject(form.ebscohostkeywords, "");
+        var ebscohostsearchsrc = chkObject(form.ebscohostsearchsrc, "");
+        var ebscohostsearchmode = chkObject(
+          form.ebscohostsearchmode,
+          "\+AND\+"
+        );
+        var ebscohostwindow = parseInt(chkObject(form.ebscohostwindow, 0));
+        var ebscohosturl = chkObject(
+          form.ebscohosturl,
+          "https://search.ebscohost.com/login.aspx?"
+        );
+        var strAlert = "";
+
+        ebscohostsearchtext = encodeURI(ebscohostsearchtext);
+
+        if (ebscohostsearchtext == "")
+          strAlert += "Please enter search term(s).\n";
+
+        if (strAlert !== "") {
+          alert(strAlert);
+          return false;
+        }
+
+        //var searchFieldSelector =form["searchFieldSelector"].value;
+        var searchFieldSelector = "";
+        ebscohosturl +=
+          "&bquery=" +
+          searchFieldSelector +
+          "+(" +
+          ebscohostkeywords +
+          ebscoHostSearchParse(ebscohostsearchtext, ebscohostsearchmode) +
+          ")";
+
+        if (ebscohostwindow) window.open(ebscohosturl, "EBSCOhost");
+        else window.location = ebscohosturl;
+
+        return false;
+      }
+      function buscaJanium(form, formato) {
+        var janiumsearchtext = form.titulo.value;
+        if (janiumsearchtext != "") {
+          var janiumselector = form["janiumFieldSelector"].value;
+          //var janiumselector = "keyword";
+          var janiumsearchurl =
+            "https://udca.janium.net/janium-bin/janium_login_opac.pl?scan&formato=" +
+            formato;
+          janiumsearchtext = encodeURI(janiumsearchtext);
+          janiumsearchurl += "&" + janiumselector + "=" + janiumsearchtext;
+          window.open(janiumsearchurl, "colmichWindow");
+        } else alert("Por favor, ingrese un t&eacute;rmino para buscar.");
+        return false;
+      }
+      function searchRepo() {
+        var text1 = document.getElementById("repoSearch").value;
+        var enco = encodeURI(text1);
+        if (text1 != "") {
+          var rev1 = document.getElementsByName("searchFieldSelectorRep");
+          var url = "";
+          if (rev1[0].checked == true) {
+            url =
+              "http://repository.udca.edu.co/simple-search?" + "query=" + enco;
+          }
+          window.open(url);
+        }
+      }
+      function searchOjs() {
+        var text1 = document.getElementById("ojssearch").value;
+        if (text1 != "") {
+          var rev1 = document.getElementsByName("searchFieldSelectorOjs");
+          var url = "";
+          if (rev1[0].checked == true) {
+            url =
+              "https://revistas.udca.edu.co/index.php/index/search/search?" +
+              "query=" +
+              text1 +
+              "&searchJournal=&authors=&title=";
+          }
+          window.open(url);
+        }
+      }
+    </script>
+    <style>
+      .navbar {
+        background-color: none;
+      }
+      .nav-link {
+        font-weight: bold;
+        color: #fff !important;
+      }
+      .nav {
+        border: none;
+      }
+      .active {
+        color: #000 !important;
+        background-color: #fff !important;
+      }
+      .tab-pane {
+        background-color: #ccc;
+      }
+      .avanzada {
+        background-color: #ff9800;
+        padding: 5px;
+        text-decoration: none;
+        color: #fff !important;
+        float: right;
+        position: relative;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-2">
+      <nav
+        class="navbar navbar-expand-lg navbar-dark"
+        style="background-color: #444647;"
+      >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="nav nav-tabs navbar-nav" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#tabs-1"
+                >Descubridor Bixby</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#tabs-2">Libros</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-toggle="tab"
+                href="#tabs-1"
+                onclick="window.open('https://udca.elogim.com:2443/login')"
+                >Bases de datos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#tabs-4">E-books</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#tabs-5"
+                >Repositorio</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#tabs-6">Revistas</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="tab-content border border-top-0">
+        <div id="tabs-1" class="container tab-pane active mt-2" role="tabpanel">
+          <form
+            class="ebscohostCustomSearchBox"
+            action=""
+            onsubmit="return ebscoHostSearchGo(this);"
+            method="post"
+          >
+            <input
+              id="ebscohostwindow"
+              name="ebscohostwindow"
+              type="hidden"
+              value="1"
+            />
+            <input
+              id="ebscohosturl"
+              name="ebscohosturl"
+              type="hidden"
+              value="http://search.ebscohost.com/login.aspx?direct=true&scope=site&type=0&site=eds-live&custid=ns014563&groupid=main&profid=eds&lang=es&authtype=ip,guest"
+            />
+            <input
+              id="ebscohostsearchsrc"
+              name="ebscohostsearchsrc"
+              type="hidden"
+              value="db"
+            />
+            <input
+              id="ebscohostsearchmode"
+              name="ebscohostsearchmode"
+              type="hidden"
+              value="+"
+            />
+            <input
+              id="ebscohostkeywords"
+              name="ebscohostkeywords"
+              type="hidden"
+              value=""
+            />
+            <div>
+              <input
+                id="ebscohostsearchtext"
+                class="rounded w-75"
+                name="ebscohostsearchtext"
+                type="text"
+                size="50"
+                placeholder="Buscar dentro de todos los recursos"
+              />
+              <button type="submit" class="btn btn-warning" name="button">
+                Buscar
+              </button>
+              <div id="guidedFieldSelectors">
+                <input
+                  class="radio"
+                  type="radio"
+                  name="searchFieldSelector"
+                  id="guidedField_0"
+                  value=""
+                  checked="checked"
+                />
+                <label class="label" for="guidedField_0">Palabras Clave</label>
+                <input
+                  class="radio"
+                  type="radio"
+                  name="searchFieldSelector"
+                  id="guidedField_1"
+                  value="TI"
+                />
+                <label class="label" for="guidedField_1">Título</label>
+                <input
+                  class="radio"
+                  type="radio"
+                  name="searchFieldSelector"
+                  id="guidedField_2"
+                  value="AU"
+                />
+                <label class="label" for="guidedField_2">Autor</label>
+                <a
+                  class="avanzada"
+                  href="https://search.ebscohost.com/login.aspx?authtype=guest&custid=ns014563&groupid=main&profid=eds&type=1&direct=true"
+                  target="_blank"
+                  >Busqueda Avanzada</a
+                >
+              </div>
+            </div>
+            <div id="limiterblock" style="display: none;">
+              <div id="limitertitle">Limit Your Results</div>
+
+              <div class="limiter" style="display: none;">
+                <input
+                  type="checkbox"
+                  id="chkFullText"
+                  name="chkFullText"
+                  checked="checked"
+                />
+                <label for="chkFullText">Full Text</label>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div
+          id="tabs-2"
+          class="container tab-pane fade mt-2 mb-2"
+          role="tabpanel"
+        >
+          <form
+            action="https://udca.janium.net/janium-bin/janium_login_opac.pl?scan"
+            method="post"
+            onsubmit="return buscaJanium(this,'');"
+          >
+            <input
+              name="titulo"
+              class="rounded w-75"
+              size="50"
+              type="text"
+              placeholder="Buscar dentro del catalogo"
+            />
+            <button type="submit" class="btn btn-warning" name="button">
+              Buscar
+            </button>
+            <br />
+            <div id="selectores">
+              <input
+                name="janiumFieldSelector"
+                type="radio"
+                value="keyword"
+                id="keyword"
+                checked="checked"
+              />
+              <label for="keyword">Palabras Clave</label>
+              <input
+                name="janiumFieldSelector"
+                type="radio"
+                value="titulo"
+                id="title"
+              />
+              <label for="title">Título</label>
+              <input
+                name="janiumFieldSelector"
+                type="radio"
+                value="autor"
+                id="author"
+              />
+              <label for="author">Autor</label>
+            </div>
+          </form>
+        </div>
+        <div id="tabs-4" class="container tab-pane fade mt-2" role="tabpanel">
+          <form
+            id="sbPeriodici"
+            action=""
+            onsubmit="return ebscoHostSearchOther(this);"
+            method="post"
+          >
+            <input
+              id="ebscohostwindow"
+              name="ebscohostwindow"
+              type="hidden"
+              value="1"
+            />
+            <input
+              id="ebscohosturl"
+              name="ebscohosturl"
+              type="hidden"
+              value="http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&type=44&db=edspub&custid=ns014563&amp;groupid=main&amp;profid=eds&amp;mode=bool&amp;lang=es&amp;authtype=ip,guest"
+            />
+            <input
+              id="ebscohostsearchsrc"
+              name="ebscohostsearchsrc"
+              type="hidden"
+              value="db"
+            />
+            <input
+              id="ebscohostsearchmode"
+              name="ebscohostsearchmode"
+              type="hidden"
+              value="+"
+            />
+            <input
+              id="ebscohostkeywords"
+              name="ebscohostkeywords"
+              type="hidden"
+              value=""
+            />
+            <input
+              id="ebscohostsearchtext"
+              class="rounded w-75"
+              name="ebscohostsearchtext"
+              type="text"
+              size="50"
+              placeholder="Escribe un título o número de ISSN"
+            />
+            <button type="submit" class="btn btn-warning" name="button">
+              Buscar
+            </button>
+          </form>
+        </div>
+        <div id="tabs-5" class="container tab-pane fade mt-2" role="tabpanel">
+          <form id="sbRepo" onsubmit="searchRepo()">
+            <input
+              id="repoSearch"
+              class="rounded w-75"
+              name="ebscohostsearchtext"
+              type="text"
+              size="50"
+              placeholder="Buscar dentro del Repositorio"
+            />
+            <button type="submit" class="btn btn-warning" name="button">
+              Buscar
+            </button>
+            <div id="searchFieldSelectorRep" style="display: none;">
+              <input
+                class="radio"
+                type="radio"
+                name="searchFieldSelectorRep"
+                id="guidedField_0"
+                value=""
+                checked="checked"
+              />
+              <label class="label" for="guidedField_0"> Palabra Clave</label>
+              <input
+                class="radio"
+                type="radio"
+                name="searchFieldSelectorRep"
+                id="guidedField_1"
+                value="TI"
+              />
+              <label class="label" for="guidedField_1"> Título</label>
+              <input
+                class="radio"
+                type="radio"
+                name="searchFieldSelectorRep"
+                id="guidedField_2"
+                value="AU"
+              />
+              <label class="label" for="guidedField_2"> Autor</label>
+            </div>
+          </form>
+        </div>
+        <div id="tabs-6" class="container tab-pane fade mt-2" role="tabpanel">
+          <form id="sbOjs" onsubmit="searchOjs()">
+            <input
+              id="ojssearch"
+              class="rounded w-75"
+              type="text"
+              size="50"
+              placeholder="Buscar dentro del OJS"
+            />
+            <button type="submit" class="btn btn-warning" name="button">
+              Buscar
+            </button>
+            <div id="searchFieldSelectorOjs" style="display: none;">
+              <input
+                class="radio"
+                type="radio"
+                name="searchFieldSelectorOjs"
+                id="guidedField_0"
+                value=""
+                checked="checked"
+              />
+              <label class="label" for="guidedField_0"> Palabra Clave</label>
+              <input
+                class="radio"
+                type="radio"
+                name="searchFieldSelectorOjs"
+                id="guidedField_1"
+                value="TI"
+              />
+              <label class="label" for="guidedField_1"> Título</label>
+              <input
+                class="radio"
+                type="radio"
+                name="searchFieldSelectorOjs"
+                id="guidedField_2"
+                value="AU"
+              />
+              <label class="label" for="guidedField_2"> Autor</label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

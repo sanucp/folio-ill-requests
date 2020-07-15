@@ -1,0 +1,99 @@
+<!--DOCTYPE html-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="http://support.ebscohost.com/eit/scripts/ebscohostsearch.js" type="text/javascript"></script>
+		<style type="text/css">
+		body{font-family:arial}
+		#contenido{
+			border:1px solid gray;
+			width:700px;
+			background-color:#fff;
+			padding:5px;
+		}
+		#ebscohostsearchtext { 
+			width:80%;
+			border-radius:5px 0 0 5px;
+			margin:10px;
+			padding: 6px 11px !important;
+			border:2px solid;
+			border-color:rgb(0, 50, 124);
+			}
+		.ebscohost-search-button {
+			border-radius:0 5px 5px 0;
+			background-color:rgb(0, 50, 124);
+			border-color: rgb(0, 50, 124);
+			margin-left:-20px;
+			padding: 6px 11px !important;
+			color: #fff;
+			font-weight: bold;
+			cursor:pointer;
+		}
+		.ebscohost-title{
+			margin:10px;
+			color: rgb(0, 50, 124);
+			font-size:25px;
+			text-decoration:none;
+			cursor:pointer;
+		}
+		#guidedFieldSelectors{
+			margin:5px;
+		}
+		.label{
+			margin-Right:20px;
+		}
+		.link{
+			margin:10px;
+		}
+		#limiterblock{margin:10px;}
+		#limitertitle{font-weight:bold;}
+		.limiter{float:left;margin-Right:30px;}
+		</style>
+	</head>
+	<body>
+	<div id="contenido">
+		<form id="ebscohostCustomSearchBox" action="" onsubmit="return ebscoHostSearchGo(this);" method="post">
+		<input id="ebscohostwindow" name="ebscohostwindow" type="hidden" value="1" />
+		<input id="ebscohosturl" name="ebscohosturl" type="hidden" value="http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&type=0&custid=s6670599&groupid=main&profid=eds&mode=all&lang=es&authtype=guest" />
+		<input id="ebscohostsearchsrc" name="ebscohostsearchsrc" type="hidden" value="db" />
+		<input id="ebscohostsearchmode" name="ebscohostsearchmode" type="hidden" value="+" />
+		<input id="ebscohostkeywords" name="ebscohostkeywords" type="hidden" value="" />
+		
+		<div>
+			<div>
+				<a href="#" class="ebscohost-title " >Buscador EDS</a>
+
+				<div>
+					<input id="ebscohostsearchtext" class="" name="ebscohostsearchtext" type="text" size="50"  />
+					<button class="ebscohost-search-button ">Buscar</button><br/>
+					<div id="guidedFieldSelectors">
+						<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_0" value="" checked="checked" />
+						<label class="label" for="guidedField_0"> Palabras Claves</label>
+						<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_1" value="TI" />
+						<label class="label" for="guidedField_1"> Título</label>
+						<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_2" value="AU" />
+						<label class="label" for="guidedField_2"> Autor</label>
+					</div>
+					<a class="link" href="http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&type=1&custid=s6670599&groupid=main&profid=eds&mode=all&lang=es&authtype=guest" target="_blank">Búsqueda Avanzada</a>
+				</div>
+			</div>
+		</div>
+
+		<div id="limiterblock">
+			<div id="limitertitle">Limita tus resultados</div>
+			
+			<div class="limiter" >
+				<input type="checkbox" id="chkFullText" name="chkFullText"  />
+				<label for="chkFullText">Texto completo</label>
+			</div>
+			<div class="limiter" >
+				<input type="checkbox" id="chkCatalogOnly" name="chkCatalogOnly"  />
+				<label for="chkCatalogOnly">Solo Catalogo</label>
+			</div>
+			
+		</div>
+
+		</form>
+	</div>
+	</body>
+</html>

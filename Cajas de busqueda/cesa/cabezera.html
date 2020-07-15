@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            margin: 0px;
+            font-family: sans-serif;
+            color: #fff;
+            height: auto;
+        }
+
+        #cabeza {
+            background-color: #03315a;
+            width: auto;
+            height: 200px;
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+
+        #enlaces {
+            width: 100%;
+        }
+
+        .boton {
+            border: none;
+            background-color: #03315a;
+            color: #fff;
+            cursor: pointer;
+            height: 40px;
+        }
+
+        .boton:hover {
+            background-color: #dbdbdb;
+            color: #03315a;
+        }
+
+        #logo {
+            float: left;
+            width: 260px;
+            height: 160px;
+            padding-top: 25px;
+        }
+
+        #convenios {
+            float: right;
+            width: 300px;
+            height: 150px;
+        }
+
+        #Izquierda {
+            float: left;
+        }
+
+        #Derecha {
+            float: left;
+            margin:10px;
+        }
+
+        @media only screen and (max-width: 500px) {
+            #convenios {
+                display: none;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="cabeza">
+        <div id="enlaces">
+            <a href="http://www.cesa.edu.co/biblioteca-cesa/" target="_blank"><button class="boton">Inicio</button></a>&nbsp
+        </div>
+        <div id="logo">
+            <img src="http://imageserver.ebscohost.com/branding/ns228447/img/logo-cesa.png" id="cesa">
+        </div>
+        <div id="convenios">
+
+            <div id="Izquierda">
+                <img src="http://imageserver.ebscohost.com/branding/ns228447/img/logo_serpilopaga.png" style="width: 100px;"><br/>
+                <img src="http://imageserver.ebscohost.com/branding/ns228447/img/logo-acreditacion_blanca.png">
+            </div>
+            <div id="Derecha">
+                <a href="http://www.aacsb.edu/" target="_blank"><img src="http://imageserver.ebscohost.com/branding/ns228447/img/logo-aacsb.png"></a><br/>
+                <a href="http://www.efmdglobal.org/edaf" target="_blank"><img src="http://imageserver.ebscohost.com/branding/ns228447/img/logo-edaf.png"></a>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

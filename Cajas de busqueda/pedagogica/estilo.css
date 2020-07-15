@@ -1,0 +1,39 @@
+#contenido{
+    width: 70%;
+    margin: auto;
+}
+.ui-widget-content{
+    border: none;
+    background: #0e1b3c;
+    color: #fff;
+}
+.ui-tabs-nav{
+    border: none;
+    background: #005b9c;
+}
+.ui-tabs .ui-tabs-nav li {
+    background: none;
+    border: none;
+}
+.ui-tabs-active{
+    background: #0e1b3c !important;
+    border: none !important;
+}
+.ui-tabs-anchor{
+    color: #005b9c;
+}
+.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited{
+    color: #fff !important;
+}
+.busqueda{
+    width: 70%;
+    height: 40px;
+    padding-left: 25px;
+}
+.ebscohost-search-button {
+    border: none;
+    background: #005b9c;
+    color: #fff;
+    padding: 15px;
+    cursor: pointer;
+}

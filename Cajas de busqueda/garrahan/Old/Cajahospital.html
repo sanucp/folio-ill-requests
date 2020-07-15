@@ -1,0 +1,319 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Untitled 1</title>
+<script src="http://support.ebscohost.com/eit/scripts/ebscohostsearch.js" type="text/javascript"></script>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+<script>
+		function ebscoHostSearchOther(form, buff) {
+			 var ebscohostsearchtext = chkObject(form.ebscohostsearchtext,'');
+			 var ebscohostkeywords = chkObject(form.ebscohostkeywords,'');
+			 var ebscohostsearchsrc = chkObject(form.ebscohostsearchsrc,'');
+			 var ebscohostsearchmode = chkObject(form.ebscohostsearchmode,'\+AND\+');
+			 var ebscohostwindow = parseInt(chkObject(form.ebscohostwindow,0));
+			 var ebscohosturl = chkObject(form.ebscohosturl,'http://search.ebscohost.com/login.aspx?');
+			 var strAlert="";
+			
+			 ebscohostsearchtext = encodeURI(ebscohostsearchtext);
+			
+			 if (ebscohostsearchtext=="") 
+					strAlert+="Please enter search term(s).\n"; 
+			 
+			 if (strAlert !== "") {
+				alert(strAlert);
+				return false;
+			 }
+			 
+			//var searchFieldSelector =form["searchFieldSelector"].value;
+			var searchFieldSelector = '';
+			ebscohosturl+='&bquery='+searchFieldSelector+'+('+ebscohostkeywords+ebscoHostSearchParse(ebscohostsearchtext,ebscohostsearchmode)+')'; 
+
+			if (ebscohostwindow)
+				window.open(ebscohosturl, 'EBSCOhost');
+			else
+				window.location = ebscohosturl;
+				
+			return false;
+		}		
+</script>
+<style>
+body{
+	width:auto;
+	height:auto;
+	font-family:Verdana,Arial,Helvetica,sans-serif;
+	font-size:12px;
+}
+		.choose-db-list{ list-style-type:none;padding:0;margin:10px 0 0 0;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:9pt;width:375px; }
+		.choose-db-check{ width:20px;float:left;padding-left:5px;padding-top:5px; }
+		.choose-db-detail{ margin-left:30px;border-left:solid 1px #E7E7E7;padding:5px 11px 7px 11px;line-height:1.4em; }
+		.summary { background-color:#1D5DA7;color:#FFFFFF;border:solid 1px #1D5DA7; }
+		.one { background-color: #FFFFFF;border:solid 1px #E7E7E7;border-top:solid 1px #FFFFFF; }
+		.two { background-color: #F5F5F5;border:solid 1px #E7E7E7;border-top:solid 1px #FFFFFF; }
+		.selected { background-color: #E0EFF7;border:solid 1px #E7E7E7;border-top:solid 1px #FFFFFF; }
+		#ebscohostCustomSearchBox #disciplineBlock { width:800px;}
+		#ebscohostCustomSearchBox .limiter { float:left;margin:0;padding:0;width:50%; }
+#caja{
+	margin:auto;
+}
+#tabs{
+	width:1200px;
+	height:50px;
+	position: relative;
+	background-color:#717;
+}
+#tabs img{
+	width:100px;
+	height:50px;
+	float:left;
+}
+#tabs ul{list-style-type:none; display: inline; margin:0; padding:0; overflow:hidden;}
+#tabs li{float:left;}
+#tabs li a{display:block; text-align: center; padding: 10px; text-decoration:none; color:white; font-weight:bold;}
+#tabs li a.active {color: white; background-color:#b6a;}
+@media screen and (max-width: 900px){
+	#tabs li{float:none;}
+	#tabs{width:auto; height:300px;}
+	#tabs img{float:none;}
+}
+#menu{
+	width:200px;
+	height:600px;
+	position:relative;
+	float:left;
+	background-color:#717;
+}
+#menu p{
+	background-color:#717;
+	color:white;
+}
+#menu ul{
+	list-style:none;
+	background-color:white;
+}
+#menu a{
+	text-decoration:none;
+	color:black;
+}
+@media screen and (max-width: 900px){
+	#menu{width:100%; float:none; height:400px;}
+	#menu table{text-align:center; margin:auto;}
+}
+#content{
+	width:700px;
+	height:400px;
+	position:relative;
+	float:left;
+}
+#ebscohostsearchtext{
+	width:600px;
+	font-size:20pt;
+	padding-left:5px;
+	margin-top:15px; 
+	margin-left:5px;
+}
+#medicinabox{
+	font-size:20pt;
+	padding-left:5px;
+	margin-top:15px; 
+	margin-left:5px;
+}
+@media screen and (max-width: 900px){
+	#content{ width:100%; float:none;}
+	#ebscohostsearchtext{ width:300px; float:none}
+	#medicinabox{ width:300px; float:none}
+}
+</style>
+</head>
+
+<body>
+<div id="caja">
+<div id="tabs">
+<img src="http://www.garrahan.gov.ar/images/logo.jpg">
+<ul>	
+	<li><a class="tablink active" href="javascript:void(0)" onclick="openTab('tabs-1')">Busqueda</a></li>
+	<li><a class="tablink" href="javascript:void(0)" onclick="openTab('tabs-3')">Recursos para Decisiones Clínicos</a></li>		
+	<li><a class="tablink" href="javascript:void(0)" onclick="openTab('tabs-4')">Revisiones Sistemáticas</a></li>
+	<li><a class="tablink" href="javascript:void(0)" onclick="openTab('tabs-5')">Guías de Práctica Clínica</a></li>
+	<li><a class="tablink" href="javascript:void(0)" onclick="openTab('tabs-2')">Medicina Basada en Evidencias</a></li>
+	<li><a class="tablink" href="javascript:void(0)" onclick="openTab('tabs-6')">PubMed</a></li>
+</ul>
+</div>
+<div id="menu">
+<table>
+<tr>
+<td>
+<p>otros recursos</p>
+<ul>
+<li><a href="http://www.medicinainfantil.org.ar/">Medicina Infantil</a></li>
+<li><a href="https://www.clinicalkey.es/">ClinicalKey en español</a></li>
+<li><a href="http://www.who.int/hinari/es/">Hinari</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+<p>Links de interes</p>
+<ul>
+<li><a href="http://bvsalud.org/es/">Biblioteca Virtual de Salud  (BVS)</a>  </li>
+<li><a href="http://www.bvs.org.ar/php/index.php"> BVS Argentina</a></li>    
+<li><a href="http://www.bibliomedicinadigital.fmed.uba.ar/">Biblioteca Digital de la Facultad de Medicina UBA</a></li>    
+<li><a href="http://www.biblioteca.mincyt.gob.ar/">Biblioteca Electrónica de Ciencia y Tecnología MINCyT</a></li>    
+<li><a href="http://www.sap.org.ar/index.php/contenidos/detalle/id/202">Archivos Argentinos de Pediatría</a></li>   
+<li><a href="http://espanol.medscape.com/pediatria">Medscape Pediatría</a></li>  
+<li><a href="https://clinicaltrials.gov/">Clinical Trials. US National Institutes of Health</a> </li>  
+<li><a href="https://www.nichd.nih.gov/cochrane/Pages/default.aspx">NICHD Cochrane Neonatal</a></li> 
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+<p>Servicios</p>
+<ul>
+<li><a href="http://widgets.ebscohost.com/prod/customlink/ill/index.php?client=ns016481">Petición de articulos</a></li>
+<li>Tutoriales</li>
+<li><a href="http://www.garrahan.gov.ar/PDFS/gap_historico/guia_lectura_critica.pdf">Guía de lectura crítica de artículos</a></li>
+</ul>
+</td>
+</tr>
+</table>
+</div>
+<div id="content">
+<div id="tabs-1" class="tabs-x">
+<form id="ebscohostCustomSearchBox" action="" onsubmit="return ebscoHostSearchGo(this);" method="post" style="width:800px; overflow:auto;">
+		<input id="ebscohostwindow" name="ebscohostwindow" type="hidden" value="1" />
+		<input id="ebscohosturl" name="ebscohosturl" type="hidden" value="http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&type=0&custid=ns016481&groupid=main&profid=eds&mode=bool&lang=en&authtype=ip,guest" />
+		<input id="ebscohostsearchsrc" name="ebscohostsearchsrc" type="hidden" value="db" />
+		<input id="ebscohostsearchmode" name="ebscohostsearchmode" type="hidden" value="+" />
+		<input id="ebscohostkeywords" name="ebscohostkeywords" type="hidden" value="" />
+		
+		<div style="height:66px; width:800px; font-family:Verdana,Arial,Helvetica,sans-serif;font-size:9pt; color:#353535;">
+			<div>
+	
+				<div>
+					<input id="ebscohostsearchtext" class="" name="ebscohostsearchtext" type="text" size="50" />
+					<input type="submit" value="Buscar" class="ebscohost-search-button " style="font-size:15pt; border:none; background-color:#6A1677; color:white;font-weight:bold;border-radius:5px;" />
+					
+					<div id="guidedFieldSelectors">
+						<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_0" value="" checked="checked" />
+						<label class="label" for="guidedField_0"> Palabras Clave</label>
+						<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_1" value="TI" />
+						<label class="label" for="guidedField_1"> Titulo</label>
+						<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_2" value="AU" />
+						<label class="label" for="guidedField_2"> Autor</label>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
+		<div id="limiterblock" style="margin-left:-px; overflow: auto; ">
+			<div id="limitertitle" style="font-weight:bold;padding-top:15px;padding-bottom:5px;">Limita los resultados</div>
+			
+			<div class="limiter" >
+				<input type="checkbox" id="chkFullText" name="chkFullText" checked="checked" />
+				<label for="chkFullText">Texto Completo</label>
+			</div>
+		</div>		
+
+</div>
+	</form>
+		<div id="tabs-4" class="tabs-x" style="height:100px;">
+			<form id="sbPeriodici" action="" onsubmit="return ebscoHostSearchOther(this);" method="post" style="width:900px;; overflow:auto;">
+				<input id="ebscohostwindow" name="ebscohostwindow" type="hidden" value="1" />
+				<input id="ebscohosturl" name="ebscohosturl" type="hidden" value="http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&type=44&db=edspub&custid=ns016481&amp;groupid=main&amp;profid=eds&amp;mode=bool&amp;lang=es&amp;authtype=ip,guest" />
+				<input id="ebscohostsearchsrc" name="ebscohostsearchsrc" type="hidden" value="db" />
+				<input id="ebscohostsearchmode" name="ebscohostsearchmode" type="hidden" value="+" />
+				<input id="ebscohostkeywords" name="ebscohostkeywords" type="hidden" value="" />
+				<input id="ebscohostsearchtext" name="ebscohostsearchtext" type="text" size="50" placeholder="Escribe un título, tema, o número de ISSN/ISBN"/>
+				<input type="submit" value="Buscar" />
+			</form>
+		</div>		
+<div id="tabs-2" class="tabs-x" style="display:none;">
+	<form>
+		<input type="text" id="medicinabox">
+		<button onclick="mediBuscar()"style="font-size:15pt; border:none; background-color:#6A1677; color:white;font-weight:bold;border-radius:5px;">Buscar</button><br/>
+		<input type="radio" name="rdamedicina" value="1" checked="checked"><label>Trip Database</label>
+		<input type="radio" name="rdamedicina" value="2"><label>Revista EVIDENCIA</label>
+        <input type="radio" name="rdamedicina" value="3"><label>Epistemonikos</label>
+        <input type="radio" name="rdamedicina" value="4"><label>Enfermería Basada en la Evidencia</label>
+	</form>
+	<p>si necesita consultar Pemsoft haga clic en la imagen, de lo contrario seleccione la fuente en la desea Buscar</p>
+    <a href="http://search.ebscohost.com/login.aspx?authtype=ip,athens&profile=pemsoftuk"><img src="http://ww1.prweb.com/prfiles/2013/01/07/10298614/OriginalPEMSoftlogo.png" class="logos" alt="pemsoft logo" style="width:200px; height:60px;"></a>
+</div>
+<script>
+function mediBuscar() {
+var text1 = document.getElementById("medicinabox").value;
+if (text1 != ''){
+var rev1 = document.getElementsByName("rdamedicina");
+var url = '';
+if (rev1[0].checked == true) { url = "https://www.tripdatabase.com/search?" + "criteria=" + text1 + "&lang=en"; }
+if (rev1[1].checked == true) { url = "http://www.foroaps.org/resultado-busqueda.php?cx=partner-pub-4649268892061747%3A0920795100&cof=FORID%3A10&ie=UTF-8&ie=ISO-8859-1&" + "q=" + text1 + "&sa.x=0&sa.y=0"; }
+if (rev1[2].checked == true) { url = "http://www.epistemonikos.org/es/search?" + "q=" + text1; }
+if (rev1[3].checked == true) { url = "http://ebevidencia.com/?" + "s=" + text1; }
+window.open (url);}
+}
+</script>
+<div id="tabs-3" class="tabs-x" style="display:none;">
+<p>Consulta las siguientes bases de datos haciendo clic en la imagen</p><br />
+<a href="http://www.dynamed.com/"><img src="https://media.licdn.com/media/AAEAAQAAAAAAAAKQAAAAJDM4OGZiYzcyLTVhYmMtNDQ3OS1iZmI0LWQyOTA2MmQ1ZmQ5MQ.png" alt="logoDynamed" class="logos"></a>
+<a href="http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=nrc-spa"><img src="http://bva.interamerica.org/images/dblogos/nrc.gif" style="width:100px; height:60px;" class="logos" alt="logoEnfermeria" ></a>
+</div>
+<div id="tabs-4" class="tabs-x" style="display:none;">
+<p>Consulta las siguientes bases de datos haciendo clic en la imagen</p><br />
+<a href="http://www.bibliotecacochrane.com/"><img src="http://es.cochrane.org/sites/es.cochrane.org/files/public/uploads/BCP2.png" class="logos" style="width:100px; height:60px;"></a>
+<a href="http://www.cochranelibrary.com/home/topic-and-review-group-list.html?page=topic"><img src="http://www.cochranelibrary.com/application/static/images/Cochrane_Logo.png" class="logos" style="width:100px; height:60px;"></a>
+</div>
+<div id="tabs-5" class="tabs-x" style="display:none;">
+<table>
+<tr>
+<td>
+<p>COMPILADORES</p>
+<a href="https://www.guideline.gov/">National Guideline Clearinghouse (USA)</a><br/>
+<a href="http://www.g-i-n.net/">GIN.  Guidelines International Network (UK)</a><br/>
+<a href="http://portal.guiasalud.es/web/guest/home">GuíaSalud (España )</a><br/>
+<a href="https://www.ncbi.nlm.nih.gov/books/NBK16710/">Health Services Technology Assessment Text HSTAT (USA</a><br/>
+<a href="https://www.mja.com.au/journal/guidelines">EMJA Clinical Guidelines (AUSTRALIA)</a><br/>
+</td>
+<td>
+<p>ELABORADORES</p>
+<a href="http://www.garrahan.gov.ar/listado-de-guias/guias-de-atencion-pediatrica/listado-de-guias">Guías del Hospital de Pediatría “Prof. Dr. P. Garrahan”</a><br/>
+<a href="https://www.nice.org.uk/guidance">NICE. National Institute for Health and Care  Excellence (UK)</a><br/>
+<a href="http://www.sign.ac.uk/guidelines/published/index.html">SIGN. Scottish Intercollegiate Guidelines Network</a><br/>
+<a href="http://www.ahrq.gov/">AHRQ Agency for Healthcare Research and Quality (USA) </a><br/>
+<a href="https://eccguidelines.heart.org/index.php/circulation/cpr-ecc-guidelines-2/">American Heart Association Guidelines (USA</a><br/>
+<a href="https://www.cancercare.on.ca/">Cancer Care Ontario (CANADA)</a><br/>
+<a href="https://www.icsi.org/guidelines__more/">ICSI Institute for Clinical Sysatems Improvement (USA) </a><br/>
+<a href="https://www.nhmrc.gov.au/guidelines-publications">NHMRC National Health and medical Research Council (AUSTRALIA) </a><br/>
+<a href="http://www.health.govt.nz/about-ministry/ministry-health-websites/new-zealand-guidelines-group">New Zealand Guidelines Group (NUEVA ZELANDIA)  </a><br/>
+<a href="http://secardiologia.es/cientifico/guias-clinicas">Sociedad Española de cardiología (ESPAÑA)  </a>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs-6" class="tabs-x" style="display:none;">
+<p>Para acceder a PubMed, haz clic en en la imagen</p>
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/US-NLM-PubMed-Logo.svg/720px-US-NLM-PubMed-Logo.svg.png" style="width:200px; height:100px;"></a>
+</div>
+</div>
+</div>
+<script>
+	function openTab(tabName) {
+	var i, x, tablinks;
+	x = document.getElementsByClassName("tabs-x");
+		for (i = 0; i < x.length; i++){
+			x[i].style.display = "none";
+		}
+	tablinks = document.getElementsByClassName("tablink");
+		for (i = 0; i < tablinks.length; i++){
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+		}
+	document.getElementById(tabName).style.display="block";
+	evt.currentTarget.className += " active";
+		}
+</script>
+</body>
+
+</html>

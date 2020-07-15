@@ -1,0 +1,300 @@
+/* mobiles  */
+@media only screen and (max-width : 600px) {
+
+  .tadeo-biblioteca-page.no-sidebars #main #content {
+    padding-top: 0;
+    width: 100%;
+  }
+
+  .tadeo-biblioteca-page .region-preface-second #block-tadeo-bienestar-tadeo-global-menu,
+  .tadeo-biblioteca-page .region-preface-second #block-tadeo-bienestar-tadeo-global-menu .content {
+    height: auto;
+  }
+  .tadeo-biblioteca-page .region-preface-second .header-logo-image {
+    width: 100%;
+  }
+  .tadeo-biblioteca-page.tadeo-general .region-preface-second #system-library .block-tadeo-bienestar .content > .header-links-images .header-logo-image {
+    background: #002E51 none repeat scroll 0% 0%;
+    border-bottom: 0px solid #5399B9;
+  }
+  .tadeo-biblioteca-page.tadeo-general #preface-second .block-tadeo-bienestar .header-image {
+    background: #1e4f86;
+    border-bottom: 0;
+    height: 26px;
+  }
+  .tadeo-biblioteca-page .region-preface-second #block-tadeo-bienestar-tadeo-global-menu .content > .menu > .menu-item {
+    float: none;
+    height: 18px;
+    padding: 4px 4px 4px 0px;
+  }
+  .link-mobile {
+    position: relative;
+    height: 27px;
+  }
+  .link-mobile a.link-mobile-item {
+    background: url("/sites/tadeo/themes/seed_tadeo/images/mobile/bg-menu-mobile.png") no-repeat center center;
+    display: block;
+    height: 27px;
+    width: 22px;
+    font-size: 0;
+    position: absolute;
+    right: 5px;
+  }
+  .tadeo-biblioteca-page #page #block-tadeo-bienestar-tadeo-global-menu .content > #block-menu-header.menu {
+    display: none;
+    margin: 0;
+    position: relative;
+    top: 0;
+    -webkit-padding-start: 0;
+  }
+  .tadeo-biblioteca-page.tadeo-general #system-library .block-tadeo-bienestar .content > #block-menu-header.menu .menu-item.first-0,
+  .tadeo-biblioteca-page.tadeo-general #system-library .block-tadeo-bienestar .content > #block-menu-header.menu > .menu-item {
+    background: none repeat scroll 0 0 #1e4f86;
+    height: auto;
+    padding: 2px;
+    width: 99%;
+  }
+  .tadeo-biblioteca-page #block-tadeo-bienestar-tadeo-global-menu .content > #block-menu-header.menu > .menu-item > a,
+  .tadeo-biblioteca-page #block-tadeo-bienestar-tadeo-global-menu .content > #block-menu-header.menu > .menu-item > span {
+    border-left: 0px solid #fff;
+    color: #fff;
+    height: 23px;
+    padding-left: 25px;
+    display: block;
+    text-align: left;
+    border-bottom: 2px solid #39658F;
+  }
+  .tadeo-general.tadeo-biblioteca-page .block-tadeo-bienestar-tadeo-global-menu .content > #block-menu-header.menu .menu-item:hover .menu,
+  .tadeo-general.tadeo-biblioteca-page .block-tadeo-bienestar-tadeo-global-menu .content > #block-menu-header.menu .menu-item.hover_effect .menu {
+    background: #39658F;
+    height: auto;
+    top: 0px;
+    width: 100%;
+    padding: 0;
+    position: relative;
+  }
+  .tadeo-general.tadeo-biblioteca-page .block-tadeo-bienestar-tadeo-global-menu .content > #block-menu-header.menu .menu-item:hover .menu-item,
+  .tadeo-general.tadeo-biblioteca-page .block-tadeo-bienestar-tadeo-global-menu .content > #block-menu-header.menu .menu-item.hover_effect .menu-item {
+    background: #39658F;
+    border-bottom: thin dotted #FFF;
+    width: 100%;  
+  }
+  .tadeo-general.tadeo-biblioteca-page .block-tadeo-bienestar-tadeo-global-menu .content > #block-menu-header.menu .menu-item .menu-item a {
+    display: block;
+    height: auto;
+    min-height: 0;
+    padding: 2px 2px 2px 10px;
+    white-space: normal;
+    width: 95%;
+    text-align: left;
+  }
+  .tadeo-general.tadeo-biblioteca-page .block-tadeo-bienestar-tadeo-global-menu .content > #block-menu-header.menu .menu-item .menu-item span {
+    color: #FFF;
+    font-size: 0.7em;
+    padding-left: 10px;
+    text-align: left;
+    display: block;
+  }
+
+  #preface-second #block-tadeo-library-tadeo-search-library {
+    width: 100%;
+  }
+  #preface-second #block-tadeo-library-tadeo-search-library .wrapper-search-form {
+    height: 164px;
+    padding-top: 1px;
+  }
+  #preface-second #block-tadeo-library-tadeo-search-library .content-search-form {
+    background: rgba(33, 47, 57, 0.85);
+    height: 83px;
+    margin: 0% auto;
+    width: 100%;
+  }
+  #preface-second #block-tadeo-library-tadeo-search-library .content-search-form .elements {
+    margin: 0 auto;
+    padding: 5px 0 0 5px;
+    width: 98%;
+  }
+  #preface-second #block-tadeo-library-tadeo-search-library .content-search-form .elements .form-item.form-type-textfield {
+    float: left;
+    margin-right: 22px;
+    width: 61%;
+  }
+  #preface-second #block-tadeo-library-tadeo-search-library .content-search-form .elements .btn-submit {
+    margin: 0;
+    overflow: visible;
+  }
+  #preface-second #block-tadeo-library-tadeo-search-library .content-search-form .elements .form-submit {
+    background: url("/sites/tadeo/themes/seed_tadeo/images/general/icon-search-library.png") no-repeat scroll 62px center #FFC000;
+    border: medium none;
+    border-radius: 4px;
+    color: #fff;
+    height: 30px;
+    margin-left: 5px;
+    margin-top: 3px;
+    padding: 5px 25px 5px 8px;
+    text-align: left;
+    width: 90px;
+  }
+  #preface-second #block-tadeo-library-tadeo-search-library .content-search-form .elements #edit-searchfieldselector {
+    border-top: thin dotted #fff;
+    clear: both;
+    margin-top: 8px;
+    padding-top: 8px;
+    width: 100%;
+  }
+  #preface-second #block-tadeo-library-tadeo-search-library .content-search-form .elements .form-radios .form-type-radio,
+  #preface-second #block-tadeo-library-tadeo-search-library .content-search-form .elements #edit-searchfieldselector.form-radios .form-type-radio {
+    float: left;
+    margin: 0;
+  }
+  #preface-second #block-tadeo-library-tadeo-search-library .content-search-form .elements .form-radios .form-type-radio label,
+  #preface-second #block-tadeo-library-tadeo-search-library .content-search-form .elements #edit-searchfieldselector.form-radios .form-type-radio label {
+    color: #FFF;
+    display: inline-block;
+    font-size: 0.75em;
+    padding: 0 20px 0 0;
+    width: auto;
+  }
+  .tadeo-biblioteca-page #page .region-content  #block-views-biblioteca-block-news-bienestar {
+    background: none no-repeat scroll center 0 #fff;
+    float: left;
+    margin-bottom: 0;
+    margin-right: 5px;
+    position: relative;
+    width: 100%;
+  }
+  .tadeo-general.tadeo-biblioteca-page .region-content #block-views-biblioteca-block-news-bienestar .attachment,
+  .tadeo-general.tadeo-biblioteca-page .region-content #block-views-biblioteca-block-news-bienestar .view-display-id-block_news_bienestar > .view-content {
+    clear: both;
+    height: 178px;
+  }
+  .tadeo-general.tadeo-biblioteca-page .region-content #block-views-biblioteca-block-news-bienestar li.views-row {
+    float: left;
+    height: 167px;
+    padding-bottom: 10px;
+    position: relative;
+    width: 300px;
+  }
+  .tadeo-general.tadeo-biblioteca-page .region-content .view-display-id-block_video_micrositio .views-row .views-field-body,
+  .tadeo-general.tadeo-biblioteca-page .region-content #block-views-biblioteca-block-news-bienestar .views-field-body {
+    color: #FFF;
+    font-size: 0.6em;
+    padding: 5px;
+    position: absolute;
+    bottom: 0%;
+    width: 97%;
+    background: #000000;
+    opacity: 0.7;
+    height: 65px;
+  }
+  .tadeo-general.tadeo-biblioteca-page #block-views-biblioteca-block-news-bienestar .views-field-body a {
+    font-size: 1.3em;
+    font-weight: normal;
+  }
+  .tadeo-general.tadeo-biblioteca-page .region-content .view-footer {
+    bottom: 1%;
+    right: 1%;
+  }
+  .tadeo-general.tadeo-biblioteca-page .region-content .view-footer .slider-galleries .next {
+    height: 30px;
+    right: 30px;
+    width: 25px;
+  }
+  .tadeo-general.tadeo-biblioteca-page .region-content .view-footer .slider-galleries .prev {
+    height: 30px;
+    width: 25px;
+  }
+  .tadeo-general.tadeo-biblioteca-page .region-content .block-banners-library,
+  .tadeo-general.tadeo-biblioteca-page .region-content .block-banners-inf-library {
+    width: 100%;
+    height: 240px;
+  }
+  .tadeo-general.tadeo-biblioteca-page .region-content .block-banners-library h2,
+  .tadeo-general.tadeo-biblioteca-page .region-content .block-banners-inf-library h2 {
+    margin: 2px;
+  }
+  .tadeo-general.tadeo-biblioteca-page .region-content .block-banners-library .view-display-id-block_links_biblioteca .views-row {
+    height: 40px;
+    margin: 0px 5px;
+  }
+  .tadeo-general.tadeo-biblioteca-page .region-content .view-display-id-block_events_biblioteca {
+    background: rgb(255,192,0) none repeat scroll 0% 0%;
+    height: 150px;
+    position: relative;
+    width: 100%;
+  }
+  .tadeo-general.tadeo-biblioteca-page .region-content .view-display-id-block_events_biblioteca .views-row a {
+    height: 70px;
+    font-size: 1em;
+    font-weight: normal;
+    margin: 0px auto;
+    padding: 1% 0px 0;
+    width: 95%;
+  }
+  .tadeo-general.tadeo-biblioteca-page .region-content .block-recommended-library {
+    margin-right: 0px;
+    width: 100%;
+  }
+  .tadeo-general.tadeo-biblioteca-page .region-content .block-recommended-library h2 {
+    margin: 2px 0px;
+  }
+  .tadeo-general.tadeo-biblioteca-page .region-content .view-display-id-block_recomendado_biblioteca {
+    margin: 2px;
+  }
+  .tadeo-general.tadeo-biblioteca-page .region-content .view-display-id-block_recomendado_biblioteca .views-row {
+    width: 100%;
+    margin: 2px;
+  }
+  .tadeo-general.tadeo-biblioteca-page .region-content .view-display-id-block_recomendado_biblioteca .views-row .views-field-title {
+    padding: 2px 2px;
+    width: 52%;
+    overflow: hidden;
+  }
+  .tadeo-general.tadeo-biblioteca-page .region-content .view-display-id-block_recomendado_biblioteca .views-row .views-field-title a {
+    color: #444444;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .tadeo-general.tadeo-biblioteca-page .region-content .view-display-id-block_recomendado_biblioteca .views-row .views-field-field-publication-category {
+    padding-left: 2px;
+    font-size: 0.8em;
+  }
+  .tadeo-general.tadeo-biblioteca-page .region-content .view-display-id-block_recomendado_biblioteca .views-row .views-field-body {
+    font-size: 0.75em;
+    padding-left: 2px;
+    width: 52%;
+  }
+  .tadeo-general.tadeo-biblioteca-page .region-content .view-display-id-block_recomendado_biblioteca .views-row .views-field-view-node {
+    padding-left: 2px;
+    margin: 2px 0px 2px;
+  }
+  .tadeo-biblioteca-page .social-network-items .social-wrapper {
+    margin: 0px auto;
+    width: 73%;
+  }
+  .tadeo-general.tadeo-biblioteca-page .view-display-id-block_library_team .views-row {
+    height: auto;
+  }
+  .tadeo-general.tadeo-biblioteca-page .view-display-id-block_library_team .views-row h2 {
+    margin: 0;
+    padding: 5px;
+  }
+  .tadeo-general.tadeo-biblioteca-page .view-display-id-block_library_team .views-field-field-body-profile {
+    font-size: 0.8em;
+    margin-left: 10px;
+  }
+  .tadeo-general.tadeo-biblioteca-page .view-display-id-block_handbooks_biblioteca .ui-accordion .ui-accordion-content .views-field-title a,
+  .tadeo-general.tadeo-biblioteca-page .view-display-id-block_authors_biblioteca .ui-accordion .ui-accordion-content .views-field-title a {
+    font-size: 0.85em;
+  }
+  .tadeo-general.tadeo-biblioteca-page .tadeo-social-wrapper {
+    float: none;
+    width: 100%;
+  }
+  .tadeo-general.tadeo-biblioteca-page .block.block-banners-library,
+  .tadeo-general.tadeo-biblioteca-page .block.block-banners-inf-library {
+    width: 298px;
+  }
+
+}

@@ -1,0 +1,1467 @@
+<a name="holdings"></a>
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> <!-- Print library header line -->
+  <th colspan=3 class="enrichheader" align="center">Existencias</th>
+ <!-- View Holdings Button -->
+    <td colspan=2 valign=center><a  href="javascript:document.item_view.form_type.value = 'VOPTIONS'; document.item_view.submit()">VER OPCIONES</a></td>
+</tr>
+      <!-- holdings allowed -->
+     <!-- new library -->
+      <tr> <!-- Print library header line -->
+        <th class="holdingsheader" colspan="4" align="left">
+          Biblioteca General &quot;Ram&#243;n de Zubir&#237;a&quot;
+      </th>
+      </tr>
+      <tr>
+        <th class="holdingsheader" align="right">&nbsp;</th>
+      <th class="holdingsheader" align="left">Copia</th>
+        <th class="holdingsheader" align="left">Material</th>
+      <th class="holdingsheader" align="left">Ubicaci&#243;n</th>
+      </tr>
+
+
+      <tr>
+         <!-- Number of copies -->
+        <!-- Start new callnum -->
+        <td class="holdingslist" align="left">515. S729S Z265 2012</td>
+
+        <td class="holdingslist" align="left" NORTL>1</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/25/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>2</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+          <td class="holdingslist" align="left">
+            Sala de Ciencias e Ingenier&#237;a. Piso 2
+          </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>3</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/28/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>4</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/29/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>5</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+          <td class="holdingslist" align="left">
+            Sala de Ciencias e Ingenier&#237;a. Piso 2
+          </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>6</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  12/13/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>7</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/30/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>8</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/28/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>9</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/25/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>10</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+          <td class="holdingslist" align="left">
+            Sala de Ciencias e Ingenier&#237;a. Piso 2
+          </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>11</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/29/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>12</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/29/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>13</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/29/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>14</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/29/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>15</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/29/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>16</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/28/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>17</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/24/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>18</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+          <td class="holdingslist" align="left">
+            Sala de Ciencias e Ingenier&#237;a. Piso 2
+          </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>19</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/28/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>20</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+          <td class="holdingslist" align="left">
+            Sala de Ciencias e Ingenier&#237;a. Piso 2
+          </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>21</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/29/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>22</td>
+        <td class="holdingslist" align="left">
+          Libro de Reserva
+        </td>
+          <td class="holdingslist" align="left">
+            Sala de Ciencias e Ingenier&#237;a. Piso 2
+          </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>23</td>
+        <td class="holdingslist" align="left">
+          Libro de Reserva
+        </td>
+          <td class="holdingslist" align="left">
+            Sala de Ciencias e Ingenier&#237;a. Piso 2
+          </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>24</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/28/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>25</td>
+        <td class="holdingslist" align="left">
+          Libro de Reserva
+        </td>
+          <td class="holdingslist" align="left">
+            Sala de Ciencias e Ingenier&#237;a. Piso 2
+          </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>26</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/29/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>27</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/25/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>28</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/28/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>29</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+          <td class="holdingslist" align="left">
+            Sala de Ciencias e Ingenier&#237;a. Piso 2
+          </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>30</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+          <td class="holdingslist" align="left">
+            Sala de Ciencias e Ingenier&#237;a. Piso 2
+          </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>31</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  9/17/2018 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>32</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/24/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>33</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+          <td class="holdingslist" align="left">
+            Sala de Ciencias e Ingenier&#237;a. Piso 2
+          </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>34</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/28/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>35</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+          <td class="holdingslist" align="left">
+            Sala de Ciencias e Ingenier&#237;a. Piso 2
+          </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>36</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/29/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>37</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/28/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>38</td>
+        <td class="holdingslist" align="left">
+          Libro de Reserva
+        </td>
+          <td class="holdingslist" align="left">
+            Sala de Ciencias e Ingenier&#237;a. Piso 2
+          </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>39</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/28/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>40</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+          <td class="holdingslist" align="left">
+            Sala de Ciencias e Ingenier&#237;a. Piso 2
+          </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>41</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+          <td class="holdingslist" align="left">
+            Sala de Ciencias e Ingenier&#237;a. Piso 2
+          </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>42</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/28/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>43</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+          <td class="holdingslist" align="left">
+            Sala de Ciencias e Ingenier&#237;a. Piso 2
+          </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>44</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/28/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>45</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+          <td class="holdingslist" align="left">
+            Sala de Ciencias e Ingenier&#237;a. Piso 2
+          </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>46</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+          <td class="holdingslist" align="left">
+            Sala de Ciencias e Ingenier&#237;a. Piso 2
+          </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>47</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/29/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>48</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/28/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>49</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/28/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>50</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/29/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>51</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/29/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>52</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+          <td class="holdingslist" align="left">
+            Sala de Ciencias e Ingenier&#237;a. Piso 2
+          </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>53</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/30/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>54</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+          <td class="holdingslist" align="left">
+            Sala de Ciencias e Ingenier&#237;a. Piso 2
+          </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>55</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+          <td class="holdingslist" align="left">
+            Sala de Ciencias e Ingenier&#237;a. Piso 2
+          </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>56</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/25/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>57</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+          <td class="holdingslist" align="left">
+            Sala de Ciencias e Ingenier&#237;a. Piso 2
+          </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>58</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+          <td class="holdingslist" align="left">
+            Sala de Ciencias e Ingenier&#237;a. Piso 2
+          </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>59</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+          <td class="holdingslist" align="left">
+            Sala de Ciencias e Ingenier&#237;a. Piso 2
+          </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>60</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/8/2018 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>61</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/28/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>62</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+          <td class="holdingslist" align="left">
+            Sala de Ciencias e Ingenier&#237;a. Piso 2
+          </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>63</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/29/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>64</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  12/7/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>65</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/29/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>66</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/28/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>67</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/28/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>68</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/28/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>69</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+          <td class="holdingslist" align="left">
+            Sala de Ciencias e Ingenier&#237;a. Piso 2
+          </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>70</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+          <td class="holdingslist" align="left">
+            Sala de Ciencias e Ingenier&#237;a. Piso 2
+          </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>71</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/25/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>72</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+        <td class="holdingslist" align="left">Vence:  10/25/2019 </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+      <!-- holdings allowed -->
+
+
+      <tr>
+        <td class="holdingslist" align="left">&nbsp;</td>
+
+        <td class="holdingslist" align="left" NORTL>73</td>
+        <td class="holdingslist" align="left">
+          Libro
+        </td>
+          <td class="holdingslist" align="left">
+            Sala de Ciencias e Ingenier&#237;a. Piso 2
+          </td>
+
+
+      </tr>
+
+
+    <!-- Boundwith holdings -->
+
+
+
+</table>

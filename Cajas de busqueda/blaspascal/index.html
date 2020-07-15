@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blas Pascal</title>
+    <!--Script de esbsco y estilos de boostrap-->
+    <script src="https://support.ebscohost.com/eit/scripts/ebscohostsearch.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <script>
+        function ebscoHostSearchOther(form, buff) {
+        var ebscohostsearchtext = chkObject(form.ebscohostsearchtext, '');
+        var ebscohostkeywords = chkObject(form.ebscohostkeywords, '');
+        var ebscohostsearchsrc = chkObject(form.ebscohostsearchsrc, '');
+        var ebscohostsearchmode = chkObject(form.ebscohostsearchmode, '\+AND\+');
+        var ebscohostwindow = parseInt(chkObject(form.ebscohostwindow, 0));
+        var ebscohosturl = chkObject(form.ebscohosturl, 'http://search.ebscohost.com/login.aspx?');
+        var strAlert = "";
+
+        ebscohostsearchtext = encodeURI(ebscohostsearchtext);
+
+        if (ebscohostsearchtext == "")
+            strAlert += "Please enter search term(s).\n";
+
+        if (strAlert !== "") {
+            alert(strAlert);
+            return false;
+        }
+
+        //var searchFieldSelector =form["searchFieldSelector"].value;
+        var searchFieldSelector = '';
+        ebscohosturl += '&bquery=' + searchFieldSelector + '+(' + ebscohostkeywords + ebscoHostSearchParse(ebscohostsearchtext, ebscohostsearchmode) + ')';
+
+        if (ebscohostwindow)
+            window.open(ebscohosturl, 'EBSCOhost');
+        else
+            window.location = ebscohosturl;
+
+        return false;
+        }
+        function searchCatalog() {
+            var text1 = document.getElementById("catalogsearch").value;
+            if (text1 != ''){
+                var rev1 = document.getElementsByName("searchFieldSelectorCat");
+                var url = '';
+                if (rev1[0].checked == true) { url = "https://biblio.ubp.edu.ar/cgi-bin/koha/opac-search.pl?" + "q=" + text1 ; }
+                if (rev1[1].checked == true) { url = "https://biblio.ubp.edu.ar/cgi-bin/koha/opac-search.pl?idx=ti&" + "q=" + text1 ; }
+                if (rev1[2].checked == true) { url = "https://biblio.ubp.edu.ar/cgi-bin/koha/opac-search.pl?idx=au&" + "q=" + text1; }
+                window.open (url);
+            }
+		}
+    </script>
+</head>
+<body>
+    <!--Contenido-->
+    <div class="container mt-2 position-relative">
+        <!--tab menu-->
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#tab1">Revistas y libros electrónicos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tab2">Catálogo</a>
+            </li>
+        </ul>
+        <!--tab content-->
+        <div class="tab-content border border-top-0">
+            <!--PFI-->
+            <div id="tab1" class="container tab-pane active mt-2 mb-2">
+                <form id="sbPeriodici" action="" onsubmit="return ebscoHostSearchOther(this);" method="post">
+                    <input id="ebscohostwindow" name="ebscohostwindow" type="hidden" value="1" />
+                    <input id="ebscohosturl" name="ebscohosturl" type="hidden" value="http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&type=44&db=edspub&custid=s1183051&amp;groupid=main&amp;profid=pfi&amp;mode=bool&amp;lang=es&amp;authtype=ip,guest" />
+                    <input id="ebscohostsearchsrc" name="ebscohostsearchsrc" type="hidden" value="db" />
+                    <input id="ebscohostsearchmode" name="ebscohostsearchmode" type="hidden" value="+" />
+                    <input id="ebscohostkeywords" name="ebscohostkeywords" type="hidden" value="" />
+                    <input id="ebscohostsearchtext" class="rounded w-75 px-2 py-2 mt-1" name="ebscohostsearchtext" type="text"
+                        size="50" placeholder="Escribe un título o número de ISSN" />
+                    <button type="submit" class="btn btn-danger" name="button">Buscar</button>
+                </form>
+            </div>
+            <!--Catalogo-->
+            <div id="tab2" class="container tab-pane fade mt-2 mb-1">
+                <form id="sbCatalog">
+                    <input id="catalogsearch" type="text" size="50" class="rounded w-75 px-2 py-2 mt-1" />
+                    <button onclick="searchCatalog() " class="btn btn-danger">Buscar</button>
+                    <a href="https://biblio.ubp.edu.ar/cgi-bin/koha/opac-search.pl" target="_blank" class="btn btn-success float-right mt-2">Búsqueda
+                        Avanzada</a>
+                    <div id="guidedFieldSelectors" class="mt-1">
+                        <input type="radio" name="searchFieldSelectorCat" value="1" checked="checked" />
+                        <label> Palabra clave</label>
+                        <input type="radio" name="searchFieldSelectorCat" value="2" />
+                        <label> Título</label>
+                        <input type="radio" name="searchFieldSelectorCat" value="3" />
+                        <label>Autor</label>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <span class="font-weight-bold">Buscar también en:</span>
+        <a href="https://go.openathens.net/redirector/ubp.edu.ar?url=http%3A%2F%2Far.microjuris.com%2F" target="_blank" class="btn btn-info mt-2">Microjuris</a>
+        <a href="https://go.openathens.net/redirector/ubp.edu.ar?url=https%3A%2F%2Fwidgets.ebscohost.com%2Fprod%2Fcustomlink%2Foasession%2Fgo.html%3Fhttps%3A%2F%2Fgo.openathens.net%2Fredirector%2Fubp.edu.ar%3Furl%3Dhttps%253A%252F%252Finformacionlegal.com.ar%252Fmaf%252Fapp%252Fauthentication%252Fsignon%253Fsp%253DFDPL-2" target="_blank"
+            class="btn btn-warning mt-2">Sistema de Información Legal</a>
+        <a href="https://search.ebscohost.com/login.aspx?authtype=shib&custid=s1183051&groupid=main&profile=ehost" target="_blank" class="btn btn-primary mt-2">EBSCO Host</a>
+        <a href="https://www.ubp.edu.ar/biblioteca/tutoriales/" target="_blank" class="btn btn-success mt-2 float-right">tutoriales</a>
+    </div>
+    <!--Boostrap  script-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

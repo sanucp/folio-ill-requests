@@ -1,0 +1,42 @@
+<?php
+header("Access-Control-Allow-Origin: *");
+header('Content-type: application/json');
+$numerito = $_POST["id"];
+$url1 =  $_POST["int"];
+$url2 =  $_POST["res"];
+$rec = $_POST["rec"];
+$url = $url1.$numerito.$url2;
+//echo ($url);
+$ch = curl_init();
+$res= curl_setopt ($ch, CURLOPT_URL, $url);
+curl_setopt ($ch, CURLOPT_HEADER, 0);
+curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
+$result = curl_exec ($ch);
+//print_r ($result);
+$campo = 'http://unisabana.hosted.exlibrisgroup.com:80/F?func=service&amp;';
+$campo_fin = '</marc:subfield>';
+$pos = strpos($result, $campo);
+$uno = substr($result, $pos);
+$pos2 =strpos($uno, $campo_fin);
+$dos = substr($uno, 0, $pos2);
+$dos = str_ireplace("&amp;", "&", $dos);
+//echo ($dos).'<br />';
+$res= curl_setopt ($ch, CURLOPT_URL, $dos);
+curl_setopt ($ch, CURLOPT_HEADER, 0);
+curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
+$result2 = curl_exec ($ch);
+$inicio = "location=";
+$fin = '">';
+$pos_inicio = strpos($result2, $inicio);
+$imagen1 = substr($result2, $pos_inicio+10);
+$pos_fin = strpos($imagen1, $fin);
+$imagen = "http://unisabana.hosted.exlibrisgroup.com".substr($imagen1, 0, $pos_fin);
+if ($imagen == "http://unisabana.hosted.exlibrisgroup.com") $imagen = "";
+curl_close ($ch);
+//echo ($imagen);
+$respuesta = new stdClass();
+$respuesta->url_img = $imagen;
+$respuesta->registro = $rec;
+echo json_encode($respuesta);
+
+?>

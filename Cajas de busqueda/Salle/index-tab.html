@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Universidad de la Salle</title>
+    <link
+      rel="stylesheet"
+      href="http://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script
+      src="http://support.ebscohost.com/eit/scripts/ebscohostsearch.js"
+      type="text/javascript"
+    ></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+    <script>
+      $(function() {
+        $("#tabs").tabs();
+      });
+      $(function() {
+        $(document).tooltip();
+      });
+
+      function ebscoHostSearchOther(form, buff) {
+        var ebscohostsearchtext = chkObject(form.ebscohostsearchtext, "");
+        var ebscohostkeywords = chkObject(form.ebscohostkeywords, "");
+        var ebscohostsearchsrc = chkObject(form.ebscohostsearchsrc, "");
+        var ebscohostsearchmode = chkObject(
+          form.ebscohostsearchmode,
+          "\+AND\+"
+        );
+        var ebscohostwindow = parseInt(chkObject(form.ebscohostwindow, 0));
+        var ebscohosturl = chkObject(
+          form.ebscohosturl,
+          "http://search.ebscohost.com/login.aspx?"
+        );
+        var strAlert = "";
+
+        ebscohostsearchtext = encodeURI(ebscohostsearchtext);
+
+        if (ebscohostsearchtext == "")
+          strAlert += "Please enter search term(s).\n";
+
+        if (strAlert !== "") {
+          alert(strAlert);
+          return false;
+        }
+
+        //var searchFieldSelector =form["searchFieldSelector"].value;
+        var searchFieldSelector = "";
+        ebscohosturl +=
+          "&bquery=" +
+          searchFieldSelector +
+          "+(" +
+          ebscohostkeywords +
+          ebscoHostSearchParse(ebscohostsearchtext, ebscohostsearchmode) +
+          ")";
+
+        if (ebscohostwindow) window.open(ebscohosturl, "EBSCOhost");
+        else window.location = ebscohosturl;
+
+        return false;
+      }
+
+      function searchRepo() {
+        var text1 = document.getElementById("repoSearch").value;
+        var enco = encodeURI(text1);
+        if (text1 != "") {
+          var rev1 = document.getElementsByName("searchFieldSelectorRep");
+          var url = "";
+          if (rev1[0].checked == true) {
+            url =
+              "http://repository.lasalle.edu.co/discover?scope=%2F&" +
+              "query=" +
+              enco +
+              "&submit=Ir";
+          }
+          if (rev1[1].checked == true) {
+            url =
+              "http://repository.lasalle.edu.co/browse?type=title&sort_by=1&order=ASC&rpp=20&etal=-1&starts_with=" +
+              enco;
+          }
+          if (rev1[2].checked == true) {
+            url =
+              "http://repository.lasalle.edu.co/browse?type=author&order=ASC&rpp=20&starts_with=" +
+              enco;
+          }
+          window.open(url);
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="contenido">
+      <div id="tabs">
+        <ul>
+          <li>
+            <a
+              href="#tabs-1"
+              title="Buscará en todos los recursos (Libros o bases de datos) adquiridos por la Universidad"
+              >Todos los recursos</a
+            >
+          </li>
+          <li>
+            <a
+              href="#tabs-2"
+              title="Buscará (por título o ISBN) las revistas científicas  suscritas por la  Universidad"
+              >Listado de revistas</a
+            >
+          </li>
+          <li>
+            <a
+              href="#tabs-3"
+              title="Buscará directamente en el catálogo de la Universidad (los resultados se mostrarán en el catálogo SIBBILA)"
+              >Catálogo SIBBILA</a
+            >
+          </li>
+          <li>
+            <a
+              href="#tabs-4"
+              title="Buscará directamente  en el repositorio institucional  Ciencia Unisalle, encontrará trabajos de grado de pregrado y  especialización, tesis de maestría y doctorado y Revistas Unisalle "
+              >Ciencia Unisalle</a
+            >
+          </li>
+          <li>
+            <a
+              href="#tabs-1"
+              title="Será direccionado al listado de las bases de datos suscritas por la Universidad"
+              onclick="window.open('https://www.lasalle.edu.co/biblioteca/recursos-de-la-informacion')"
+              >Bases de datos</a
+            >
+          </li>
+          <li>
+            <a
+              href="#tabs-1"
+              onclick="window.open ('https://www.lasalle.edu.co/biblioteca/recursos-de-la-informacion/tutoriales-recursos-electronicos')"
+              >Tutoriales Recursos Electrónicos</a
+            >
+          </li>
+        </ul>
+        <div id="tabs-1">
+          <form
+            class="ebscohostCustomSearchBox"
+            action=""
+            onsubmit="return ebscoHostSearchGo(this);"
+            method="post"
+            style="overflow:hidden;"
+          >
+            <input
+              id="ebscohostwindow"
+              name="ebscohostwindow"
+              type="hidden"
+              value="1"
+            />
+            <input
+              id="ebscohosturl"
+              name="ebscohosturl"
+              type="hidden"
+              value="http://search.ebscohost.com/login.aspx?direct=true&scope=site&type=0&site=eds-live&custid=s9800254&groupid=main&profid=eds&lang=es&authtype=ip,guest"
+            />
+            <input
+              id="ebscohostsearchsrc"
+              name="ebscohostsearchsrc"
+              type="hidden"
+              value="db"
+            />
+            <input
+              id="ebscohostsearchmode"
+              name="ebscohostsearchmode"
+              type="hidden"
+              value="+"
+            />
+            <input
+              id="ebscohostkeywords"
+              name="ebscohostkeywords"
+              type="hidden"
+              value=""
+            />
+            <div>
+              <input
+                id="ebscohostsearchtext"
+                class="busqueda"
+                name="ebscohostsearchtext"
+                type="text"
+                size="50"
+              />
+              <input
+                type="submit"
+                value="Buscar"
+                class="ebscohost-search-button "
+              />
+              <div id="guidedFieldSelectors">
+                <input
+                  class="radio"
+                  type="radio"
+                  name="searchFieldSelector"
+                  id="guidedField_0"
+                  value=""
+                  checked="checked"
+                />
+                <label class="label" for="guidedField_0">Palabras Clave</label>
+                <input
+                  class="radio"
+                  type="radio"
+                  name="searchFieldSelector"
+                  id="guidedField_1"
+                  value="TI"
+                />
+                <label class="label" for="guidedField_1">Título</label>
+                <input
+                  class="radio"
+                  type="radio"
+                  name="searchFieldSelector"
+                  id="guidedField_2"
+                  value="AU"
+                />
+                <label class="label" for="guidedField_2">Autor</label>
+              </div>
+            </div>
+            <div id="limiterblock" style="display:none;">
+              <div id="limitertitle">Limit Your Results</div>
+
+              <div class="limiter" style="display:none;">
+                <input
+                  type="checkbox"
+                  id="chkFullText"
+                  name="chkFullText"
+                  checked="checked"
+                />
+                <label for="chkFullText">Full Text</label>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div id="tabs-2">
+          <form
+            id="sbPeriodici"
+            action=""
+            onsubmit="return ebscoHostSearchOther(this);"
+            method="post"
+          >
+            <input
+              id="ebscohostwindow"
+              name="ebscohostwindow"
+              type="hidden"
+              value="1"
+            />
+            <input
+              id="ebscohosturl"
+              name="ebscohosturl"
+              type="hidden"
+              value="http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&type=44&db=edspub&custid=s9800254&amp;groupid=main&amp;profid=eds&amp;mode=bool&amp;lang=es&amp;authtype=ip,guest"
+            />
+            <input
+              id="ebscohostsearchsrc"
+              name="ebscohostsearchsrc"
+              type="hidden"
+              value="db"
+            />
+            <input
+              id="ebscohostsearchmode"
+              name="ebscohostsearchmode"
+              type="hidden"
+              value="+"
+            />
+            <input
+              id="ebscohostkeywords"
+              name="ebscohostkeywords"
+              type="hidden"
+              value=""
+            />
+            <input
+              id="ebscohostsearchtext"
+              class="busqueda"
+              name="ebscohostsearchtext"
+              type="text"
+              size="50"
+              placeholder="Escribe un título o número de ISSN"
+            />
+            <input
+              type="submit"
+              value="Buscar"
+              class="ebscohost-search-button "
+            />
+          </form>
+        </div>
+        <div id="tabs-3">
+          <form
+            action="http://sibbila.lasalle.edu.co/janium-bin/janium_login_opac.pl?scan"
+            method="post"
+            onsubmit="return buscaJanium(this,'');"
+          >
+            <input name="titulo" class="busqueda" size="50" type="text" />
+            <button class="ebscohost-search-button ">Buscar</button>
+            <br />
+            <div id="selectores">
+              <input
+                name="janiumFieldSelector"
+                type="radio"
+                value="keyword"
+                id="keyword"
+                checked="checked"
+              />
+              <label for="keyword">Palabras Clave</label>
+              <input
+                name="janiumFieldSelector"
+                type="radio"
+                value="titulo"
+                id="title"
+              />
+              <label for="title">Título</label>
+              <input
+                name="janiumFieldSelector"
+                type="radio"
+                value="autor"
+                id="author"
+              />
+              <label for="author">Autor</label>
+            </div>
+          </form>
+        </div>
+        <script>
+          function buscaJanium(form, formato) {
+            var janiumsearchtext = form.titulo.value;
+            if (janiumsearchtext != "") {
+              var janiumselector = form["janiumFieldSelector"].value;
+              //var janiumselector = "keyword";
+              var janiumsearchurl =
+                "http://sibbila.lasalle.edu.co/janium-bin/janium_login_opac.pl?scan&formato=" +
+                formato;
+              janiumsearchtext = encodeURI(janiumsearchtext);
+              janiumsearchurl += "&" + janiumselector + "=" + janiumsearchtext;
+              window.open(janiumsearchurl, "colmichWindow");
+            } else alert("Por favor, ingrese un t&eacute;rmino para buscar.");
+            return false;
+          }
+        </script>
+        <div id="tabs-4">
+          <form id="sbPeriodici">
+            <input
+              id="repoSearch"
+              class="busqueda"
+              name="ebscohostsearchtext"
+              type="text"
+              size="50"
+            />
+            <button onclick="searchRepo()" class="ebscohost-search-button ">
+              Buscar
+            </button>
+            <div id="guidedFieldSelectors">
+              <input
+                type="radio"
+                name="searchFieldSelectorRep"
+                value="1"
+                checked="checked"
+              />
+              <label>Palabras Clave</label>
+              <input type="radio" name="searchFieldSelectorRep" value="2" />
+              <label>Título</label>
+              <input type="radio" name="searchFieldSelectorRep" value="3" />
+              <label>Autor</label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

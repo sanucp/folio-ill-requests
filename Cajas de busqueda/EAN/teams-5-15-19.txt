@@ -1,0 +1,4 @@
+GILS Lite: -- reservas (ya permiten, traducir texto)
+-- No mostrar ejemplares que "dañados" o con estado alterados (solucionado)
+-- Visualización por sedes (ya que solo se cuenta con una sede) cambiar el orden de "ubicación" por "clasificacion"
+-- 

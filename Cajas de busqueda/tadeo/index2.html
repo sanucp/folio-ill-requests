@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+		<script src="http://support.ebscohost.com/eit/scripts/ebscohostsearch.js" type="text/javascript"></script>
+		<script>
+		$(function() {
+			$( "#tabs" ).tabs();
+		});
+function ebscoPubFinderSearch(myForm) {
+var resourcetype = document.querySelector('input[name="resourcetypes"]:checked').value;
+    myForm.bquery.value =  myForm.uquery.value;
+      if (resourcetype == "book"){
+           myForm.bquery.value += ' AND (PT book OR PT ebook)';
+      } else {
+                myForm.bquery.value += '';
+     }
+}
+		function searchCatalog() {
+			var text1 = document.getElementById("catalogsearch").value;
+			if (text1 != ''){
+			var rev1 = document.getElementsByName("searchFieldSelectorCat");
+			var url = '';
+			if (rev1[0].checked == true) { url = "http://unicornio.utadeo.edu.co/uhtbin/cgisirsi/x/0/0/5?" + "searchdata1=" + text1 ; }
+			if (rev1[1].checked == true) { url = "http://unicornio.utadeo.edu.co/uhtbin/cgisirsi/x/0/0/5?" + "searchdata1=" + text1 + "&srchfield1=TI^TITLE^^Title Processing^title" ; }
+			if (rev1[2].checked == true) { url = "http://unicornio.utadeo.edu.co/uhtbin/cgisirsi/x/0/0/5?" + "searchdata1=" + text1 + "&srchfield1=AU^AUTHOR^^Author Processing^author" ; }
+			window.open (url);}
+		}
+
+function ebscoHostSearchRI(form, buff) {
+    var ebscohostsearchtext = chkObject(form.ebscohostsearchtext,'');
+      var ebscohostkeywords = chkObject(form.ebscohostkeywords,'');
+      var ebscohostsearchsrc = chkObject(form.ebscohostsearchsrc,'');
+      var ebscohostsearchmode = chkObject(form.ebscohostsearchmode,'\+AND\+');
+      var ebscohostwindow = parseInt(chkObject(form.ebscohostwindow,0));
+      var ebscohosturl = chkObject(form.ebscohosturl,'http://search.ebscohost.com/login.aspx?');
+     var isDMP = ebscohosturl.indexOf('dynamed') > -1;
+      var bquery = "bquery";
+      if (isDMP){
+          bquery = "q";
+      }
+
+      var strAlert="";
+     /* [7.5.2017]  Updated below to encodeURIComponent to allow for # wildcard to work in Permalink */
+         ebscohostsearchtext = encodeURIComponent(ebscohostsearchtext);
+
+      if (ebscohosturl.indexOf('eds-live') == -1 && ebscohosturl.indexOf('pfi-live') === -1) {
+              if (ebscohostsearchsrc == "db" || ebscohostsearchsrc == "dbgroup") {
+                   var ebscohostdatabases = getSelectedDatabases(form.cbs,ebscohostsearchsrc);
+               if (ebscohostdatabases==-1)
+                   strAlert+="Please select one or more databases.\n";
+
+               ebscohosturl+=ebscohostdatabases;
+              }
+         }
+
+      if (ebscohostsearchtext=="")
+              strAlert+="Please enter search term(s).\n";
+
+      if (strAlert !== "") {
+          alert(strAlert);
+         return false;
+      }
+
+      var cbFT = document.getElementById("chkFullText");
+      var matches=ebscohosturl.match(/cli[0-9]/g);
+      var index = (matches===null)?0:matches.length;
+
+      if (!_isEmpty(cbFT) && cbFT.checked) {
+         ebscohosturl	+= "&cli"+index+"=FT&clv"+index+"=Y";
+         index++;
+      }
+
+      //[a.hazen 7.5.2017] Add IR to EDS
+           var cbIRO = document.getElementById("chekIROnly");
+
+      if (!_isEmpty(cbIRO) && cbIRO.checked) {
+          ebscohosturl+= "&cli"+index+"=FC1&clv"+index+"=Y";
+          index++;
+      }
+
+         try {
+             ebscoAddDisciplines();
+         }
+     catch (e) {
+         debugger;
+         }
+
+
+
+     if (ebscohostkeywords!="")
+         ebscohostkeywords=ebscoHostSearchParse(ebscohostkeywords,ebscohostsearchmode)+'\+AND\+';
+
+     var keywordSelector = document.getElementById("guidedField_0");
+     var titleSelector = document.getElementById("guidedField_1");
+     var authorSelector = document.getElementById("guidedField_2");
+
+     if(!_isEmpty(authorSelector) && authorSelector.checked) {
+         ebscohosturl+= '&bquery=AU+('+ebscohostkeywords+ebscoHostSearchParse(ebscohostsearchtext,ebscohostsearchmode)+')';
+     } else if(!_isEmpty(titleSelector) && titleSelector.checked) {
+         ebscohosturl+= '&bquery=TI+('+ebscohostkeywords+ebscoHostSearchParse(ebscohostsearchtext,ebscohostsearchmode)+')';
+     } else {
+         ebscohosturl += '&'+bquery+'='+ebscohostkeywords+ebscoHostSearchParse(ebscohostsearchtext,ebscohostsearchmode);
+     }
+
+     if (ebscohostwindow)
+         window.open(ebscohosturl, 'EBSCOhost');
+     else
+         window.location = ebscohosturl;
+
+     return false;
+ }
+		</script>
+		
+	</head>
+	<body>
+	<div id="content">
+		<div id="tabs">
+			<ul>
+				<li><a href="#tabs-1">Mega Buscador</a></li>
+				<li><a href="#tabs-2">Libros Electronicos</a></li>
+				<li><a href="#tabs-3">Catalogo</a></li>
+				<li><a href="#tabs-4">Repositorio</a></li>
+			</ul>
+			<div id="tabs-1">
+				<form class="search-form" onsubmit="return ebscoHostSearchGo(this);" action="" method="post">
+						<input id="ebscohostwindow" type="hidden" name="ebscohostwindow" value="1">
+						<input id="ebscohosturl" type="hidden" name="ebscohosturl" value="http://search.ebscohost.com/login.aspx?direct=true&amp;site=eds-live&amp;scope=site&amp;type=0&amp;db=eda&amp;custid=s6026984&amp;groupid=main&amp;profid=eds&amp;mode=bool&amp;lang=es&amp;authtype=guest">
+						<input id="ebscohostsearchsrc" type="hidden" name="ebscohostsearchsrc" value="+">
+						<input id="ebscohostsearchmode" type="hidden" name="ebscohostsearchmode" value="db">
+						<input id="ebscohostkeywords" type="hidden" name="ebscohostkeywords" value="">
+						<input placeholder="Buscar" id="ebscohostsearchtext" type="text" name="ebscohostsearchtext" size="50">
+						<input type="submit" id="edit-submit" name="op" value="Buscar" class="ebscohost-search-button">
+						<br/>
+						<hr>
+						<br/>
+						<div id="guidedFieldSelectors">
+							<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_0" value="" checked="checked" />
+							<label class="label" for="guidedField_0"> Palabra clave</label>
+							<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_1" value="TI" />
+							<label class="label" for="guidedField_1"> Título</label>
+							<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_2" value="AU" />
+							<label class="label" for="guidedField_2"> Autor</label>
+						</div>
+				</form>
+			</div>
+    <div id = "tabs-2">
+<form class="webform-client-form" action="https://search.ebscohost.com/login.aspx" method="get" target="_blank" onsubmit="ebscoPubFinderSearch(this);">
+<!-- Dropdown menu to prepend the selected value below to the user's search term -->
+  
+<div class="webform-client-form"><input name="direct" value="true" type="hidden"><input name="scope" value="site" type="hidden"><input name="type" value="44" type="hidden"><input name="db" value="edspub" type="hidden"><input name="site" value="eds-live" type="hidden"><input name="profile" value="eds" type="hidden"><input name="authtype" value="ip,cookie,guest" type="hidden"><input name="custid" value="s6026984" type="hidden"><input name="groupid" value="main" type="hidden"></div>
+ 
+<!-- search box and submit button -->
+ 
+<input name="bquery" value="" type="hidden" /><input id="ebscohostsearchtext" name="uquery" size="50" type="text" />
+<input type="Submit" value="Search" class="ebscohost-search-button"/>
+<br/>
+						<hr>
+						<br/>
+<div class="webform-client-form" id="guidedFieldSelectors"><label for="resourcetypesall"><input type="radio" name="resourcetypes" value="all" id="resourcetypesall">All Resources</label>&nbsp;&nbsp;&nbsp;&nbsp;<label for="resourcetypesbook"><input type="radio" name="resourcetypes" value="book" id="resourcetypesbook" CHECKED>eBooks</label>
+</div>
+</form>
+    </div>
+			<div id="tabs-3" class="tabs-x">
+				<form id="sbCatalog">
+					<input id="catalogsearch" name="ebscohostsearchtext" type="text" size="50"  />
+					<button onclick="searchCatalog()" class="ebscohost-search-button">Buscar</button><br/>
+					<hr>
+					<br/>
+					<div id="guidedFieldSelectors">
+						<input type="radio" name="searchFieldSelectorCat" value="1" checked="checked" />
+						<label> Palabra clave</label>
+						<input type="radio" name="searchFieldSelectorCat" value="2" />
+						<label> Título</label>
+						<input type="radio" name="searchFieldSelectorCat" value="3" />
+						<label>Autor</label>
+					</div>
+				</form>
+			</div>
+			<div id="tabs-4" class="tabs-x">
+					<form class="ebscohostCustomSearchBox" action="" onsubmit="return ebscoHostSearchRI(this);" method="post" >
+							<input id="ebscohostwindow" name="ebscohostwindow" type="hidden" value="1" />
+							<input id="ebscohosturl" name="ebscohosturl" type="hidden" value="http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&type=0&custid=s6026984&groupid=main&profid=eds&lang=es&authtype=ip,guest" />
+							<input id="ebscohostsearchsrc" name="ebscohostsearchsrc" type="hidden" value="db" />
+							<input id="ebscohostsearchmode" name="ebscohostsearchmode" type="hidden" value="+" />
+							<input id="ebscohostkeywords" name="ebscohostkeywords" type="hidden" value="" />
+						
+							<div>
+								<div>
+									<div>
+										<input id="ebscohostsearchtext" class="busqueda" name="ebscohostsearchtext" type="text" size="50" />
+										<input type="submit" value="Buscar" class="ebscohost-search-button " />
+						
+										<div id="guidedFieldSelectors">
+											<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_0" value="" checked="checked" />
+											<label class="label" for="guidedField_0"> Palabras Clave</label>
+											<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_1" value="TI" />
+											<label class="label" for="guidedField_1"> Título</label>
+											<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_2" value="AU" />
+											<label class="label" for="guidedField_2"> Autor</label>
+										</div>
+										<div class="limiter" style="display:none;" >
+											<input type="checkbox" id="chekIROnly" name="chkIROnly" checked="checked"  />
+										</div>
+						
+									</div>
+								</div>
+							</div>
+						</form>
+			</div>
+		</div>
+	</div>
+	</body>
+</html>

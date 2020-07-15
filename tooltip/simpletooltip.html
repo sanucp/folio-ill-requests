@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="es-ES"> 
+<head profile="http://gmpg.org/xfn/11"> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<title>SsimpleTooltip - Demo</title> 
+<link rel="shortcut icon" href="http://www.seballero.com/favicon.ico" />
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+<script type="text/javascript" src="js/jquery.js"></script>
+ <script type="text/javascript">
+            $(document).ready(function() {
+							
+					  $("#tooltip1").mouseover(function(){
+						 eleOffset = $(this).offset();
+						  
+						$(this).next().fadeIn("fast").css({
+								
+									left: eleOffset.left + $(this).outerWidth(),
+									top: eleOffset.top
+
+								});
+						}).mouseout(function(){
+							$(this).next().hide();
+						});
+						
+						
+						
+						
+						$("#tooltip2").mouseover(function(){
+							$("#tooltip2").mousemove(function(e){
+								 $(this).next().css({left : e.pageX , top: e.pageY});
+							  });
+							eleOffset = $(this).offset();
+							$(this).next().fadeIn("fast").css({
+								
+									left: eleOffset.left + $(this).outerWidth(),
+									top: eleOffset.top
+
+								});
+						}).mouseout(function(){
+							$(this).next().fadeOut("fast");
+						});
+			
+			});		
+        </script>
+</head>
+
+
+<body id="demo">
+
+    <a id="tooltip1" href="#">Ejemplo básico de Tooltip</a><div class="tooltip">Contenido del Tooltip 1</div><br/>
+ <a id="tooltip2" href="#">Ejemplo básico de Tooltip con seguimiento</a><div class="tooltip-seg">Contenido del Tooltip 1</div><br/>
+    
+</body>
+</html>

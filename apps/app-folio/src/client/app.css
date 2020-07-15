@@ -1,0 +1,22 @@
+h1 {
+  color: green;
+}
+
+body {
+  margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.dropdown {
+  background-color: #343a40;
+}
+.dropdown:hover {
+  background-color: #095aab;
+}
+.dropdown-toggle {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+.dropdown-toggle:hover {
+  color: #fff;
+}

@@ -1,0 +1,82 @@
+<html>
+<head>
+<script src="http://support.ebscohost.com/eit/scripts/ebscohostsearch.js" type="text/javascript"></script>
+<style type="text/css">
+		.choose-db-list{ list-style-type:none;padding:0;margin:10px 0 0 0;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:9pt;width:392px; }
+		.choose-db-check{ width:20px;float:left;padding-left:5px;padding-top:5px; }
+		.choose-db-detail{ margin-left:30px;border-left:solid 1px #E7E7E7;padding:5px 11px 7px 11px;line-height:1.4em; }
+		.summary { background-color:#1D5DA7;color:#FFFFFF;border:solid 1px #1D5DA7; }
+		.one { background-color: #FFFFFF;border:solid 1px #E7E7E7;border-top:solid 1px #FFFFFF; }
+		.two { background-color: #F5F5F5;border:solid 1px #E7E7E7;border-top:solid 1px #FFFFFF; }
+		.selected { background-color: #E0EFF7;border:solid 1px #E7E7E7;border-top:solid 1px #FFFFFF; }
+		#ebscohostCustomSearchBox { border:solid 1px; border-radius:10px; font-family:arial;}
+		#ebscohostCustomSearchBox #disciplineBlock { width:auto; }
+		#ebscohostCustomSearchBox .limiter { float:left;margin:0;padding:0;width:50%; }
+		img {width:150px; float:left;}
+		
+		#ebscohostsearchtext { width: 200px; padding: 10px 15px; margin: 5px 0; box-sizing: border-box;border-radius:10px; -webkit-transition: width 0.4s ease-in-out; transition: width 0.4s ease-in-out; }
+		#ebscohostsearchtext:focus {width: 500px;}
+		#ebscohostsearchtext.edspub { width: 245px; }
+		
+		.ebscohost-search-button.edspub {
+			border: 1px solid #156619;
+			padding: 5px 10px !important;
+			border-radius: 3px;
+			color: #fff;
+			font-weight: bold;
+			background-color: #156619;
+		}
+		
+		.ebscohost-title.edspub {
+			color: #1c7020;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<form id="ebscohostCustomSearchBox" action="" onsubmit="return ebscoHostSearchGo(this);" method="post" style="width:900px; overflow:auto;">
+		<img src="https://www.icesi.edu.co/imgs/contenido/jpeg/logosimbolo_universidad_icesi.jpg" alt="logo" />
+		<input id="ebscohostwindow" name="ebscohostwindow" type="hidden" value="1" />
+		<input id="ebscohosturl" name="ebscohosturl" type="hidden" value="http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&type=0&custid=s4499722&groupid=main&profid=eds&mode=bool&lang=en&authtype=ip,guest" />
+		<input id="ebscohostsearchsrc" name="ebscohostsearchsrc" type="hidden" value="db" />
+		<input id="ebscohostsearchmode" name="ebscohostsearchmode" type="hidden" value="+" />
+		<input id="ebscohostkeywords" name="ebscohostkeywords" type="hidden" value="" />
+		
+		<div style="height:90px; width:800px; font-family:Verdana,Arial,Helvetica,sans-serif;font-size:9pt; color:#353535;">
+			<div style="padding-top:5px;padding-left:167px;">
+				<span class="ebscohost-title " style="font-weight:bold;">SYRI Biblioteca</span>
+
+				<div>
+					<input id="ebscohostsearchtext" class="" name="ebscohostsearchtext" type="text" size="25"  style="font-size:12pt;padding-left:5px;margin-left:0px;"  />
+					<input type="submit" value="Buscar" class="ebscohost-search-button " style="font-size:17pt; color:white; background-color:#114283; border-radius: 6px; border: none;" />
+					
+					<div id="guidedFieldSelectors">
+						<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_0" value="" checked="checked" />
+						<label class="label" for="guidedField_0"> Keyword</label>
+						<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_1" value="TI" />
+						<label class="label" for="guidedField_1"> Title</label>
+						<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_2" value="AU" />
+						<label class="label" for="guidedField_2"> Author</label>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
+		<div id="limiterblock" style="margin-left:-px; overflow: auto; ">
+			<div id="limitertitle" style="font-weight:bold;padding-top:25px;padding-bottom:5px;color:#114283;">Limita los Resultados</div>
+			
+			<div class="limiter" >
+				<input type="checkbox" id="chkFullText" name="chkFullText" checked="checked" />
+				<label for="chkFullText">Texto Completo</label>
+			</div>
+						
+			<div class="limiter" >
+				<input type="checkbox" id="chkCatalogOnly" name="chkCatalogOnly" />
+				<label for="chkCatalogOnly">Solo en el Catalogo</label>
+			</div>
+			
+		</div>
+	</form>
+</body>
+</html>

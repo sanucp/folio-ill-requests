@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>UMBuscador</title>
+    <script src="https://support.ebscohost.com/eit/scripts/ebscohostsearch.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+    <script>
+    $(function () {
+    	$("#tabs").tabs();
+    });
+    function cambio() {
+    		if (
+    				document.getElementById("autor").selected == true
+    		) {
+    				document.getElementById("guidedField_2").checked = true;
+    		}
+    		if (
+    				document.getElementById("titulo").selected == true
+    		) {
+    				document.getElementById("guidedField_1").checked = true;
+    		}
+    }
+    </script>
+    <style>
+    #contenido{
+      width: 70%;
+      margin: auto;
+    }
+    .ui-widget-content{
+      border: none;
+    }
+    .ui-tabs .ui-tabs-nav li{
+      border: none;
+      background:#ff1711;
+      color:#fff !important;
+    }
+    .ui-tabs-nav{
+      background: none;
+      border: none;
+    }
+    .ui-tabs .ui-tabs-nav li.ui-tabs-active{
+      background: #cc0000;
+    }
+    .ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited{
+    		color:#fff !important;
+    }
+    .ui-tabs .ui-tabs-nav .ui-tabs-anchor{
+      color: #fff;
+    }
+    .selector{
+      padding: 10px;
+      position: relative;
+      top:-10px;
+      left:-20px;
+    }
+    .busqueda{
+      padding: 10px;
+      position: relative;
+      top:-10px;
+      left:-20px;
+    }
+    .EDSBbutton{
+      color:#fff;
+      background: #0087bf;
+      padding: 10px;
+      position: relative;
+      top:-10px;
+      left:-20px;
+      border: none;
+      cursor: pointer;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="contenido">
+      <div id="tabs">
+        <ul id="menu">
+          <li><a href="#tabs-1">UMBuscador</a></li>
+          <li><a href="#tabs-1" onclick="window.open('http://umb.edu.co/recursos/base-de-datos/base-de-datos-por-suscripcion.html')">Bases de Datos</a></li>
+          <li><a href="#tabs-3">Catálogo Material Impreso</a></li>
+        </ul>
+        <div id="tabs-1">
+          <form id="ebscohostCustomSearchBox" action="" onsubmit="return ebscoHostSearchGo(this);" method="post">
+          	<input id="ebscohostwindow" name="ebscohostwindow" type="hidden" value="1" />
+          	<input id="ebscohosturl" name="ebscohosturl" type="hidden" value="http://proxy.umb.edu.co/login?url=http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&type=0&custid=s4892549&groupid=main&profid=eds&mode=all&lang=es&authtype=ip" />
+          	<input id="ebscohostsearchsrc" name="ebscohostsearchsrc" type="hidden" value="db" />
+          	<input id="ebscohostsearchmode" name="ebscohostsearchmode" type="hidden" value="+" />
+          	<input id="ebscohostkeywords" name="ebscohostkeywords" type="hidden" value="" />
+          	<div>
+          		<div>
+                <select name="Campos" id="selectores" onchange="cambio()" class="selector">
+        					<option value="" id="clave">Palabras Clave</option>
+        					<option value="AU" id="autor">Autor</option>
+        					<option value="TI" id="titulo">Titulo</option>
+        				</select>
+        				<div id="guidedFieldSelectors" style="display:none;">
+        						<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_0" value="" checked="checked" />
+        						<label class="label" for="guidedField_0"> Todos los campos</label>
+        						<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_1" value="TI" />
+        						<label class="label" for="guidedField_1"> Titulo</label>
+        						<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_2" value="AU" />
+        						<label class="label" for="guidedField_2"> Autor</label>
+        				</div>
+          		<input id="ebscohostsearchtext" class="busqueda" name="ebscohostsearchtext" type="text" size="50"  />
+          		<button class="EDSBbutton">Buscar</button><br/>
+          		</div>
+          	</div>
+          </form>
+        </div>
+        <div id="tabs-3">
+          <form id="sbCatalog">
+              <select name="Campos" id="Campos" class="selector">
+                  <option value="" >Palabras Clave</option>
+                  <option value="AU" >Autor</option>
+                  <option value="TI" >Titulo</option>
+              </select>
+              <input id="catalogsearch" name="ebscohostsearchtext" class="busqueda" type="text" size="50" placeholder="Busca en el catalogo..." />
+              <button class="EDSBbutton" onclick="searchCatalog()">Buscar</button>
+
+          </form>
+        </div>
+        <script>
+            function searchCatalog() {
+                var text1 = document.getElementById("catalogsearch").value;
+                var res = escape(text1);
+                if (res != '') {
+                    var rev1 = document.getElementById("Campos").value;
+                    var url = '';
+                    if (rev1 == "") {
+                        url = "http://unicornio.umb.edu.co/uhtbin/cgisirsi.exe/x/0/0/5/?" + "searchdata1=" + res;
+                    }
+                    if (rev1 == "TI") {
+                        url = "http://unicornio.umb.edu.co/uhtbin/cgisirsi.exe/x/0/0/5/?" + "searchdata1=" + res + "&srchfield1=TI^TITLE^^Title Processing^title";
+                    }
+                    if (rev1 == "AU") {
+                        url = "http://unicornio.umb.edu.co/uhtbin/cgisirsi.exe/x/0/0/5/?" + "searchdata1=" + res + "&srchfield1=AU^AUTHOR^^Author Processing^author";
+                    }
+                    window.open(url);
+                }
+            }
+        </script>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1" />
+	<script src="https://support.ebscohost.com/eit/scripts/ebscohostsearch.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="https://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+	<script>
+		$(function () {
+			$("#tabs").tabs();
+		});
+
+		function searchRepo() {
+			var text1 = document.getElementById("repoSearch").value;
+			var enco = encodeURI(text1);
+			if (text1 != '') {
+				var rev1 = document.getElementsByName("searchFieldSelectorRep");
+				var url = '';
+				if (rev1[0].checked == true) {
+					url = "https://repository.javeriana.edu.co/discover?scope=%2F&" + "query=" + enco + "&submit=Ir";
+				}
+				if (rev1[1].checked == true) {
+					url =
+						"https://repository.javeriana.edu.co/browse?type=title&sort_by=1&order=ASC&rpp=20&etal=-1&starts_with=" +
+						enco;
+				}
+				if (rev1[2].checked == true) {
+					url = "https://repository.javeriana.edu.co/browse?type=author&order=ASC&rpp=20&starts_with=" + enco;
+				}
+				window.open(url);
+			}
+		}
+	</script>
+	<link href="https://fonts.googleapis.com/css?family=Asap:400,500,600" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+
+<body>
+	<div id="contenido">
+		<div id="tabs">
+			<ul>
+				<li><a href="#tabs-1">B&#250;squeda <span class="fntMed">Integrada</span></a></li>
+				<li><a href="#tabs-3">Repositorio <span class="fntMed">Institucional</span></a></li>
+				<li><a href="#tabs-2">Cat&#225;logo <span class="fntMed">Biblos</span></a></li>
+			</ul>
+			<div id="tabs-1">
+				<form id="ebscohostCustomSearchBox" action="" onsubmit="return ebscoHostSearchGo(this);" method="post">
+					<input id="ebscohostwindow" name="ebscohostwindow" type="hidden" value="1" />
+					<input id="ebscohosturl" name="ebscohosturl" type="hidden"
+						value="http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&type=0&custid=s6670599&groupid=main&profid=eds&mode=all&lang=es&authtype=guest" />
+					<input id="ebscohostsearchsrc" name="ebscohostsearchsrc" type="hidden" value="db" />
+					<input id="ebscohostsearchmode" name="ebscohostsearchmode" type="hidden" value="+" />
+					<input id="ebscohostkeywords" name="ebscohostkeywords" type="hidden" value="" />
+					<div>
+						<div>
+							<input id="ebscohostsearchtext" class="busqueda" name="ebscohostsearchtext" type="text"
+								size="50" />
+							<button class="EDSBbutton">Buscar</button><br />
+							<span class="mensaje"><i>Busque libros, revistas, art&#237culos, tesis y m&#225;s en
+									Cat&#225;logo Biblos, Repositorio institucional y Bases de datos</i></span>
+							<br />
+							<br />
+							<a class="link"
+								href="http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&type=1&custid=s6670599&groupid=main&profid=eds&mode=all&lang=es&authtype=guest"
+								target="_blank"><i>B&#250;squeda Avanzada</i></a>
+							<div>
+								<div id="guidedFieldSelectors">
+									<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_0"
+										value="" checked="checked" />
+									<label class="label" for="guidedField_0"> Palabra Clave</label>
+									<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_1"
+										value="TI" />
+									<label class="label" for="guidedField_1"> T&#237;tulo</label>
+									<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_2"
+										value="AU" />
+									<label class="label" for="guidedField_2"> Autor</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<br />
+					<div id="limiterblock">
+						<div id="limitertitle"><span class="fntMed">Limita tus resultados</span></div>
+						<div class="limiter">
+							<input type="checkbox" id="chkFullText" name="chkFullText" />
+							<label class="limiter1" for="chkFullText">Texto completo</label>
+						</div>
+						<div class="limiter" hidden="hidden">
+							<input type="checkbox" id="chkCatalogOnly" name="chkCatalogOnly" />
+							<label class="limiter1" for="chkCatalogOnly">Solo Cat&#225;logo</label>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div id="tabs-2">
+				<form style="margin-bottom: 0px;" action="https://biblos.javeriana.edu.co/uhtbin/cgisirsi/X/0/0/123/"
+					method="post" name="searchform" target="_blank">
+					<input type="text" name="searchdata1" value="" class="busqueda" size="33" maxlength="255" />
+					<input style="margin-bottom: 11px;" class="EDSBbutton" type="submit" value="Buscar" />
+					<a class="link"
+						href="https://biblos.javeriana.edu.co/uhtbin/cgisirsi/x/SIRSI/0/57/60/495/X?user_id=WEBSERVER"
+						target="_blank"><i>B&#250;squeda Avanzada</i></a>
+					<br />
+					<br />
+					<div id="guidedFieldSelectors" class="abajo">
+						<input name="srchfield1" type="radio" value="GENERAL^SUBJECT^GENERAL^^palabra clave" id="radio1"
+							checked="checked">
+						<label for="radio1"> Palabra Clave</label>
+						<input name="srchfield1" type="radio" value="AU^AUTHOR^AUTHORS^Author Processing^autor"
+							id="radio2">
+						<label for="radio2"> Autor</label>
+						<input name="srchfield1" type="radio" value="TI^TITLE^TITLES^Title Processing^título"
+							id="radio3">
+						<label for="radio3"> T&#237;tulo</label>
+						<input name="srchfield1" type="radio" value="SU^SUBJECT^SUBJECTS^^tema" id="radio4">
+						<label for="radio4"> Tema</label>
+					</div>
+					&nbsp;
+					<input type="hidden" name="library" value="ALL" />
+					<input type="hidden" name="sort_by" value="-PBYR" />
+				</form>
+			</div>
+			<div id="tabs-3">
+				<form id="sbPeriodici">
+					<input id="repoSearch" class="busqueda" name="ebscohostsearchtext" type="text" size="50" />
+					<button onclick="searchRepo()" class="EDSBbutton">Buscar</button><br />
+					<br />
+					<br />
+					<div id="guidedFieldSelectors">
+						<input type="radio" name="searchFieldSelectorRep" value="1" checked="checked" />
+						<label> Palabra Clave</label>
+						<input type="radio" name="searchFieldSelectorRep" value="2" />
+						<label> T&#237;tulo</label>
+						<input type="radio" name="searchFieldSelectorRep" value="3" />
+						<label>Autor</label>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<br />
+	<div id="navegadores">Para el adecuado funcionamiento se recomienda utilizar <b>Chrome, Safari</b> o <b>Firefox.</b>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+Universidad de los Lagos (13-01-2020)
+s8034062
+
+Estaba presente con Lidiette y Carolina:
+
+reunión Solicitada para poder resolver algunas dudas sobre el modulo de administración de EDS, se realizo una explicación de como se realizan los reportes y como se interpretan los mismos; ademas de esto se realizo una explicación general sobre el modulo de administración y sobre el uso de EDS en general; se hablo de Open Athens y Curriculum Builder, y sobre algunas mejoras para el perfil de EDS.
+
+EDS: -Inducción de EADMIN
+  -Modulo de reportes (tienen un proceso de acreditación en 2020)
+    *Counter
+    *reportes de uso
+    *reportes de analisis
+    *FTF
+  -Filtros
+  -APP
+  -Catalogo
+OA: -Que es
+CB: -Que es
+
+Por hacer:
+ -APP de Zotero (realizado)
+ -Filtro de HTML (realizado)
+ -Programar reunión para OA
+ -Enviar formato para suscripciones
+ -Enviar lstado de Flipstep (ventas)
+ -preguntar si admin se puede dejar en español
+ -configuración del catalogo VTS (inovate)
+
+Hecho:
+ -quitar bases de datos venciadas
+ -activar paquetes de JSTOR
+ -ampliar sesión de EDS
+ -dejar en español interfaz de ehost

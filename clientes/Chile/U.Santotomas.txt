@@ -1,0 +1,26 @@
+Universidad Santo Tomas (16-01-2020)
+s4929850
+
+me encontraba presente con Alex:
+
+Reunión realizada durante la conferencia, se hablo con el director de la biblioteca ya que en el momento la universidad busca cambiar su sistema de manejo de bibliotecas y descubridor (en la actualidad tienen ALEPH y PRIMO), se busca incluirlos dentro del proyecto de FOLIO, en el momento la universidad suscribe EDS pero nunca se ha terminado de implementar, pero se busca un desarrollo con el API de EDS para permitir la conexión con un software creado por la universidad (RAC) para realizar comparaciónes y crear URL de busqueda dentro del sistema de cursos virtuales.
+
+EDS: -Catalogo (ALEPH)
+        *GILS Lite
+        *Etiqueta especial para RAC
+    -API
+        *XML
+    -Carga de suscripciones 
+        *Recursos de Proquest
+    -Branding
+    -Caja de busqueda
+
+FOLIO: -Bases de datos
+    -Reportes
+    -cursos
+    -Migración de datos
+Perpetua: -Conservación de información
+
+Por hacer: -Enviar información tecnica de FOLIO (Alex)
+    -reabrir implementación (Andres)
+    -Enviar formularios (Andres)

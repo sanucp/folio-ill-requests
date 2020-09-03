@@ -10,8 +10,13 @@
   "app.Email": "Correio eletrônico",
   "app.button": "Conecte-se",
   "bib.header": "Dados bibliográficos",
+  "bib.atittle": "título do artigo",
   "bib.tittle": "Título",
   "bib.aut": "Autor",
-  "bib.pub": "Tipo de publicação",
+  "bib.date": "Data de publicação",
+  "bib.volume": "Volume da publicação",
+  "bib.issue": "Número da publicação",
+  "bib.spage": "Página inicial",
+  "bib.pages": "Páginas",
   "bib.comments": "Comentários"
 }

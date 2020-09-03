@@ -1,0 +1,22 @@
+Universidad Alberto Hurtado (15-01-2020)
+s7063396
+
+Reunión realizada para ayudar con los casos de soporte que la universidad ha creado y no se han resuelto o no han tenido una clara solución,tambien se busca la reunión con la universidad ya que ellos se encuentran en el momento en la suscripción de ALMA y buscan compara EDS contra PRIMO (nos mencionaron que no han tenido ningun problema con EDS y se encuentran muy contentos, la comparación seria para ver como se recuperan los recursos de EBSCO en PRIMO).
+
+EDS: - Catalogo (en la actualidad tienen sirsi, van a migrar a ALMA)
+        *EDS con ALMA (recuperación por OAI-PMH)
+        *GILS Lite
+        *RTAC
+        +Se mostro la cuenta de la Sabana, se podrían enviar ejemplos de ALMA trabajando con EDS
+    -Estadisticas
+        *Explicacion de Estadisticas
+    -Problemas con Proxy y suscripciones externas
+
+FOLIO: -Explicación del proyecto    
+
+Por hacer: -Enviar información sobre ALMA con EDS (Andres)
+    -Información de GILS lite (Andres)
+    -Información de FOLIO (Andres/Alexander)
+
+Realizado en sitio: -configuración de App de Zotero
+    -Información de Configuración de EZProxy

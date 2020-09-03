@@ -1,7 +1,8 @@
 const axios = require("axios");
 const config = require("./config.json");
+const biblo = require("./biblio.json");
 
-/*function getToken() {
+function getToken() {
   const url = config["folio_url"] + "authn/login";
   const headers = {
     "Content-Type": "application/json",
@@ -39,13 +40,47 @@ const config = require("./config.json");
 
 async function ness() {
   let men;
+  const bibdata = {
+    source: "FOLIO",
+    title: biblo["title"],
+    contributors: [
+      {
+        name: biblo["author"],
+        contributorTypeId: "6e09d47d-95e2-4d8a-831b-f777b8ef6d81",
+        contributorNameTypeId: "2b94c631-fca9-4892-a730-03ee529ffe2a",
+        primary: true,
+      },
+    ],
+    identifiers: [
+      {
+        identifierTypeId: "8261054f-be78-422d-bd51-4ed9f33c3422",
+        value: biblo["ISBN"],
+      },
+    ],
+    instanceTypeId: "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
+    notes: [
+      {
+        instanceNoteTypeId: "6a2533a7-4de2-4e64-8466-074c2fa9308c",
+        note: biblo["coments"],
+        staffOnly: true,
+      },
+    ],
+    tags: {
+      tagList: ["ill-pending"],
+    },
+  };
+  //console.log(bibdata);
   return await getToken()
     .then(function (result) {
       men = result;
     })
     .then(function () {
       axios({
-        url: config["folio_url"] + "bl-users/by-username/sanucp",
+        url:
+          config["folio_url"] +
+          "inventory/instances?limit=30&query=keyword all '" +
+          biblo["ISBN"] +
+          "'",
         method: "get",
         headers: {
           "X-Okapi-Tenant": config["folio_tenandid"],
@@ -53,7 +88,22 @@ async function ness() {
         },
       })
         .then(function (res) {
-          console.log(res);
+          if (res.data.totalRecords != 0) {
+            console.log(res.data);
+          } else {
+            axios({
+              url: config["folio_url"] + "instance-storage/instances",
+              method: "post",
+              headers: {
+                "X-Okapi-Tenant": config["folio_tenandid"],
+                "X-Okapi-Token": men,
+                "Content-Type": "application/json",
+              },
+              data: bibdata,
+            }).then(function (response) {
+              console.log(response);
+            });
+          }
         })
         .catch(function (err) {
           console.log(err);
@@ -64,10 +114,4 @@ async function ness() {
     });
 }
 
-ness();*/
-
-var d = new Date();
-
-d.setDate(+4);
-
-console.log(d);
+ness();

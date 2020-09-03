@@ -10,25 +10,36 @@ class Biblo extends Component {
     super(props);
     this.state = {
       url: new URLSearchParams(window.location.search),
+      genre: "",
       tit: "",
       aut: "",
-      isbd: "",
+      isbn: "",
       issn: "",
       doi: "",
-      pubtype: "",
+      date: "",
       uri: "",
       coment: "",
       respo: "",
+      atit: "",
+      volume: "",
+      issue: "",
+      spage: "",
+      pages: "",
     };
   }
   componentWillMount() {
     this.setState({
-      tit: this.state.url.get("Title"),
-      aut: this.state.url.get("author"),
-      isbd: this.state.url.get("isbd"),
+      tit: this.state.url.get("title"),
+      atit: this.state.url.get("atitle"),
+      aut: this.state.url.get("aulast"),
+      isbn: this.state.url.get("isbn"),
       issn: this.state.url.get("issn"),
+      volume: this.state.url.get("volume"),
+      issue: this.state.url.get("issue"),
+      spage: this.state.url.get("spage"),
+      pages: this.state.url.get("pages"),
       doi: this.state.url.get("doi"),
-      pubtype: this.state.url.get("pubtype"),
+      date: this.state.url.get("date"),
       uri: this.state.url.get("uri"),
     });
   }
@@ -39,7 +50,7 @@ class Biblo extends Component {
 
   submitHandle = (event) => {
     event.preventDefault();
-    const i = this.state.isbd;
+    const i = this.state.isbn;
     const u = sessionStorage.getItem("user");
     const us = JSON.parse(u);
 
@@ -67,6 +78,14 @@ class Biblo extends Component {
               <Form onSubmit={this.submitHandle}>
                 <Form.Group>
                   <Form.Label>
+                    <FormattedMessage
+                      id="bib.atittle"
+                      defaultMessage="Titulo del articulo"
+                    />
+                    :
+                  </Form.Label>
+                  <Form.Control defaultValue={this.state.atit}></Form.Control>
+                  <Form.Label>
                     <FormattedMessage id="bib.tittle" defaultMessage="Titulo" />
                     :
                   </Form.Label>
@@ -76,21 +95,40 @@ class Biblo extends Component {
                   </Form.Label>
                   <Form.Control defaultValue={this.state.aut}></Form.Control>
                   <Form.Label>ISBN: </Form.Label>
-                  <Form.Control defaultValue={this.state.isbd}></Form.Control>
+                  <Form.Control defaultValue={this.state.isbn}></Form.Control>
                   <Form.Label>ISSN: </Form.Label>
                   <Form.Control defaultValue={this.state.issn}></Form.Control>
                   <Form.Label>DOI: </Form.Label>
                   <Form.Control defaultValue={this.state.doi}></Form.Control>
                   <Form.Label>
+                    <FormattedMessage id="bib.date" defaultMessage="Fecha" />:{" "}
+                  </Form.Label>
+                  <Form.Control defaultValue={this.state.date}></Form.Control>
+                  <Form.Label>
                     <FormattedMessage
-                      id="bib.pub"
-                      defaultMessage="Tipo de Publicación"
+                      id="bib.volume"
+                      defaultMessage="Volumen"
                     />
                     :{" "}
                   </Form.Label>
-                  <Form.Control
-                    defaultValue={this.state.pubtype}
-                  ></Form.Control>
+                  <Form.Control defaultValue={this.state.volume}></Form.Control>
+                  <Form.Label>
+                    <FormattedMessage id="bib.issue" defaultMessage="Numero" />:{" "}
+                  </Form.Label>
+                  <Form.Control defaultValue={this.state.issue}></Form.Control>
+                  <Form.Label>
+                    <FormattedMessage
+                      id="bib.spage"
+                      defaultMessage="Pagina de inicio"
+                    />
+                    :{" "}
+                  </Form.Label>
+                  <Form.Control defaultValue={this.state.spage}></Form.Control>
+                  <Form.Label>
+                    <FormattedMessage id="bib.pages" defaultMessage="Paginas" />
+                    :{" "}
+                  </Form.Label>
+                  <Form.Control defaultValue={this.state.pages}></Form.Control>
                   <Form.Label>URL: </Form.Label>
                   <Form.Control defaultValue={this.state.uri}></Form.Control>
                   <Form.Label>

@@ -2,7 +2,6 @@ const express = require("express");
 const axios = require("axios");
 const config = require("./config.json");
 const { v4: uuidv4 } = require("uuid");
-const { json } = require("express");
 
 const app = express();
 
@@ -228,7 +227,7 @@ app.get("/api/request/:i&:us", (req, res) => {
           "Content-Type": "application/json",
         }),
         (url = config["folio_url"] + "circulation/requests"),
-        console.log(body),
+        //console.log(body),
         axios
           .post(url, JSON.stringify(body), {
             headers: header,

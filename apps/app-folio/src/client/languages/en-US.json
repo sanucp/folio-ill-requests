@@ -10,8 +10,13 @@
   "app.Email": "E-mail",
   "app.button": "LogIn",
   "bib.header": "Bibliographic data",
-  "bib.tittle": "Tittle",
+  "bib.atittle": "Article title",
+  "bib.tittle": "Title",
   "bib.aut": "Author",
-  "bib.pub": "Publication Type",
+  "bib.date": "Publication date",
+  "bib.volume": "Volume of the publication",
+  "bib.issue": "Number of the publication",
+  "bib.spage": "Start page",
+  "bib.pages": "Pages",
   "bib.comments": "Comments"
 }

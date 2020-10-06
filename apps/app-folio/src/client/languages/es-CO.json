@@ -18,5 +18,6 @@
   "bib.issue": "Numero de la publicación",
   "bib.spage": "Pagina de inicial",
   "bib.pages": "Paginas",
-  "bib.comments": "Comentarios"
+  "bib.comments": "Comentarios",
+  "bib.genre": "Tipo de publicación"
 }

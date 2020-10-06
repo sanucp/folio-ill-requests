@@ -25,6 +25,7 @@ class Biblo extends Component {
       issue: "",
       spage: "",
       pages: "",
+      genre: "",
     };
   }
   componentWillMount() {
@@ -32,8 +33,9 @@ class Biblo extends Component {
       tit: this.state.url.get("title"),
       atit: this.state.url.get("atitle"),
       aut: this.state.url.get("aulast"),
-      isbn: this.state.url.get("isbn"),
+      isbn: this.state.url.get("ISBN"),
       issn: this.state.url.get("issn"),
+      genre: this.state.url.get("genre"),
       volume: this.state.url.get("volume"),
       issue: this.state.url.get("issue"),
       spage: this.state.url.get("spage"),
@@ -53,11 +55,13 @@ class Biblo extends Component {
     const i = this.state.isbn;
     const u = sessionStorage.getItem("user");
     const us = JSON.parse(u);
-
-    //console.log(i);
+    const a = this.state.aut;
+    const bib = this.state.atit;
+    //const bib = JSON.stringify(biblos);
+    console.log(bib);
     //console.log(us);
 
-    fetch("./api/request/" + i + "&" + us)
+    fetch("./api/request/" + i + "&" + a + "&" + us + "&" + bib)
       .then((res) => res.json())
       .then((r) => this.setState({ respo: r.re }))
       .then(() => console.log(this.state.respo));
@@ -77,6 +81,14 @@ class Biblo extends Component {
             <Card.Text>
               <Form onSubmit={this.submitHandle}>
                 <Form.Group>
+                  <Form.Label>
+                    <FormattedMessage
+                      id="bib.genre"
+                      defaultMessage="Tipo de publicacion"
+                    />
+                    :
+                  </Form.Label>
+                  <Form.Control defaultValue={this.state.genre}></Form.Control>
                   <Form.Label>
                     <FormattedMessage
                       id="bib.atittle"

@@ -8,14 +8,14 @@ const app = express();
 app.use(express.static("dist"));
 
 function getToken() {
-  const url = config["folio_url"] + "authn/login";
+  const url = config["demo"]["folio_url"] + "authn/login";
   const headers = {
     "Content-Type": "application/json",
-    "x-okapi-tenant": config["folio_tenandid"],
+    "x-okapi-tenant": config["demo"]["folio_tenandid"],
   };
   const auth = {
-    username: config["folio_user"],
-    password: config["folio_pass"],
+    username: config["demo"]["folio_user"],
+    password: config["demo"]["folio_pass"],
   };
   return new Promise(function (resolve, reject) {
     try {
@@ -49,10 +49,10 @@ app.get("/api/getUser/:usr&:pass", (req, res) => {
     var name = req.param("usr");
     var pass = req.param("pass");
 
-    var authUrl = config["folio_url"] + "authn/login";
+    var authUrl = config["demo"]["folio_url"] + "authn/login";
     const authHeaders = {
       "Content-Type": "application/json",
-      "x-okapi-tenant": config["folio_tenandid"],
+      "x-okapi-tenant": config["demo"]["folio_tenandid"],
     };
 
     const usrData = {
@@ -74,10 +74,13 @@ app.get("/api/getUser/:usr&:pass", (req, res) => {
               })
               .then(function () {
                 axios({
-                  url: config["folio_url"] + "bl-users/by-username/" + name,
+                  url:
+                    config["demo"]["folio_url"] +
+                    "bl-users/by-username/" +
+                    name,
                   method: "get",
                   headers: {
-                    "X-Okapi-Tenant": config["folio_tenandid"],
+                    "X-Okapi-Tenant": config["demo"]["folio_tenandid"],
                     "X-Okapi-Token": men,
                   },
                 })
@@ -99,17 +102,43 @@ app.get("/api/getUser/:usr&:pass", (req, res) => {
   }
 });
 
-app.get("/api/request/:i&:us", (req, res) => {
-  //console.log(req.param("us"));
+app.get("/api/request/:i&:a&:us&:bib", (req, res) => {
+  //console.log(req.param("bib"));
   try {
     var u = req.param("us");
     var i = req.param("i");
-    //console.log(u);
-    //console.log(i);
+    var au = req.param("a");
+    const bib = req.param("bib");
+
+    //console.log(JSON.parse(bib));
+
     function getItem() {
       let tok;
       let id;
       let recid;
+      const bibdata = {
+        source: "FOLIO",
+        title: bib,
+        contributors: [
+          {
+            name: au,
+            contributorTypeId: "6e09d47d-95e2-4d8a-831b-f777b8ef6d81",
+            contributorNameTypeId: "2b94c631-fca9-4892-a730-03ee529ffe2a",
+            primary: true,
+          },
+        ],
+        identifiers: [
+          {
+            identifierTypeId: "8261054f-be78-422d-bd51-4ed9f33c3422",
+            value: i,
+          },
+        ],
+        instanceTypeId: "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
+        tags: {
+          tagList: ["ill-pending"],
+        },
+      };
+      //console.log(bibdata);
       return new Promise(function (resolve, reject) {
         getToken()
           .then(function (result) {
@@ -118,43 +147,68 @@ app.get("/api/request/:i&:us", (req, res) => {
           .then(function () {
             axios({
               url:
-                config["folio_url"] +
+                config["demo"]["folio_url"] +
                 "inventory/instances?limit=30&query=keyword all '" +
                 i +
                 "'",
               method: "get",
               headers: {
-                "X-Okapi-Tenant": config["folio_tenandid"],
+                "X-Okapi-Tenant": config["demo"]["folio_tenandid"],
                 "X-Okapi-Token": tok,
               },
             })
               .then(function (response) {
-                id = response.data.instances[0]["id"];
+                if (response.data.totalRecords != 0) {
+                  //console.log(response.data.instances[0]["id"]);
+                  id = response.data.instances[0]["id"];
+                } else {
+                  axios({
+                    url:
+                      config["demo"]["folio_url"] +
+                      "instance-storage/instances",
+                    method: "post",
+                    headers: {
+                      "X-Okapi-Tenant": config["demo"]["folio_tenandid"],
+                      "X-Okapi-Token": tok,
+                      "Content-Type": "application/json",
+                    },
+                    data: bibdata,
+                  })
+                    .then(function (res) {
+                      console.log(res.data.instances[0]["id"]);
+                      //id = response.data.instances[0]["id"];
+                    })
+                    .catch(function (error) {
+                      console.log(error.response.data);
+                    });
+                }
               })
               .then(function () {
+                //console.log(id);
                 axios({
                   url:
-                    config["folio_url"] +
+                    config["demo"]["folio_url"] +
                     "holdings-storage/holdings?limit=100&query=instanceId==" +
                     id,
                   method: "get",
                   headers: {
-                    "X-Okapi-Tenant": config["folio_tenandid"],
+                    "X-Okapi-Tenant": config["demo"]["folio_tenandid"],
                     "X-Okapi-Token": tok,
                   },
                 })
                   .then(function (response) {
                     recid = response.data.holdingsRecords[0]["id"];
+                    //console.log(response.data);
                   })
                   .then(function () {
                     axios({
                       url:
-                        config["folio_url"] +
+                        config["demo"]["folio_url"] +
                         "inventory/items?query=holdingsRecordId==" +
                         recid,
                       method: "get",
                       headers: {
-                        "X-Okapi-Tenant": config["folio_tenandid"],
+                        "X-Okapi-Tenant": config["demo"]["folio_tenandid"],
                         "X-Okapi-Token": tok,
                       },
                     })
@@ -211,7 +265,7 @@ app.get("/api/request/:i&:us", (req, res) => {
             callNumber: re[0]["itemLevelCallNumber"],
             holdingsRecordId: re[0]["holdingsRecordId"],
             location: {
-              name: re[0]["permanentLocation"]["name"],
+              name: re[0]["effectiveLocation"]["name"],
             },
           },
           fulfilmentPreference: "Hold Shelf",
@@ -222,11 +276,11 @@ app.get("/api/request/:i&:us", (req, res) => {
           },
         }),
         (header = {
-          "X-Okapi-Tenant": config["folio_tenandid"],
+          "X-Okapi-Tenant": config["demo"]["folio_tenandid"],
           "X-Okapi-Token": tk,
           "Content-Type": "application/json",
         }),
-        (url = config["folio_url"] + "circulation/requests"),
+        (url = config["demo"]["folio_url"] + "circulation/requests"),
         //console.log(body),
         axios
           .post(url, JSON.stringify(body), {

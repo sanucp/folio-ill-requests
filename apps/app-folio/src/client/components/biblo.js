@@ -58,7 +58,7 @@ class Biblo extends Component {
     const a = this.state.aut;
     const bib = this.state.atit;
     //const bib = JSON.stringify(biblos);
-    console.log(bib);
+    //console.log(bib);
     //console.log(us);
 
     fetch("./api/request/" + i + "&" + a + "&" + us + "&" + bib)

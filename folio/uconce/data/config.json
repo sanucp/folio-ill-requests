@@ -1,0 +1,14 @@
+{
+  "test": {
+    "folio_url": "https://okapi-bibliotecasudec-test.folio.ebsco.com/",
+    "folio_tenandid": "fs00001060",
+    "folio_user": "Eintegrations",
+    "folio_pass": "Xz4&BMv9b!K$"
+  },
+  "release": {
+    "folio_url": "",
+    "folio_tenandid": "",
+    "folio_user": "",
+    "folio_pass": ""
+  }
+}

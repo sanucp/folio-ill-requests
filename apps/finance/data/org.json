@@ -1,0 +1,20 @@
+{
+  "name": "Lalalal",
+  "code": "LALA",
+  "description": "Ejemplo de organización",
+  "status": "active",
+  "Office": "Library",
+  "language": "en-us",
+  "addresses": {
+    "adressLine1": "adress1",
+    "adressLine2": "",
+    "city": "world"
+  },
+  "phoneNumbers": {
+    "phoneNumber": "+1-0001111"
+  },
+  "emails": {
+    "value": "anavarro@ebsco.com",
+    "description": "main"
+  }
+}

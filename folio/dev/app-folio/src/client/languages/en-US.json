@@ -1,0 +1,23 @@
+{
+  "lang.selct": "Select Language",
+  "lang.esp": "Spanish",
+  "lang.eng": "English",
+  "lang.por": "Portuguese",
+  "app.header": "User personal data",
+  "app.usr": "User Name",
+  "app.name": "Name",
+  "app.lastname": "Lastname",
+  "app.Email": "E-mail",
+  "app.button": "LogIn",
+  "bib.header": "Bibliographic data",
+  "bib.atittle": "Article title",
+  "bib.tittle": "Title",
+  "bib.aut": "Author",
+  "bib.date": "Publication date",
+  "bib.volume": "Volume of the publication",
+  "bib.issue": "Number of the publication",
+  "bib.spage": "Start page",
+  "bib.pages": "Pages",
+  "bib.comments": "Comments",
+  "bib.genre": "Publication type"
+}

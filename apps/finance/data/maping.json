@@ -1,0 +1,24 @@
+{
+  "mappings": [
+    {
+      "ws_field": "anoNacimiento",
+      "folio_field": "dateOfBirth",
+      "fs_type": "personal"
+    },
+    {
+      "ws_field": "codigoBarras",
+      "folio_field": "barcode",
+      "fs_type": "string"
+    },
+    {
+      "ws_field": "correo",
+      "folio_field": "email",
+      "fs_type": "personal"
+    },
+    {
+      "ws_field": "denomCentro",
+      "folio_field": "centroAsociadows",
+      "fs_type": "customFields"
+    }
+  ]
+}

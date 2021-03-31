@@ -1,0 +1,26 @@
+{
+  "demo": {
+    "folio_url": "https://okapi-demo.folio.ebsco.com/",
+    "folio_tenandid": "fs00000002",
+    "folio_user": "sanucp",
+    "folio_pass": "And1020756378!"
+  },
+  "test": {
+    "folio_url": "http://localhost:9130/",
+    "folio_tenandid": "diku",
+    "folio_user": "diku_admin",
+    "folio_pass": "admin"
+  },
+  "game": {
+    "folio_url": "http://192.168.0.18:9130/",
+    "folio_tenandid": "diku",
+    "folio_user": "diku_admin",
+    "folio_pass": "admin"
+  },
+  "udec": {
+    "folio_url": "https://okapi-bibliotecasudec-test.folio.ebsco.com/",
+    "folio_tenandid": "fs00001060",
+    "folio_user": "Eintegrations",
+    "folio_pass": "Xz4&BMv9b!K$"
+  }
+}

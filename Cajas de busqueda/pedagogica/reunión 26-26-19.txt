@@ -1,6 +1,0 @@
-Quitar pestaña ojs
-cambiar texto de enlace del repositorio a "acceso al texto completo"
-Tooltip para la caja de busqueda
-URL del demo
-GILS
-Curriculum Builder

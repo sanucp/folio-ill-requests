@@ -1,1 +1,0 @@
-0  0  *  *  *   root  ftpup.bash > /dev/null 2>&1

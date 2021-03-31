@@ -1,0 +1,20 @@
+{
+  "demo": {
+    "folio_url": "https://okapi-demo.folio.ebsco.com/",
+    "folio_tenandid": "fs00000002",
+    "folio_user": "sanucp",
+    "folio_pass": "And092451!"
+  },
+  "test": {
+    "folio_url": "http://localhost:9130/",
+    "folio_tenandid": "diku",
+    "folio_user": "diku_admin",
+    "folio_pass": "admin"
+  },
+  "game": {
+    "folio_url": "http://192.168.0.21:9130/",
+    "folio_tenandid": "diku",
+    "folio_user": "diku_admin",
+    "folio_pass": "admin"
+  }
+}

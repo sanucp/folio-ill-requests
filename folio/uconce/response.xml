@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:s="http://www.w3.org/2001/XMLSchema"
+    xmlns:s0="WS_BIBLIOTECA"
+    xmlns:tns1="dsws.businessobjects.com" targetNamespace="WS_BIBLIOTECA"
+    xmlns="http://schemas.xmlsoap.org/wsdl/" name="BIServices">
+    <types>
+        <s:schema elementFormDefault="qualified" targetNamespace="WS_BIBLIOTECA">
+            <s:simpleType name="Operator">
+                <s:restriction base="s:string">
+                    <s:enumeration value="EQUAL" />
+                    <s:enumeration value="GREATER" />
+                    <s:enumeration value="GREATER_OR_EQUAL" />
+                    <s:enumeration value="LESS" />
+                    <s:enumeration value="LESS_OR_EQUAL" />
+                    <s:enumeration value="NOT_EQUAL" />
+                    <s:enumeration value="INLIST" />
+                    <s:enumeration value="NOT_INLIST" />
+                </s:restriction>
+            </s:simpleType>
+            <s:complexType name="FilterCondition">
+                <s:sequence>
+                    <s:element name="value" type="s:string" />
+                    <s:element name="operator" type="s0:Operator" />
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="LovValueIndex">
+                <s:sequence>
+                    <s:element name="valueofPrompt" type="s:string" />
+                    <s:element name="index" type="s:string" />
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="DrillFilter">
+                <s:sequence>
+                    <s:element name="dimension" type="s:string" />
+                    <s:element name="value" type="s:string" />
+                    <s:element name="operator" type="s0:Operator" />
+                </s:sequence>
+            </s:complexType>
+            <s:element name="GetReportBlock_WS_FOLIO_BIBLIOTECA">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element name="login" type="s:string" minOccurs="0" nillable="true" />
+                        <s:element name="password" type="s:string" minOccurs="0" nillable="true" />
+                        <s:element name="_Country" type="s0:FilterCondition" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+                        <s:element name="_Proveedor" type="s0:FilterCondition" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+                        <s:element name="_Idnumber" type="s0:FilterCondition" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+                        <s:element name="_Nombre_Organización" type="s0:FilterCondition" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+                        <s:element name="_Name1" type="s0:FilterCondition" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+                        <s:element name="_City1" type="s0:FilterCondition" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+                        <s:element name="_City2" type="s0:FilterCondition" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+                        <s:element name="_Tel_Number" type="s0:FilterCondition" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+                        <s:element name="resetState" type="s:boolean" minOccurs="0" nillable="true" />
+                        <s:element name="refresh" type="s:boolean" minOccurs="0" nillable="true" />
+                        <s:element name="getFromLatestDocumentInstance" type="s:boolean" minOccurs="0" nillable="true" />
+                        <s:element name="getFromUserInstance" type="s:boolean" minOccurs="0" nillable="true" />
+                        <s:element name="turnOutputToVTable" type="s:boolean" minOccurs="0" nillable="true" />
+                        <s:element name="closeDocument" type="s:boolean" minOccurs="0" nillable="true" />
+                        <s:element name="startRow" type="s:int" minOccurs="0" nillable="true" />
+                        <s:element name="endRow" type="s:int" minOccurs="0" nillable="true" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:simpleType name="DrillOperation">
+                <s:restriction base="s:string">
+                    <s:enumeration value="UP" />
+                    <s:enumeration value="DOWN" />
+                </s:restriction>
+            </s:simpleType>
+            <s:complexType name="DrillPath">
+                <s:sequence>
+                    <s:element name="from" type="s:string" />
+                    <s:element name="value" type="s:string" />
+                    <s:element name="drillOperation" type="s0:DrillOperation" />
+                </s:sequence>
+            </s:complexType>
+            <s:element name="Drill_WS_FOLIO_BIBLIOTECA">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element name="login" type="s:string" minOccurs="0" nillable="true" />
+                        <s:element name="password" type="s:string" minOccurs="0" nillable="true" />
+                        <s:element name="drillPath" type="s0:DrillPath" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+                        <s:element name="filter" type="s0:DrillFilter" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+                        <s:element name="resetState" type="s:boolean" minOccurs="0" nillable="true" />
+                        <s:element name="refresh" type="s:boolean" minOccurs="0" nillable="true" />
+                        <s:element name="getFromLatestDocumentInstance" type="s:boolean" minOccurs="0" nillable="true" />
+                        <s:element name="getFromUserInstance" type="s:boolean" minOccurs="0" nillable="true" />
+                        <s:element name="turnOutputToVTable" type="s:boolean" minOccurs="0" nillable="true" />
+                        <s:element name="closeDocument" type="s:boolean" minOccurs="0" nillable="true" />
+                        <s:element name="startRow" type="s:int" minOccurs="0" nillable="true" />
+                        <s:element name="endRow" type="s:int" minOccurs="0" nillable="true" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:complexType name="TRow">
+                <s:sequence>
+                    <s:element name="cell" type="s:anyType" maxOccurs="unbounded" nillable="true" />
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="TTable">
+                <s:sequence>
+                    <s:element name="row" maxOccurs="unbounded" type="s0:TRow" />
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="THeader">
+                <s:sequence>
+                    <s:element name="row" maxOccurs="unbounded" type="s0:TRow" />
+                </s:sequence>
+            </s:complexType>
+            <s:complexType name="TFooter">
+                <s:sequence>
+                    <s:element name="row" maxOccurs="unbounded" type="s0:TRow" />
+                </s:sequence>
+            </s:complexType>
+            <s:element name="GetReportBlock_WS_FOLIO_BIBLIOTECAResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element name="table" type="s0:TTable" />
+                        <s:element name="headers" type="s0:THeader" />
+                        <s:element name="footers" type="s0:TFooter" />
+                        <s:element name="user" type="s:string" />
+                        <s:element name="documentation" type="s:string" />
+                        <s:element name="documentname" type="s:string" />
+                        <s:element name="lastrefreshdate" type="s:dateTime" />
+                        <s:element name="creationdate" type="s:dateTime" />
+                        <s:element name="creator" type="s:string" />
+                        <s:element name="isScheduled" type="s:boolean" />
+                        <s:element name="scheduleStartTime" type="s:dateTime" />
+                        <s:element name="scheduleEndTime" type="s:dateTime" />
+                        <s:element name="tableType" type="s:string" />
+                        <s:element name="nbColumns" type="s:int" />
+                        <s:element name="nbLines" type="s:int" />
+                        <s:element name="message" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="Drill_WS_FOLIO_BIBLIOTECAResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element name="table" type="s0:TTable" />
+                        <s:element name="headers" type="s0:THeader" />
+                        <s:element name="footers" type="s0:TFooter" />
+                        <s:element name="user" type="s:string" />
+                        <s:element name="documentation" type="s:string" />
+                        <s:element name="documentname" type="s:string" />
+                        <s:element name="lastrefreshdate" type="s:dateTime" />
+                        <s:element name="creationdate" type="s:dateTime" />
+                        <s:element name="creator" type="s:string" />
+                        <s:element name="isScheduled" type="s:boolean" />
+                        <s:element name="scheduleStartTime" type="s:dateTime" />
+                        <s:element name="scheduleEndTime" type="s:dateTime" />
+                        <s:element name="tableType" type="s:string" />
+                        <s:element name="nbColumns" type="s:int" />
+                        <s:element name="nbLines" type="s:int" />
+                        <s:element name="message" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="QaaWSHeader">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element name="sessionID" type="s:string" minOccurs="0" maxOccurs="1" nillable="true" />
+                        <s:element name="serializedSession" type="s:string" minOccurs="0" maxOccurs="1" nillable="true" />
+                        <s:element name="ClientType" type="s:string" minOccurs="0" maxOccurs="1" nillable="true" />
+                        <s:element name="AuditingObjectID" type="s:string" minOccurs="0" maxOccurs="1" nillable="true" />
+                        <s:element name="AuditingObjectName" type="s:string" minOccurs="0" maxOccurs="1" nillable="true" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+        </s:schema>
+    </types>
+    <message name="GetReportBlock_WS_FOLIO_BIBLIOTECASoapIn">
+        <part name="parameters" element="s0:GetReportBlock_WS_FOLIO_BIBLIOTECA" />
+        <part name="request_header" element="s0:QaaWSHeader" />
+    </message>
+    <message name="GetReportBlock_WS_FOLIO_BIBLIOTECASoapOut">
+        <part name="parameters" element="s0:GetReportBlock_WS_FOLIO_BIBLIOTECAResponse" />
+    </message>
+    <message name="Drill_WS_FOLIO_BIBLIOTECASoapIn">
+        <part name="parameters" element="s0:Drill_WS_FOLIO_BIBLIOTECA" />
+        <part name="request_header" element="s0:QaaWSHeader" />
+    </message>
+    <message name="Drill_WS_FOLIO_BIBLIOTECASoapOut">
+        <part name="parameters" element="s0:Drill_WS_FOLIO_BIBLIOTECAResponse" />
+    </message>
+    <portType name="BIServicesSoap">
+        <operation name="GetReportBlock_WS_FOLIO_BIBLIOTECA">
+            <documentation></documentation>
+            <input message="s0:GetReportBlock_WS_FOLIO_BIBLIOTECASoapIn" />
+            <output message="s0:GetReportBlock_WS_FOLIO_BIBLIOTECASoapOut" />
+        </operation>
+        <operation name="Drill_WS_FOLIO_BIBLIOTECA">
+            <documentation></documentation>
+            <input message="s0:Drill_WS_FOLIO_BIBLIOTECASoapIn" />
+            <output message="s0:Drill_WS_FOLIO_BIBLIOTECASoapOut" />
+        </operation>
+    </portType>
+    <binding name="BIServicesSoap" type="s0:BIServicesSoap">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+        <operation name="GetReportBlock_WS_FOLIO_BIBLIOTECA">
+            <documentation></documentation>
+            <soap:operation soapAction="WS_BIBLIOTECA/GetReportBlock_WS_FOLIO_BIBLIOTECA" style="document" />
+            <input>
+                <soap:header message="s0:GetReportBlock_WS_FOLIO_BIBLIOTECASoapIn" part="request_header" use="literal">
+                    <soap:headerfault message="s0:GetReportBlock_WS_FOLIO_BIBLIOTECASoapIn" part="request_header" use="literal" />
+                </soap:header>
+                <soap:body use="literal" parts="parameters" />
+            </input>
+            <output>
+                <soap:body use="literal" />
+            </output>
+        </operation>
+        <operation name="Drill_WS_FOLIO_BIBLIOTECA">
+            <documentation></documentation>
+            <soap:operation soapAction="WS_BIBLIOTECA/Drill_WS_FOLIO_BIBLIOTECA" style="document" />
+            <input>
+                <soap:header message="s0:Drill_WS_FOLIO_BIBLIOTECASoapIn" part="request_header" use="literal">
+                    <soap:headerfault message="s0:Drill_WS_FOLIO_BIBLIOTECASoapIn" part="request_header" use="literal" />
+                </soap:header>
+                <soap:body use="literal" parts="parameters" />
+            </input>
+            <output>
+                <soap:body use="literal" />
+            </output>
+        </operation>
+    </binding>
+    <service name="WS_BIBLIOTECA">
+        <documentation></documentation>
+        <port name="BIServicesSoap" binding="s0:BIServicesSoap">
+            <soap:address location="http://BO4:8080/dswsbobje/qaawsservices/queryasaservice/biws?cuid=AYKEpsMbDLtKgeYEZz7piYE&amp;authType=secEnterprise&amp;locale=es_CL&amp;timeout=60&amp;ConvertAnyType=true" />
+        </port>
+    </service>
+</definitions> 

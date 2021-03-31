@@ -1,0 +1,32 @@
+[
+  {
+    "name": "File",
+    "code": "FI",
+    "description": "Ejemplo de organización",
+    "status": "active",
+    "Office": "Library",
+    "language": "en-us",
+    "phoneNumbers": "+1-0001111",
+    "emails": "anavarro@ebsco.com"
+  },
+  {
+    "name": "Comp",
+    "code": "COMP",
+    "description": "Ejemplo de organización",
+    "status": "active",
+    "Office": "Library",
+    "language": "en-us",
+    "phoneNumbers": "+1-0001111",
+    "emails": "anavarro@ebsco.com"
+  },
+  {
+    "name": "live",
+    "code": "LIV",
+    "description": "Ejemplo de organización",
+    "status": "active",
+    "Office": "Library",
+    "language": "en-us",
+    "phoneNumbers": "+1-0001111",
+    "emails": "anavarro@ebsco.com"
+  }
+]

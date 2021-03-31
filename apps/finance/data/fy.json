@@ -1,0 +1,9 @@
+{
+  "name": "Fiscal year 2021",
+  "code": "FY2021",
+  "description": "Fiscal year jan-1 to dec-31 of 2021",
+  "start": "2021-01-01T00:00:00Z",
+  "end": "2021-12-30T23:59:59Z",
+  "allocation": 2000000,
+  "available": 2000000
+}

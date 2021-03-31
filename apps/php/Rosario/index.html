@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Modificar Archivo CSV</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://www.w3schools.com/lib/w3-colors-win8.css"
+    />
+    <script>
+      function myFunction() {
+        alert("Procesando... Espere un momento por favor!");
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="w3-container w3-win8-crimson">
+      <h1>
+        APP de completado de estadisticas de Curriculum Builder - Universidad
+        del Rosario
+      </h1>
+    </div>
+    <div class="w3-container">
+      <div class="w3-row">
+        <div class="w3-container w3-col l4 w3-margin-top">
+          <form
+            action="data.php"
+            method="post"
+            enctype="multipart/form-data"
+            onsubmit="myFunction()"
+          >
+            <label for="archivo" class="w3-text-teal">Archivo de datos:</label>
+            <input type="file" name="archivo" id="archivo" class="w3-input" />
+            <br />
+            <input type="submit" value="Enviar" class="w3-btn w3-blue-grey" />
+          </form>
+          <br />
+          <form
+            action="student.php"
+            method="post"
+            enctype="multipart/form-data"
+            onsubmit="myFunction()"
+          >
+            <label for="studentdata" class="w3-text-teal"
+              >Archivo de estudiantes:</label
+            >
+            <input
+              type="file"
+              name="studentdata"
+              id="studentdata"
+              class="w3-input"
+            />
+            <br />
+            <input type="submit" value="Enviar" class="w3-btn w3-blue-grey" />
+          </form>
+        </div>
+        <div class="w3-col w3-card w3-margin-top" style="width: 40%">
+          <header class="w3-blue w3-container">
+            <h3>Instrucciones del Aplicativo</h3>
+          </header>
+          <div class="w3-container">
+            <ul class="w3-ul w3-large w3-hoverable">
+              <li>
+                1. Descarge los archivos de estadísticas de Curriculum Builder
+                (dat.csv y studentdata.csv) desde el administrador de la
+                herramienta
+                <a
+                  href="https://curriculumbuilder.ebscohost.com/admin2.php"
+                  target="_blank"
+                  >(aquí)</a
+                >, (Recuerde que estos archivos deben tener la extensión .CSV).
+              </li>
+              <li>
+                2. Subir los archivos en el espacio de este aplicativo definido
+                para cada uno de los archivos (son los que se encuentran a la
+                izquierda de estas instrucciones); solo cargue uno a la vez y
+                espere que el proceso termine para luego realizar el proceso con
+                el otro.
+              </li>
+              <li>
+                3. El aplicativo comenzara a realizar el proceso de suma de
+                datos, esto puede demorar un tiempo dependiendo del tamaño del
+                archivo.
+              </li>
+              <li>
+                4. El aplicativo descargara automaticamente el archivo una vez
+                terminado el procesamiento de datos, este quedara en la carpeta
+                de descarga del navegador.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <img
+            src="http://imageserver.ebscohost.com/branding/s4300083/logoeds.png"
+            alt="logo"
+            class="w3-display-topright"
+            style="margin-top: 15% !important; margin-right: 2%"
+          />
+        </div>
+      </div>
+    </div>
+    <footer
+      class="w3-container w3-win8-crimson w3-center"
+      style="position: absolute; bottom: 0; width: 100%"
+    >
+      <p>
+        Desarrollado para la Universidad del Rosario <br />
+        Por EBSCO Information Services (C) - 2020
+      </p>
+    </footer>
+  </body>
+</html>
